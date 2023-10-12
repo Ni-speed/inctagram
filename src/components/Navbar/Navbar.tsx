@@ -10,8 +10,8 @@ const navigation = [
   { id: 3, path: '/signIn', title: 'Sign In' },
   { id: 4, path: '/contacts', title: 'Contacts' },
   { id: 5, path: '/profile', title: 'Profile' },
-  { id: 6, path: '/ForgotPassword/ForgotPassword', title: 'Forgot Password' },
-  { id: 6, path: '/characters', title: 'Character' },
+  { id: 6, path: '/forgotPassword', title: 'Forgot Password' },
+  { id: 7, path: '/characters', title: 'Character' },
 ]
 
 export const Navbar = () => {

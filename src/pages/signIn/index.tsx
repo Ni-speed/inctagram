@@ -7,7 +7,7 @@ type Props = {}
 function SignIpIndex({}: Props) {
   return (
     <>
-      <HeadMeta title={'Characters'} />
+      <HeadMeta title={'Sign In'} />
       <SignIn />
     </>
   )

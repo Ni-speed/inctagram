@@ -7,7 +7,7 @@ type Props = {}
 function SignUpIndex({}: Props) {
   return (
     <>
-      <HeadMeta title={'Characters'} />
+      <HeadMeta title={'Sign Up'} />
       <SignUp />
     </>
   )
