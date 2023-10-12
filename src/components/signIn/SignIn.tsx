@@ -1,11 +1,12 @@
 import React from 'react'
 
 import { GitHUb, Google } from '../../../public/icons'
+import { Card } from '@/components/Card'
 
 export const SignIn = () => {
   return (
     <>
-      <div>
+      <Card>
         <p style={{ marginBottom: '13px' }}>Sign In</p>
         <div style={{ display: 'flex', gap: '80px', marginBottom: '24px', width: '330px' }}>
           <Google />
@@ -21,7 +22,7 @@ export const SignIn = () => {
         </form>
         <div>Do you have an account?</div>
         <a href={'https://www.youtube.com/watch?v=eQLxAGEV_6U'}>Sigh In</a>
-      </div>
+      </Card>
     </>
   )
 }
