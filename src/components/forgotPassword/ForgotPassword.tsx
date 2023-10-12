@@ -1,7 +1,9 @@
+import { Card } from '@/components/Card'
+
 export const ForgotPassword = () => {
   return (
     <>
-      <div>
+      <Card>
         <p style={{ marginBottom: '13px' }}>Forgot Password</p>
 
         <form style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '330px' }}>
@@ -13,7 +15,7 @@ export const ForgotPassword = () => {
         </form>
         <a href={'https://www.youtube.com/watch?v=eQLxAGEV_6U'}>Back to Sign In</a>
         <div>Captcha</div>
-      </div>
+      </Card>
     </>
   )
 }
