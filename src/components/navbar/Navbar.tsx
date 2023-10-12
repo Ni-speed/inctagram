@@ -12,6 +12,7 @@ const navigation = [
   { id: 5, path: '/profile', title: 'Profile' },
   { id: 6, path: '/forgotPassword', title: 'Forgot Password' },
   { id: 7, path: '/characters', title: 'Character' },
+  { id: 8, path: '/termOfService', title: 'Term Of Service' },
 ]
 
 export const Navbar = () => {

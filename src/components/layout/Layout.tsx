@@ -1,6 +1,6 @@
 import { PropsWithChildren, ReactElement } from 'react'
 
-import { Navbar } from '@/components/Navbar/Navbar'
+import { Navbar } from '@/components/navbar/Navbar'
 import { NextPage } from 'next'
 
 import styles from '@/styles/Home.module.css'

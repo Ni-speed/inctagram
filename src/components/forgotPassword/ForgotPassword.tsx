@@ -1,4 +1,4 @@
-import { Card } from '@/components/Card'
+import { Card } from '../card'
 
 export const ForgotPassword = () => {
   return (

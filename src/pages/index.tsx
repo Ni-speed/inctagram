@@ -1,5 +1,5 @@
-import { HeadMeta } from '@/components/HeadMeta/HeadMeta'
-import { getLayout } from '@/components/Layout/Layout'
+import { HeadMeta } from '@/components/headMeta/HeadMeta'
+import { getLayout } from '@/components/layout/Layout'
 
 function Home() {
   return (
