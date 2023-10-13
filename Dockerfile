@@ -1,7 +1,7 @@
 FROM node:18.15 as dependencies
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+RUN yarn install
 
 FROM node:18.15 as builder
 WORKDIR /app
