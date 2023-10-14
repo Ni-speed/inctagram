@@ -1,0 +1,78 @@
+@mixin typography($fontSize, $lineHeight, $fontWeight) {
+  margin: 0;
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  color: var(--color-light-100);
+}
+
+.boldText14 {
+  @include typography(var(--font-size-xxl), var(--line-height-l), var(--font-weight-bold));
+}
+
+.boldText16 {
+  @include typography(var(--font-size-xxl), var(--line-height-l), var(--font-weight-bold));
+}
+
+.h1 {
+  @include typography(var(--font-size-xl), var(--line-height-l), var(--font-weight-bold));
+}
+
+.h2 {
+  @include typography(var(--font-size-l), var(--line-height-m), var(--font-weight-bold));
+}
+
+.h3 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
+}
+
+.large {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
+}
+
+.mediumText14 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
+}
+
+.regularLink {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}
+
+.regularText14 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+}
+
+.regularText16 {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+}
+
+.semiBoldSmallText {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+}
+
+.smallLink {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+}
+
+.smallText {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+}
+
+.link1,
+.link1:visited {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+
+  cursor: pointer;
+  color: var(--color-info-500);
+  text-decoration: underline;
+}
+
+.link2,
+.link1:visited {
+  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+
+  cursor: pointer;
+  color: var(--color-info-500);
+  text-decoration: underline;
+}
