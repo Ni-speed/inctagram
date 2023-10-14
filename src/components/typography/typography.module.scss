@@ -7,12 +7,8 @@
   color: var(--color-light-100);
 }
 
-.boldText14 {
-  @include typography(var(--font-size-xxl), var(--line-height-l), var(--font-weight-bold));
-}
-
-.boldText16 {
-  @include typography(var(--font-size-xxl), var(--line-height-l), var(--font-weight-bold));
+.large {
+  @include typography(var(--font-size-xxl), var(--line-height-l), var(--font-weight-large));
 }
 
 .h1 {
@@ -24,55 +20,51 @@
 }
 
 .h3 {
-  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
-}
-
-.large {
-  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-regular));
-}
-
-.mediumText14 {
-  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
-}
-
-.regularLink {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
-}
-
-.regularText14 {
-  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-large));
 }
 
 .regularText16 {
-  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
+  @include typography(var(--font-size-m), var(--line-height-s), var(--font-weight-regular));
 }
 
-.semiBoldSmallText {
-  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+.boldText16 {
+  @include typography(var(--font-size-m), var(--line-height-m), var(--font-weight-bold));
 }
 
-.smallLink {
-  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+.regularText14 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
+}
+
+.mediumText14 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-medium));
+}
+
+.boldText14 {
+  @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
 }
 
 .smallText {
-  @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-bold));
+  @include typography(var(--font-size-s), var(--line-height-s), var(--font-weight-regular));
 }
 
-.link1,
-.link1:visited {
+.semiBoldSmallText {
+  @include typography(var(--font-size-s), var(--line-height-s), var(--font-weight-large));
+}
+
+.regularLink,
+.regularLink:visited {
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-regular));
 
   cursor: pointer;
-  color: var(--color-info-500);
+  color: var(--color-accent-500);
   text-decoration: underline;
 }
 
-.link2,
-.link1:visited {
+.smallLink,
+.smallLink:visited {
   @include typography(var(--font-size-xs), var(--line-height-s), var(--font-weight-regular));
 
   cursor: pointer;
-  color: var(--color-info-500);
+  color: var(--color-accent-500);
   text-decoration: underline;
 }
