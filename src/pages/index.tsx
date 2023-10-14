@@ -1,3 +1,6 @@
+import { useState } from 'react'
+
+import { CommonCheckbox } from '../shared/ui/CommonCheckbox/CommonCheckbox'
 import { HeadMeta } from '@/components/headMeta/HeadMeta'
 import { getLayout } from '@/components/layout/Layout'
 
@@ -5,7 +8,6 @@ function Home() {
   return (
     <>
       <HeadMeta title={'Create Next App'} />
-
       <h1> Hello World</h1>
     </>
   )
