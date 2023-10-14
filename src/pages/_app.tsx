@@ -3,7 +3,9 @@ import type { AppProps } from 'next/app'
 
 import type { ReactElement, ReactNode } from 'react'
 
-import '@/styles/globals.css'
+import '@fontsource-variable/inter'
+
+import '../styles/index.scss'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
