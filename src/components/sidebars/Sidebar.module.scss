@@ -1,0 +1,16 @@
+.sidebarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .slidebarItem {
+    &:focus {
+      border: var(--color-accent-700) solid 2px;
+    }
+  }
+}

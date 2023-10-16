@@ -1,34 +1,29 @@
-import { HomeIcon } from '../../../public/icons/index'
+import {
+  CreateSidebarItem,
+  FavoritesSidebarItem,
+  LogOutItem,
+  MessengerSidebarItem,
+  MyProfileSidebarItem,
+  SearchSidebarItem,
+} from '@/components/sidebars/sidebarItems'
+import { HomeSidebarItem } from '@/components/sidebars/sidebarItems/HomeSidebarItem'
+import Link from 'next/link'
 
 import s from './Sidebar.module.scss'
 
 export const Sidebars = () => {
-  const sidebarsItems = [
-    {
-      callbackHandler: () => {
-        console.log('Hi 1')
-      },
-      iconUrl: HomeIcon,
-      id: 1,
-      title: 'Home',
-    },
-    {
-      callbackHandler: () => {
-        console.log('Hi 2')
-      },
-      iconUrl: HomeIcon,
-      id: 2,
-      title: 'Create',
-    },
-    {
-      callbackHandler: () => {
-        console.log('Hi 3')
-      },
-      iconUrl: HomeIcon,
-      id: 3,
-      title: 'My Profile',
-    },
-  ]
-
-  return <div></div>
+  return (
+    <div className={s.sidebarContainer}>
+      <Link className={s.slidebarItem} href={'/'}>
+        <HomeSidebarItem />
+      </Link>
+      <CreateSidebarItem />
+      <MyProfileSidebarItem />
+      <MessengerSidebarItem />
+      <SearchSidebarItem />
+      <SearchSidebarItem />
+      <FavoritesSidebarItem />
+      <LogOutItem />
+    </div>
+  )
 }
