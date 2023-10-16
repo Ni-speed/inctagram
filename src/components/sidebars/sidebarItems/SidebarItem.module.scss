@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+
+  &:hover .child {
+    cursor: pointer;
+    color: var(--color-accent-100);
+  }
+
+  &:active {
+    font-size: 36px;
+    border: var(--color-success-700) solid 2px;
+  }
+}
