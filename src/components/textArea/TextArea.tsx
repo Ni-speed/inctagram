@@ -55,10 +55,12 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
         {label}
       </Typography>
       <div
-        className={`${s.inputContainer} ${errorMessage ? s.error : ''} ${disabled && s.disabled}`}
+        className={`${s.textAreaContainer} ${errorMessage ? s.errorInTextArea : ''} ${
+          disabled && s.disabled
+        }`}
       >
         <textarea
-          className={`${s.input} ${error ? s.error : ''}`}
+          className={`${s.textArea} ${error ? s.error : ''}`}
           disabled={disabled}
           onChange={onChangeValueHandler}
           onKeyDown={onKeyPressHandler}

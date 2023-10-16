@@ -34,6 +34,7 @@ export const Error: Story = {
 }
 export const Disabled: Story = {
   args: {
+    disabled: true,
     label: 'Disabled',
     placeholder: 'Text-area',
   },
