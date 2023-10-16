@@ -1,6 +1,6 @@
 import { ChangeEvent, ComponentPropsWithoutRef, KeyboardEvent, forwardRef } from 'react'
 
-import { Typography } from '../typography/Typography'
+import { Typography } from '@/shared/ui/typography/Typography'
 
 import s from './textArea.module.scss'
 
