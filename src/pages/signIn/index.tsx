@@ -1,6 +1,6 @@
-import { HeadMeta } from '@/components/headMeta/HeadMeta'
 import { getLayout } from '@/components/layout/Layout'
-import { SignIn } from '@/components/signIn/SignIn'
+import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { SignIn } from '@/shared/ui/signIn/SignIn'
 
 type Props = {}
 

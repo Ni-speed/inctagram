@@ -1,9 +1,9 @@
 import { PropsWithChildren, ReactElement } from 'react'
 
-import { Navbar } from '@/components/navbar/Navbar'
+import { Navbar } from '@/shared/ui/navbar/Navbar'
 import { NextPage } from 'next'
 
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 
 export const Layout: NextPage<PropsWithChildren<{}>> = ({ children }) => {
   return (

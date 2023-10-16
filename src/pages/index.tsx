@@ -1,8 +1,5 @@
-import { useState } from 'react'
-
-import { CommonCheckbox } from '../shared/ui/CommonCheckbox/CommonCheckbox'
-import { HeadMeta } from '@/components/headMeta/HeadMeta'
 import { getLayout } from '@/components/layout/Layout'
+import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 function Home() {
   return (

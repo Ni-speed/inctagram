@@ -1,6 +1,6 @@
-import { HeadMeta } from '@/components/headMeta/HeadMeta'
 import { getLayout } from '@/components/layout/Layout'
-import { TermOfService } from '@/components/termOfService/TermOfService'
+import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { TermOfService } from '@/shared/ui/termOfService/TermOfService'
 
 type Props = {}
 
