@@ -28,3 +28,4 @@ const ForwardRef = forwardRef(SvgComponent)
 const HomeIconSvg = memo(ForwardRef)
 
 export default HomeIconSvg
+
