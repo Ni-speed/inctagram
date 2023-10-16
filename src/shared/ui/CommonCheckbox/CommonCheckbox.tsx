@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { Typography } from '..'
 import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
@@ -42,7 +43,7 @@ export const CommonCheckbox: React.FC<CheckboxPropsType> = ({
       </div>
       {label && (
         <label className={s.label} htmlFor={'c1'}>
-          {label}
+          <Typography variant={'regularText14'}>{label}</Typography>
         </label>
       )}
     </div>

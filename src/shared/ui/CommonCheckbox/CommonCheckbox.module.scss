@@ -43,12 +43,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('./../../assets/checkboxUnchecked.svg');
+      background-image: url('./../../assets/svg/checkboxUnchecked/checkboxUnchecked.svg');
       background-repeat: no-repeat;
       background-position: center;
 
       &:disabled {
-        background-image: url('./../../assets/checkboxUncheckedDisabled.svg');
+        background-image: url('./../../assets/svg/checkboxUncheckedDisabled/checkboxUncheckedDisabled.svg');
         background-repeat: no-repeat;
         background-position: center;
       }
