@@ -6,8 +6,8 @@ import {
   MyProfileSidebarItem,
   SearchSidebarItem,
   StatisticsSidebarItem,
-} from '@/components/sidebars/sidebarItems'
-import { HomeSidebarItem } from '@/components/sidebars/sidebarItems/HomeSidebarItem'
+} from './sidebarItems'
+import { HomeSidebarItem } from '@/shared/ui/sidebars/sidebarItems/HomeSidebarItem'
 import Link from 'next/link'
 
 import s from './Sidebar.module.scss'

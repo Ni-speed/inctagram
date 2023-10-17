@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { HomeHoverIcon, HomeIcon } from '../../../../public/icons/index'
-import { Typography } from '@/components/typography/Typography'
+import { HomeHoverIcon, HomeIcon } from '@/shared/assets/svg/sidebarsIcons'
+import { Typography } from '@/shared/ui'
 
 import s from './SidebarItem.module.scss'
 
