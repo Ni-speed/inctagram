@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GitHUb, Google } from '../../../public/icons'
+import { GitHUb, Google } from '../../../../public/icons'
 import { Card } from '../card'
 
 export const SignUp = () => {
