@@ -4,8 +4,12 @@
   gap: 12px;
   align-items: center;
 
+  box-sizing: border-box;
+  height: 24px;
+
   &:hover {
     cursor: pointer;
+    box-sizing: border-box;
   }
 }
 
@@ -15,13 +19,17 @@
   gap: 12px;
   align-items: center;
 
+  box-sizing: border-box;
+  height: 24px;
+
   &:hover .child {
     cursor: pointer;
     color: var(--color-accent-100);
+    fill: var(--color-accent-100);
   }
 
-  &:active {
-    font-size: 36px;
-    border: var(--color-success-700) solid 2px;
+  &:active .child {
+    color: var(--color-accent-500);
+    fill: var(--color-accent-500);
   }
 }
