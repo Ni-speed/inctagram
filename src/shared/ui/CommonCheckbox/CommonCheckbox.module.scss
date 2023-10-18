@@ -1,0 +1,73 @@
+.wrapperCheckbox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .disabled {
+    pointer-events: none;
+  }
+
+  .buttonWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    width: 25px;
+
+    &:disabled {
+      cursor: initial;
+    }
+
+    &:hover {
+      background-color: #333333;
+      border-radius: 50%;
+    }
+
+    &:focus-visible {
+      background-color: #808080;
+      border-radius: 50%;
+    }
+
+    &:active {
+      background-color: #808080;
+      border-radius: 50%;
+    }
+
+    button {
+      all: unset;
+    }
+
+    .checkboxRoot {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('./../../assets/svg/checkboxUnchecked/checkboxUnchecked.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+
+      &:disabled {
+        background-image: url('./../../assets/svg/checkboxUncheckedDisabled/checkboxUncheckedDisabled.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    .checkboxIndicator {
+      position: relative;
+      z-index: 5;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .label {
+    user-select: none;
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-s);
+    font-style: normal;
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-m);
+  }
+}
