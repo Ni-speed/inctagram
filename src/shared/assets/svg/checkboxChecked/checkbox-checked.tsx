@@ -1,11 +1,15 @@
-import { Ref, SVGProps, forwardRef, memo } from 'react'
-const SvgComponent = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+import { SVGProps } from 'react'
+
+type PropsType = {
+  size?: number
+} & SVGProps<SVGSVGElement>
+
+export const СheckboxChecked = ({ size = 18, ...props }: PropsType) => (
   <svg
     fill={'none'}
-    height={24}
-    ref={ref}
-    viewBox={'-6 -6 36 36'}
-    width={24}
+    height={size}
+    viewBox={'0 0 24 24'}
+    width={size}
     xmlns={'http://www.w3.org/2000/svg'}
     {...props}
   >
@@ -18,6 +22,3 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) =
     />
   </svg>
 )
-const ForwardRef = forwardRef(SvgComponent)
-
-export const СheckboxChecked = memo(ForwardRef)

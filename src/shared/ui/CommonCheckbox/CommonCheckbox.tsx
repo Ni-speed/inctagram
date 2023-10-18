@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Typography } from '..'
-import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets'
+import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
 import s from './CommonCheckbox.module.scss'
