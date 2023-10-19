@@ -5,7 +5,6 @@ function Home() {
   return (
     <>
       <HeadMeta title={'Create Next App'} />
-
       <h1> Hello World</h1>
     </>
   )
