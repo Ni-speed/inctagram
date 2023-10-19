@@ -1,0 +1,20 @@
+.sidebarBox {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  margin-top: 72px;
+  margin-left: 60px;
+
+  .sidebarItem {
+    &:focus {
+      box-sizing: border-box;
+      border: var(--color-accent-700);
+    }
+  }
+
+  a {
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+}
