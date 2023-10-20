@@ -1,16 +1,13 @@
 import { CreateIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
-
-import s from './SidebarItem.module.scss'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems/SidebarItem'
 
 export type CreateSidebarItemProps = {
   callback?: () => void
 }
-export const CreateSidebarItem = (props: CreateSidebarItemProps) => {
+export const CreateSidebarItem = ({ callback }: CreateSidebarItemProps) => {
   return (
-    <div className={s.container}>
+    <SidebarItem callback={callback} title={'Create'}>
       <CreateIcon />
-      <Typography variant={'mediumText14'}>Create</Typography>
-    </div>
+    </SidebarItem>
   )
 }
