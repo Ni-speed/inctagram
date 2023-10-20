@@ -1,16 +1,13 @@
 import { FavoritesIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
-
-import s from './SidebarItem.module.scss'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems/SidebarItem'
 
 export type FavoritesSidebarItemProps = {
   callback?: () => void
 }
-export const FavoritesSidebarItem = (props: FavoritesSidebarItemProps) => {
+export const FavoritesSidebarItem = ({ callback }: FavoritesSidebarItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'Favorites'}>
       <FavoritesIcon />
-      <Typography variant={'mediumText14'}>Favorites</Typography>
-    </div>
+    </SidebarItem>
   )
 }
