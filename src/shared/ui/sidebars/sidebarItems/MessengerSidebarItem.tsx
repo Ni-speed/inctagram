@@ -1,16 +1,13 @@
 import { MessengerIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-import s from './SidebarItem.module.scss'
-
-export type MessengerSidebarItemProps = {
+type MessengerSidebarItemProps = {
   callback?: () => void
 }
-export const MessengerSidebarItem = (props: MessengerSidebarItemProps) => {
+export const MessengerSidebarItem = ({ callback }: MessengerSidebarItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'Messenger'}>
       <MessengerIcon />
-      <Typography variant={'mediumText14'}>Messenger</Typography>
-    </div>
+    </SidebarItem>
   )
 }

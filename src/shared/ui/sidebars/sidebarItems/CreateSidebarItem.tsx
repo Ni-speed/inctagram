@@ -1,7 +1,7 @@
 import { CreateIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems/SidebarItem'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-export type CreateSidebarItemProps = {
+type CreateSidebarItemProps = {
   callback?: () => void
 }
 export const CreateSidebarItem = ({ callback }: CreateSidebarItemProps) => {

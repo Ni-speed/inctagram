@@ -1,15 +1,14 @@
-import {
-  CreateIcon,
-  FavoritesIcon,
-  LogOutIcon,
-  MessengerIcon,
-  MyProfileIcon,
-  SearchIcon,
-  StatisticsIcon,
-} from '@/shared/assets/svg/sidebarsIcons'
 import { SidebarsUniversal } from '@/shared/ui/sidebars/SidebarsUniversal '
+import {
+  CreateSidebarItem,
+  FavoritesSidebarItem,
+  LogOutItem,
+  MessengerSidebarItem,
+  MyProfileSidebarItem,
+  SearchSidebarItem,
+  StatisticsSidebarItem,
+} from '@/shared/ui/sidebars/sidebarItems'
 import { HomeSidebarItem } from '@/shared/ui/sidebars/sidebarItems/HomeSidebarItem'
-import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems/SidebarItem'
 import Link from 'next/link'
 
 import s from './Sidebar.module.scss'
@@ -21,31 +20,17 @@ export const Sidebars = () => {
         <Link className={s.sidebarItem} href={'/'}>
           <HomeSidebarItem />
         </Link>
-        <SidebarItem title={'Create'}>
-          <CreateIcon />
-        </SidebarItem>
-        <SidebarItem title={'My Profile'}>
-          <MyProfileIcon />
-        </SidebarItem>
-        <SidebarItem title={'Messenger'}>
-          <MessengerIcon />
-        </SidebarItem>
-        <SidebarItem title={'Search'}>
-          <SearchIcon />
-        </SidebarItem>
+        <CreateSidebarItem />
+        <MyProfileSidebarItem />
+        <MessengerSidebarItem />
+        <SearchSidebarItem />
       </SidebarsUniversal>
       <SidebarsUniversal className={s.sidebarsStatistic}>
-        <SidebarItem title={'Statistics'}>
-          <StatisticsIcon />
-        </SidebarItem>
-        <SidebarItem title={'Favorites'}>
-          <FavoritesIcon />
-        </SidebarItem>
+        <StatisticsSidebarItem />
+        <FavoritesSidebarItem />
       </SidebarsUniversal>
       <SidebarsUniversal className={s.sidebarsLogout}>
-        <SidebarItem title={'Log Out'}>
-          <LogOutIcon />
-        </SidebarItem>
+        <LogOutItem />
       </SidebarsUniversal>
     </div>
   )

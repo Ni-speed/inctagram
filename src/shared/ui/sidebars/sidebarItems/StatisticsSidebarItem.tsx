@@ -1,16 +1,13 @@
 import { StatisticsIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-import s from './SidebarItem.module.scss'
-
-export type StatisticsSidebarItemProps = {
+type StatisticsSidebarItemProps = {
   callback?: () => void
 }
-export const StatisticsSidebarItem = (props: StatisticsSidebarItemProps) => {
+export const StatisticsSidebarItem = ({ callback }: StatisticsSidebarItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'Statistics'}>
       <StatisticsIcon />
-      <Typography variant={'mediumText14'}>Statistics</Typography>
-    </div>
+    </SidebarItem>
   )
 }

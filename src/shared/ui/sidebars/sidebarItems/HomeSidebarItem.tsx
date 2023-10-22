@@ -1,30 +1,29 @@
 import { useState } from 'react'
 
-import { HomeHoverIcon, HomeIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { HomeActiveIconSvg, HomeIcon } from '@/shared/assets/svg/sidebarsIcons'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
 import s from './SidebarItem.module.scss'
 
-export type SidebarItemProps = {
+type HomeSidebarItemProps = {
   callback?: () => void
   className?: string
 }
-export const HomeSidebarItem = (props: SidebarItemProps) => {
-  const [isHover, setIsHover] = useState<boolean>(false)
+export const HomeSidebarItem = ({ callback }: HomeSidebarItemProps) => {
+  const [isMouseDown, setIsMouseDown] = useState<boolean>(false)
   const onMouseEnterHandler = (value: boolean) => {
-    setIsHover(value)
+    setIsMouseDown(value)
   }
 
   return (
     <div
       className={s.homeContainer}
-      onMouseEnter={() => onMouseEnterHandler(true)}
-      onMouseLeave={() => onMouseEnterHandler(false)}
+      onMouseDown={() => onMouseEnterHandler(true)}
+      onMouseUp={() => onMouseEnterHandler(false)}
     >
-      {isHover ? <HomeHoverIcon className={s.child} /> : <HomeIcon className={s.child} />}
-      <Typography className={s.child} variant={'mediumText14'}>
-        Home
-      </Typography>
+      <SidebarItem callback={callback} className={s.homeContainer} title={'Home'}>
+        {isMouseDown ? <HomeActiveIconSvg /> : <HomeIcon className={s.child} />}
+      </SidebarItem>
     </div>
   )
 }

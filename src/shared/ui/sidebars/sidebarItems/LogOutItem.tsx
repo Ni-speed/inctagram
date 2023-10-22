@@ -1,16 +1,13 @@
 import { LogOutIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-import s from './SidebarItem.module.scss'
-
-export type LogOutItemProps = {
+type LogOutItemProps = {
   callback?: () => void
 }
-export const LogOutItem = (props: LogOutItemProps) => {
+export const LogOutItem = ({ callback }: LogOutItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'Log Out'}>
       <LogOutIcon />
-      <Typography variant={'mediumText14'}>Log Out</Typography>
-    </div>
+    </SidebarItem>
   )
 }

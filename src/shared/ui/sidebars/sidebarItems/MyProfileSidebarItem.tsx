@@ -1,16 +1,13 @@
 import { MyProfileIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-import s from './SidebarItem.module.scss'
-
-export type MyProfileSidebarItemProps = {
+type MyProfileSidebarItemProps = {
   callback?: () => void
 }
-export const MyProfileSidebarItem = (props: MyProfileSidebarItemProps) => {
+export const MyProfileSidebarItem = ({ callback }: MyProfileSidebarItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'My Profile'}>
       <MyProfileIcon />
-      <Typography variant={'mediumText14'}>My Profile</Typography>
-    </div>
+    </SidebarItem>
   )
 }

@@ -1,16 +1,13 @@
 import { SearchIcon } from '@/shared/assets/svg/sidebarsIcons'
-import { Typography } from '@/shared/ui'
+import { SidebarItem } from '@/shared/ui/sidebars/sidebarItems'
 
-import s from './SidebarItem.module.scss'
-
-export type SearchSidebarItemProps = {
+type SearchSidebarItemProps = {
   callback?: () => void
 }
-export const SearchSidebarItem = (props: SearchSidebarItemProps) => {
+export const SearchSidebarItem = ({ callback }: SearchSidebarItemProps) => {
   return (
-    <div className={s.container} onClick={props.callback}>
+    <SidebarItem callback={callback} title={'Search'}>
       <SearchIcon />
-      <Typography variant={'mediumText14'}>Search</Typography>
-    </div>
+    </SidebarItem>
   )
 }
