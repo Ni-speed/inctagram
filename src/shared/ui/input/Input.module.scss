@@ -1,179 +1,173 @@
-.inputMain {
-  height: 60px;
-}
-
 .internalBlock {
-  height: 60px;
-}
-
-.inputContainer {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-
-  height: 36px;
-
-  color: var(--color-light-100);
-}
-
-.inputName {
-  color: var(--color-dark-100);
-}
-
-.inputContainer .inputStandard {
-  padding-right: 32px;
-  padding-left: 12px;
-
-  // тут закоментил так как по дефолту белый цвет
-  //color: var(--color-dark-100);
-
-  background-color: inherit;
-  border: 1px solid var(--color-dark-300);
-  border-radius: 2px;
-
-  &:disabled {
-    color: var(--color-dark-300);
+  .inputName {
+    color: var(--color-light-900);
   }
 
-  &.error {
-    color: var(--color-danger-300);
-    border-color: var(--color-danger-300);
-  }
-
-  &:focus {
-    border-color: var(--color-info-700);
-  }
-
-  &:hover {
-    // тут изменил цвет и добавил фоновый цвет
+  .disabledProps {
     color: var(--color-dark-100);
-    background-color: var(--color-dark-700);
     border-color: var(--color-dark-100);
+    fill: var(--color-dark-100);
   }
 
-  &:active:enabled {
-    border-color: var(--color-light-100);
-  }
-}
-
-.inputContainer .inputPassword {
-  padding-right: 32px;
-  padding-left: 12px;
-
-  background-color: inherit;
-  border: 1px solid var(--color-dark-300);
-  border-radius: 2px;
-
-  &:disabled {
-    color: var(--color-dark-300);
+  .error {
+    color: var(--color-danger-500);
   }
 
-  &.error {
-    color: var(--color-danger-300);
-    border-color: var(--color-danger-300);
+  .inputContainer {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    height: 36px;
+
+    caret-color: var(--color-light-100);
+
+    .showPasswordButton {
+      position: absolute;
+      top: 6px;
+      right: 12px;
+
+      width: 24px;
+      height: 24px;
+      padding: 0;
+
+      background-color: inherit;
+      border: 0;
+
+      .eyeSVG {
+        fill: var(--color-light-100);
+      }
+    }
+
+    .searchButton {
+      position: absolute;
+      top: 8px;
+      left: 12px;
+
+      width: 20px;
+      height: 20px;
+      padding: 0;
+
+      background-color: inherit;
+      border: 0;
+
+      .searchSVG {
+        fill: var(--color-light-900);
+      }
+
+      .searchSvgError {
+        fill: var(--color-light-100);
+      }
+    }
+
+    .inputStandard {
+      height: 36px;
+      padding-left: 12px;
+
+      color: var(--color-light-900);
+
+      background-color: inherit;
+      border: 1px solid var(--color-dark-100);
+      border-radius: 2px;
+
+      &:disabled {
+        color: var(--color-dark-100);
+        border-color: var(--color-dark-100);
+      }
+
+      &.error {
+        color: var(--color-light-100);
+        border-color: var(--color-danger-500);
+      }
+
+      &:focus {
+        border: 2px solid var(--color-accent-500);
+        outline: none;
+      }
+
+      &:hover {
+        border-color: var(--color-light-900);
+      }
+
+      &:active {
+        color: var(--color-light-100);
+        background-color: var(--color-dark-500);
+        border-color: var(--color-light-100);
+      }
+    }
+
+    .inputPassword {
+      height: 36px;
+      padding-right: 32px;
+      padding-left: 12px;
+
+      color: var(--color-light-900);
+
+      background-color: inherit;
+      border: 1px solid var(--color-dark-100);
+      border-radius: 2px;
+
+      &:disabled {
+        color: var(--color-dark-100);
+        border-color: var(--color-dark-100);
+      }
+
+      &.error {
+        color: var(--color-light-100);
+        border-color: var(--color-danger-500);
+      }
+
+      &:focus {
+        border: 2px solid var(--color-accent-500);
+        outline: none;
+      }
+
+      &:hover {
+        border-color: var(--color-light-900);
+      }
+
+      &:active {
+        color: var(--color-light-100);
+        background-color: var(--color-dark-500);
+        border-color: var(--color-light-100);
+      }
+    }
+
+    .inputSearch {
+      height: 36px;
+      padding-right: 12px;
+      padding-left: 41px;
+
+      color: var(--color-light-900);
+
+      background-color: inherit;
+      border: 1px solid var(--color-dark-100);
+      border-radius: 2px;
+
+      &:disabled {
+        color: var(--color-dark-100);
+        border-color: var(--color-dark-100);
+      }
+
+      &.error {
+        color: var(--color-light-100);
+        border-color: var(--color-danger-500);
+      }
+
+      &:focus {
+        border: 2px solid var(--color-accent-700);
+        outline: none;
+      }
+
+      &:hover {
+        border-color: var(--color-light-900);
+      }
+
+      &:active {
+        color: var(--color-light-100);
+        border-color: var(--color-light-100);
+      }
+    }
   }
-
-  &:focus {
-    border-color: var(--color-info-700);
-  }
-
-  &:hover {
-    // тут изменил цвет и добавил фоновый цвет
-    color: var(--color-dark-100);
-    background-color: var(--color-dark-700);
-    border-color: var(--color-dark-100);
-  }
-
-  // сделал так что бы фон кнопки "глаз" тоже менялся при наведении на инпут
-  &:hover + .showPasswordButton {
-    background-color: var(--color-dark-700);
-  }
-
-  &:active:enabled {
-    border-color: var(--color-light-100);
-  }
-}
-
-.inputContainer .inputSearch {
-  height: 36px;
-  padding-right: 26px;
-  padding-left: 30px;
-
-  color: var(--color-dark-100);
-
-  background-color: inherit;
-  border: 1px solid var(--color-dark-300);
-  border-radius: 2px;
-
-  &:disabled {
-    color: var(--color-dark-300);
-  }
-
-  &.error {
-    border-color: var(--color-danger-300);
-  }
-
-  &:focus {
-    border-color: var(--color-info-700);
-  }
-
-  &:hover {
-    // тут изменил цвет и добавил фоновый цвет
-    color: var(--color-dark-100);
-    background-color: var(--color-dark-700);
-    border-color: var(--color-dark-100);
-  }
-
-  // сделал так что бы фон кнопки "лупа" тоже менялся при наведении на инпут
-  &:hover + .clearSearchButton {
-    background-color: var(--color-dark-700);
-  }
-
-  &:active:enabled {
-    border-color: var(--color-light-100);
-  }
-}
-
-.searchButton {
-  position: absolute;
-  top: 6px;
-  left: 1px;
-
-  width: 24px;
-  height: 24px;
-
-  background-color: inherit;
-  border: 0;
-}
-
-.clearSearchButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-
-  width: 16px;
-  height: 16px;
-
-  color: white;
-
-  background-color: inherit;
-  border: 0;
-}
-
-.showPasswordButton {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-
-  width: 20px;
-  height: 20px;
-
-  background-color: inherit;
-  border: 0;
-}
-
-.error {
-  font-size: var(--font-size-xs);
-  color: var(--color-danger-300);
 }
