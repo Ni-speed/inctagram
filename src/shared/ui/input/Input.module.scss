@@ -61,6 +61,14 @@
       }
     }
 
+    &:active {
+      .searchButton {
+        .searchSVG {
+          fill: var(--color-light-100);
+        }
+      }
+    }
+
     .inputStandard {
       height: 36px;
       padding-left: 12px;
@@ -167,6 +175,12 @@
       &:active {
         color: var(--color-light-100);
         border-color: var(--color-light-100);
+      }
+
+      &:hover + .searchButton {
+        .searchSVG {
+          fill: var(--color-warning-500);
+        }
       }
     }
   }
