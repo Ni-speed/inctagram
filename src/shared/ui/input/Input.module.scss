@@ -90,8 +90,9 @@
       }
 
       &:focus {
-        border: 2px solid var(--color-accent-500);
+        border-color: transparent;
         outline: none;
+        box-shadow: 0 0 0 2px var(--color-accent-500);
       }
 
       &:hover {
@@ -127,8 +128,9 @@
       }
 
       &:focus {
-        border: 2px solid var(--color-accent-500);
+        border-color: transparent;
         outline: none;
+        box-shadow: 0 0 0 2px var(--color-accent-500);
       }
 
       &:hover {
@@ -164,8 +166,9 @@
       }
 
       &:focus {
-        border: 2px solid var(--color-accent-700);
+        border-color: transparent;
         outline: none;
+        box-shadow: 0 0 0 2px var(--color-accent-700);
       }
 
       &:hover {
