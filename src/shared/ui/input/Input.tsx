@@ -66,45 +66,43 @@ export const Input = (
   }
 
   return (
-    <div className={s.inputMain}>
-      <div className={s.internalBlock}>
-        {props.inputName && !inputIsSearch && (
-          <Typography
-            className={clsx(s.inputName, disabled && s.disabledProps)}
-            variant={'regularText14'}
-          >
-            {props.inputName}
-          </Typography>
-        )}
-        <Label label={label && label}>
-          <div className={s.inputContainer}>
-            {inputIsSearch && (
-              <button className={s.searchButton} type={'button'}>
-                <SearchSvg
-                  className={clsx(
-                    errorMessage && s.searchSvgError,
-                    disabled ? s.disabledProps : s.searchSVG
-                  )}
-                />
-              </button>
-            )}
-            <input
-              className={styleNameForInput}
-              disabled={disabled}
-              onChange={onChangeHandler}
-              placeholder={props.placeholder}
-              type={internalInput}
-              value={props.value}
-            />
-            {inputIsPassword && (
-              <button className={s.showPasswordButton} onClick={onClickHandler} type={'button'}>
-                <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
-              </button>
-            )}
-          </div>
-        </Label>
-        {showError && <div className={s.error}>{errorMessage}</div>}
-      </div>
+    <div className={s.internalBlock}>
+      {props.inputName && !inputIsSearch && (
+        <Typography
+          className={clsx(s.inputName, disabled && s.disabledProps)}
+          variant={'regularText14'}
+        >
+          {props.inputName}
+        </Typography>
+      )}
+      <Label label={label && label}>
+        <div className={s.inputContainer}>
+          {inputIsSearch && (
+            <button className={s.searchButton} type={'button'}>
+              <SearchSvg
+                className={clsx(
+                  errorMessage && s.searchSvgError,
+                  disabled ? s.disabledProps : s.searchSVG
+                )}
+              />
+            </button>
+          )}
+          <input
+            className={styleNameForInput}
+            disabled={disabled}
+            onChange={onChangeHandler}
+            placeholder={props.placeholder}
+            type={internalInput}
+            value={props.value}
+          />
+          {inputIsPassword && (
+            <button className={s.showPasswordButton} onClick={onClickHandler} type={'button'}>
+              <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+            </button>
+          )}
+        </div>
+      </Label>
+      {showError && <div className={s.error}>{errorMessage}</div>}
     </div>
   )
 }
