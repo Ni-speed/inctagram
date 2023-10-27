@@ -1,10 +1,9 @@
 import { Ref, SVGProps, forwardRef, memo } from 'react'
 
-const SvgComponent = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+export const SearchSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={20}
-    ref={ref}
     viewBox={'0 0 20 20'}
     width={20}
     xmlns={'http://www.w3.org/2000/svg'}
@@ -18,7 +17,3 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) =
     />
   </svg>
 )
-const ForwardRef = forwardRef(SvgComponent)
-const SearchSvg = memo(ForwardRef)
-
-export default SearchSvg

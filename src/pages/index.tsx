@@ -1,6 +1,5 @@
 import { getLayout } from '@/components/layout/Layout'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { useRouter } from 'next/router'
 
 function Home() {
   return (
