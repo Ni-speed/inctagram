@@ -28,7 +28,7 @@ export const DropDown = ({ items, modal, trigger }: DropDownProps) => {
           className={s.arrow}
           height={8}
           stroke={'#4C4C4C'}
-          stroke-width={'1'}
+          strokeWidth={'1'}
           width={15}
         />
       </DropdownMenu.Content>

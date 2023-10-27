@@ -19,14 +19,18 @@ export const Navbar = () => {
   ]
 
   return (
-    <div className={s.link}>
-      {navigation.map(({ id, path, title }) => {
-        return (
-          <Link href={path} key={id}>
-            {title}
-          </Link>
-        )
-      })}
+    <div className={s.navbar}>
+      <div className={s.container}>
+        <div className={s.link}>
+          {navigation.map(({ id, path, title }) => {
+            return (
+              <Link href={path} key={id}>
+                {title}
+              </Link>
+            )
+          })}
+        </div>
+      </div>
     </div>
   )
 }

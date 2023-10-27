@@ -1,4 +1,4 @@
-import { getLayout } from '@/components/layout/Layout'
+import { getLayout } from '../widgets/ui'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 function Home() {
