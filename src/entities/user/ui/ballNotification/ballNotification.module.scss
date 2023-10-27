@@ -1,9 +1,8 @@
 .bellBlock {
+  display: inline-block;
   position: relative;
-  display: flex;
-  align-items: center;
-  margin-right: 48px;
-
+  cursor: pointer;
+  height: 20px;
   .count {
     display: flex;
     align-items: center;

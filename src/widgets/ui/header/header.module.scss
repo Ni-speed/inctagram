@@ -12,11 +12,12 @@
     justify-content: space-between;
 
     .blockButton {
-      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: space-between;
-
+      .ball {
+        margin-right: 48px;
+      }
       .select {
         height: 36px;
         width: 163px;

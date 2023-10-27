@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { BallNotification } from '../../../entities/user/ui'
-import { Typography } from '../../../shared/ui'
+import { DropDown, Typography } from '../../../shared/ui'
 import { Button } from '../../../shared/ui/button'
 
 import s from './header.module.scss'
@@ -19,7 +19,22 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
           <Typography variant={'large'}>Inctagram</Typography>
         </div>
         <div className={s.blockButton}>
-          {isAuth && <BallNotification countNotification={countNotification}></BallNotification>}
+          {isAuth && (
+            <DropDown
+              items={[
+                'sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf',
+                'sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf',
+                'sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf',
+                'sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf',
+              ]}
+              modal
+              trigger={
+                <div className={s.ball} style={{ display: 'inline-block', height: '20px' }}>
+                  <BallNotification countNotification={countNotification}></BallNotification>
+                </div>
+              }
+            ></DropDown>
+          )}
           <div className={s.select}>Select</div>
           {isAuth || (
             <>
