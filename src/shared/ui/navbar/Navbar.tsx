@@ -1,21 +1,23 @@
 import React from 'react'
 
+import { useTranslation } from '../../hooks/useTranslation'
 import Link from 'next/link'
 
 import s from './Navbar.module.scss'
 
-const navigation = [
-  { id: 1, path: '/', title: 'Home' },
-  { id: 2, path: '/signUp', title: 'Sign Up' },
-  { id: 3, path: '/signIn', title: 'Sign In' },
-  { id: 4, path: '/contacts', title: 'Contacts' },
-  { id: 5, path: '/profile', title: 'Profile' },
-  { id: 6, path: '/forgotPassword', title: 'Forgot Password' },
-  { id: 7, path: '/characters', title: 'Character' },
-  { id: 8, path: '/termOfService', title: 'Term Of Service' },
-]
-
 export const Navbar = () => {
+  const { t } = useTranslation()
+  const navigation = [
+    { id: 1, path: '/', title: t.navBar.home },
+    { id: 2, path: '/signUp', title: t.navBar.signUp },
+    { id: 3, path: '/signIn', title: t.navBar.signIn },
+    { id: 4, path: '/contacts', title: t.navBar.contacts },
+    { id: 5, path: '/profile', title: t.navBar.profile },
+    { id: 6, path: '/forgotPassword', title: t.navBar.forgotPassword },
+    { id: 7, path: '/characters', title: t.navBar.character },
+    { id: 8, path: '/termOfService', title: t.navBar.termOfService },
+  ]
+
   return (
     <div className={s.link}>
       {navigation.map(({ id, path, title }) => {
