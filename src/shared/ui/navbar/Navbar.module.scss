@@ -1,9 +1,14 @@
-.link {
-  display: flex;
-  column-gap: 20px;
-  margin-bottom: 30px;
+.container {
+    max-width: 1156px;
+    margin: 0 auto;
+}
 
-  & a:hover {
-    color: #680db0;
-  }
+.link {
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 30px;
+
+    & a:hover {
+        color: #680db0;
+    }
 }
