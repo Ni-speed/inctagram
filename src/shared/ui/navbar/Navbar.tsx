@@ -14,8 +14,8 @@ export const Navbar = () => {
     { id: 4, path: '/contacts', title: t.navBar.contacts },
     { id: 5, path: '/profile', title: t.navBar.profile },
     { id: 6, path: '/forgotPassword', title: t.navBar.forgotPassword },
-    { id: 7, path: '/characters', title: t.navBar.character },
-    { id: 8, path: '/termOfService', title: t.navBar.termOfService },
+    { id: 7, path: '/privacyPolicy', title: t.navBar.privacyPolicy },
+    { id: 8, path: '/termOfService', title: t.navBar.termsOfService },
   ]
 
   return (

@@ -1,0 +1,18 @@
+.link {
+    margin-top: 24px;
+    border: none;
+    display: flex;
+    gap: 12px;
+
+}
+
+.textWrapper {
+    margin-top: 23px;
+    max-width: 958px;
+    text-align: center;
+    margin: 0 auto;
+
+    .text {
+        margin-top: 20px;
+    }
+}

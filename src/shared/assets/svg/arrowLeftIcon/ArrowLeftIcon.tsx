@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SVGProps, memo } from 'react'
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
+export const ArrowLeftIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     fill={'none'}
     height={props.height}
@@ -10,11 +10,9 @@ const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   >
     <path
       d={
-        'M6.67 12.67a.67.67 0 0 1-.52-1.1L9.14 8 6.26 4.42a.67.67 0 0 1 .1-.94.67.67 0 0 1 .97.1l3.22 4a.67.67 0 0 1 0 .85l-3.33 4a.67.67 0 0 1-.55.24Z'
+        'M9.22 12.67a.67.67 0 0 1-.52-.25l-3.22-4a.67.67 0 0 1 0-.85l3.33-4a.67.67 0 0 1 1.03.86L6.86 8l2.88 3.57a.67.67 0 0 1-.52 1.1Z'
       }
       fill={'#fff'}
     />
   </svg>
 )
-
-export const ArrowLeftIcon = memo(SvgComponent)

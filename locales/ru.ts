@@ -1,13 +1,20 @@
 export const ru = {
+  linksButtons: {
+    backToSignUp: 'Вернуться к регистрации ',
+  },
   navBar: {
-    character: 'Персонажи',
     contacts: 'Контакты',
     forgotPassword: 'Восстановить пароль',
     home: 'Главная',
+    privacyPolicy: 'Политика конфиденциальности',
     profile: 'Профиль',
     signIn: 'Вход',
     signUp: 'Регистрация',
-    termOfService: 'Срок службы',
+    termsOfService: 'Срок службы',
+  },
+  privacyPolicy: {
+    privacyPolicy: 'Политика конфиденциальности',
+    termsOfService: 'Условия использования',
   },
 }
 export type LocaleType = typeof ru
