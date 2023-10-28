@@ -1,0 +1,21 @@
+.inputWrapper:not(:first-child) {
+    margin-top: 24px;
+}
+
+.checkbox {
+    margin-top: 18px;
+}
+
+.button {
+    margin-top: 18px;
+}
+
+.textCheckbox {
+    text-decoration: none;
+    color: var(--color-light-100);
+
+    .link {
+        color: var(--color-accent-300);
+        text-decoration: underline;
+    }
+}

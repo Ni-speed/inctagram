@@ -26,7 +26,11 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
         <div>
           <Typography variant={'large'}>Inctagram</Typography>
         </div>
-        <select defaultValue={router.locale} onChange={changeLangHandler}>
+        <select
+          style={{ backgroundColor: 'grey' }}
+          defaultValue={router.locale}
+          onChange={changeLangHandler}
+        >
           <option value={'ru'}>ru</option>
           <option value={'en'}>en</option>
         </select>
