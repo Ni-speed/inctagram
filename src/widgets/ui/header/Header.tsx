@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
 import { BallNotification } from '../../../entities/user/ui'
 import { DropDown, Typography } from '../../../shared/ui'
 import { Button } from '../../../shared/ui/button'
+import { useRouter } from 'next/router'
 
 import s from './header.module.scss'
 
@@ -12,12 +13,23 @@ type HeaderPropsType = {
 }
 
 export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
+  const router = useRouter()
+  const changeLangHandler = (event: ChangeEvent<HTMLSelectElement>) => {
+    const locale = event.currentTarget.value
+
+    router.push(router.pathname, '', { locale })
+  }
+
   return (
     <header className={s.header}>
       <div className={s.container}>
         <div>
           <Typography variant={'large'}>Inctagram</Typography>
         </div>
+        <select defaultValue={router.locale} onChange={changeLangHandler}>
+          <option value={'ru'}>ru</option>
+          <option value={'en'}>en</option>
+        </select>
         <div className={s.blockButton}>
           {isAuth && (
             <DropDown
