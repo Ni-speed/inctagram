@@ -1,4 +1,8 @@
 export const ru = {
+  languageSelector: {
+    en: 'Английский',
+    ru: 'Русский',
+  },
   linksButtons: {
     backToSignUp: 'Вернуться к регистрации ',
     signIn: 'Войти',

@@ -1,6 +1,10 @@
 import { LocaleType } from './ru'
 
 export const en: LocaleType = {
+  languageSelector: {
+    en: 'English',
+    ru: 'Russian',
+  },
   linksButtons: {
     backToSignUp: 'Back to Sig Up ',
     signIn: 'Sign In',
