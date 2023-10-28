@@ -1,6 +1,6 @@
 import { getLayout } from '../../widgets/ui'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { SignUp } from '@/shared/ui/signUp/signUp'
+import { SignUp } from '@/widgets/ui/signUp/signUp'
 
 type Props = {}
 

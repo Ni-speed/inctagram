@@ -1,0 +1,29 @@
+.signUp {
+    margin: 24px auto 0;
+    padding: 24px;
+    text-align: center;
+
+    .icons {
+        margin-top: 13px;
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .form {
+        margin-top: 24px;
+        text-align: left;
+    }
+
+    .haveAcc {
+        margin-top: 18px;
+    }
+
+    .link {
+        margin-top: 12px;
+
+        .textLink {
+            color: var(--color-accent-500)
+        }
+    }
+}
