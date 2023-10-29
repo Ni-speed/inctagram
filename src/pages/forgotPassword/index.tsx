@@ -1,5 +1,5 @@
+import { ForgotPassword } from '../../shared/ui'
 import { getLayout } from '../../widgets/ui'
-import { ForgotPassword } from '@/shared/ui/forgotPassword/ForgotPassword'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 type Props = {}

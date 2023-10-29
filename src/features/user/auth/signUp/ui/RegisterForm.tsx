@@ -1,11 +1,11 @@
 import { SubmitHandler } from 'react-hook-form'
 
+import { useTranslation } from '../../../../../shared/hooks'
 import { useRegisterForm } from '../lib'
-import { useTranslation } from '@/shared/hooks'
 import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
-import s from './register-form.module.scss'
+import s from './registerForm.module.scss'
 
 type RegisterFormPropsType = {
   className?: string
