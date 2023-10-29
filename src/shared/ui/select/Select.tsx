@@ -12,7 +12,7 @@ type Props = {
   label?: string
   onChange: (value: string) => void
   open?: boolean
-  options: Array<Option>
+  options: Option[]
   placeholder?: ReactElement | string
   rootClassName?: string
   value: ReactElement | string
@@ -38,6 +38,8 @@ export const Select = (props: SelectProps) => {
     Large: 24,
     Small: 16,
   } as const
+
+  console.log(options)
 
   const classNames = {
     content: clsx(s.content, s[variant]),
