@@ -8,6 +8,7 @@ import s from './Input.module.scss'
 
 export type InputProps = {
   className?: string
+  classNameError?: string
   classNameWrapper?: string
   disabled?: boolean
   errorMessage?: string
@@ -24,6 +25,7 @@ export const Input = (
 ) => {
   const {
     className,
+    classNameError,
     classNameWrapper,
     disabled,
     errorMessage = false,
@@ -68,7 +70,7 @@ export const Input = (
   }
 
   return (
-    <div className={`${s.internalBlock} ${classNameWrapper}`}>
+    <div className={clsx(s.internalBlock, classNameWrapper)}>
       {props.inputName && !inputIsSearch && (
         <Typography
           className={clsx(s.inputName, disabled && s.disabledProps)}
@@ -105,7 +107,7 @@ export const Input = (
           )}
         </div>
       </Label>
-      {showError && <div className={s.errorText}>{errorMessage}</div>}
+      {showError && <div className={clsx(s.errorText, classNameError)}>{errorMessage}</div>}
     </div>
   )
 }
