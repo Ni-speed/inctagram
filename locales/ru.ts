@@ -1,4 +1,9 @@
 export const ru = {
+  confirmEmail: {
+    button: 'Войти',
+    subTitle: 'Ваша электронная почта подтверждена',
+    title: 'Поздравляем!',
+  },
   languageSelector: {
     en: 'Английский',
     ru: 'Русский',
@@ -8,7 +13,13 @@ export const ru = {
     signIn: 'Войти',
     signUp: 'Регистрация',
   },
+  modalSignUp: {
+    button: 'OK',
+    text: 'Мы отправили ссылку для подтверждения вашего электронного ящика на адрес epam@epam.com.',
+    title: 'Электронное письмо отправлено',
+  },
   navBar: {
+    confirmEmail: 'Подтверждение электронной почты',
     contacts: 'Контакты',
     forgotPassword: 'Восстановить пароль',
     home: 'Главная',
@@ -17,6 +28,12 @@ export const ru = {
     signIn: 'Войти',
     signUp: 'Регистрация',
     termsOfService: 'Срок службы',
+  },
+  notConfirmEmail: {
+    button: 'Повторно отправить ссылку',
+    subTitle:
+      'Похоже, срок действия ссылки для подтверждения истек. Не волнуйтесь, мы можем отправить ссылку еще раз.',
+    title: 'Срок действия ссылки истек',
   },
   other: {
     agree: 'Я принимаю',

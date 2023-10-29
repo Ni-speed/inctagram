@@ -39,8 +39,6 @@ export const Select = (props: SelectProps) => {
     Small: 16,
   } as const
 
-  console.log(options)
-
   const classNames = {
     content: clsx(s.content, s[variant]),
     icon: clsx(s.icon, s[variant]),
