@@ -31,7 +31,6 @@ export const ru = {
     error: {
       email: {
         format: 'Необходимый формат example@example.ru',
-        required: 'Обязательное поле',
       },
       password: {
         characters: 'Недопустимые символы',

@@ -1,12 +1,11 @@
 import React from 'react'
 
-import { RegisterForm } from '../../../features/user/auth/ui'
+import { RegisterForm } from '../../../features/user/auth/signUp/ui'
 import { Github, Google } from '../../../shared/assets/svg'
 import { useTranslation } from '../../../shared/hooks'
 import { Typography } from '../../../shared/ui'
 import { Card } from '../../../shared/ui/card'
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 
 import s from './signUp.module.scss'
 

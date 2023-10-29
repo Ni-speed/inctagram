@@ -1,8 +1,8 @@
 import { memo, useMemo, useState } from 'react'
 
+import { LanguageSelectItem } from '.'
+import { Select } from '..'
 import { EnFlag, RuFlag } from '@/shared/assets/svg'
-import { LanguageSelectItem } from '@/shared/ui/languageSelect/languageSelectItem/LanguageSelectItem'
-import { Select } from '@/shared/ui/select'
 import { useRouter } from 'next/router'
 
 type LocalType = 'en' | 'ru'
@@ -37,7 +37,7 @@ export const LanguageSelect = memo(({ testOptions }: LanguageSelectTypes) => {
           value: el,
         }))
       : testOptions
-  }, [locales])
+  }, [locales, testOptions])
 
   return (
     <div>

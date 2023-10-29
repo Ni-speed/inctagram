@@ -33,7 +33,6 @@ export const en: LocaleType = {
     error: {
       email: {
         format: 'Required format example@example.com',
-        required: 'Required',
       },
       password: {
         characters: 'Invalid characters present',
