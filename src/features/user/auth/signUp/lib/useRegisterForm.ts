@@ -57,7 +57,7 @@ export const useRegisterForm = (
       privacyPolicy: true,
       username: '',
     },
-    mode: 'onSubmit',
+    mode: 'onBlur',
     resolver: zodResolver(schema(t.registerForm.error)),
   })
 

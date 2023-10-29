@@ -12,8 +12,11 @@ export const Layout: NextPage<PropsWithChildren<any>> = props => {
   return (
     <main className={s.main}>
       <Header countNotification={5} isAuth></Header>
-      <Navbar></Navbar>
-      <div className={s.container}> {children}</div>
+
+      <div className={s.container}>
+        <Navbar></Navbar>
+        {children}
+      </div>
     </main>
   )
 }

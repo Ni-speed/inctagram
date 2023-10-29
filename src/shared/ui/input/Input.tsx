@@ -30,6 +30,7 @@ export const Input = (
     inputIsSearch,
     inputType = 'text',
     label,
+    onBlur,
     onChangeValue,
   } = props
 
@@ -91,6 +92,7 @@ export const Input = (
           <input
             className={styleNameForInput}
             disabled={disabled}
+            onBlur={onBlur}
             onChange={onChangeHandler}
             placeholder={props.placeholder}
             type={internalInput}

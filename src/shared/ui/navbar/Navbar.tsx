@@ -15,22 +15,21 @@ export const Navbar = () => {
     { id: 5, path: '/profile', title: t.navBar.profile },
     { id: 6, path: '/forgotPassword', title: t.navBar.forgotPassword },
     { id: 7, path: '/privacyPolicy', title: t.navBar.privacyPolicy },
-    { id: 8, path: '/termOfService', title: t.navBar.termsOfService },
+    { id: 8, path: '/termsOfService', title: t.navBar.termsOfService },
+    { id: 9, path: '/confirmEmail', title: t.navBar.confirmEmail },
   ]
 
   return (
-    <div className={s.navbar}>
-      <div className={s.container}>
-        <div className={s.link}>
-          {navigation.map(({ id, path, title }) => {
-            return (
-              <Link href={path} key={id}>
-                {title}
-              </Link>
-            )
-          })}
-        </div>
+    <>
+      <div className={s.link}>
+        {navigation.map(({ id, path, title }) => {
+          return (
+            <Link href={path} key={id}>
+              {title}
+            </Link>
+          )
+        })}
       </div>
-    </div>
+    </>
   )
 }
