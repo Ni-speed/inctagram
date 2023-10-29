@@ -1,6 +1,5 @@
-import { getLayout } from '../../widgets/ui'
+import { TermOfService, getLayout } from '../../widgets/ui'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { TermOfService } from '@/widgets/ui/termOfService/TermOfService'
 
 type Props = {}
 

@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-import { Typography } from '..'
 import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
-import s from './CommonCheckbox.module.scss'
+import s from './commonCheckbox.module.scss'
 
 export type CheckboxPropsType = {
   checked: boolean
   className?: string
   disabled?: boolean
-  label?: string
+  label?: ReactNode
   onChange: (isChecked: boolean) => void
   required?: boolean
 }
@@ -43,7 +42,7 @@ export const CommonCheckbox: React.FC<CheckboxPropsType> = ({
       </div>
       {label && (
         <label className={s.label} htmlFor={'c1'}>
-          <Typography variant={'regularText14'}>{label}</Typography>
+          {label}
         </label>
       )}
     </div>

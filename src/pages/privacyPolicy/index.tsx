@@ -1,5 +1,4 @@
-import { PrivacyPolicy } from '../../widgets/ui/privacyPolicy'
-import { getLayout } from '../../widgets/ui'
+import { PrivacyPolicy, getLayout } from '../../widgets/ui'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 type Props = {}

@@ -24,8 +24,10 @@ export const ControlledInput = <T extends FieldValues>({
   return (
     <Input
       {...{
+        errorMessage: emailControl.fieldState.error?.message,
         onChangeValue: emailControl.field.onChange,
         value: emailControl.field.value,
+
         ...InputProps,
       }}
     />

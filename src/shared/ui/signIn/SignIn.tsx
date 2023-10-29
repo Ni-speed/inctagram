@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { GitHUb, Google } from '../../../../public/icons'
+import { Github, Google } from '../../assets/svg'
 import { Card } from '../card'
 
 export const SignIn = () => {
@@ -10,7 +10,7 @@ export const SignIn = () => {
         <p style={{ marginBottom: '13px' }}>Sign In</p>
         <div style={{ display: 'flex', gap: '80px', marginBottom: '24px', width: '330px' }}>
           <Google />
-          <GitHUb />
+          <Github />
         </div>
         <form style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '330px' }}>
           <input name={'email'} placeholder={'Email'} />
