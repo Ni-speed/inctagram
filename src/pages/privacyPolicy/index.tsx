@@ -1,16 +1,14 @@
 import { PrivacyPolicy, getLayout } from '../../widgets/ui'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
-type Props = {}
-
-function TermOfServiceIndex({}: Props) {
+const PrivacyPolicyPage = () => {
   return (
     <>
-      <HeadMeta title={'Term Of Service'} />
+      <HeadMeta title={'Privacy policy'} />
       <PrivacyPolicy />
     </>
   )
 }
 
-TermOfServiceIndex.getLayout = getLayout
-export default TermOfServiceIndex
+PrivacyPolicyPage.getLayout = getLayout
+export default PrivacyPolicyPage

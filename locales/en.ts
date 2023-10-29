@@ -1,6 +1,11 @@
 import { LocaleType } from './ru'
 
 export const en: LocaleType = {
+  confirmEmail: {
+    button: 'Sign In',
+    subTitle: 'Your email has been confirmed',
+    title: 'Congratulations!',
+  },
   languageSelector: {
     en: 'English',
     ru: 'Russian',
@@ -14,11 +19,17 @@ export const en: LocaleType = {
     signIn: 'Sign In',
     signUp: 'Sign Up',
   },
+
   titles: {
     forgotPassword: 'Забыли пароль',
-    expiredLinkPass: 'Password Recovery link expired',
+    expiredLinkPass: 'Password Recovery link expired
+  modalSignUp: {
+    button: 'Email sent',
+    text: 'We have sent a link to confirm your email to epam@epam.com',
+    title: 'Электронное письмо отправлено
   },
   navBar: {
+    confirmEmail: 'Сonfirm Email',
     contacts: 'Contacts',
     forgotPassword: 'Forgot Password',
     home: 'Home',
@@ -27,6 +38,12 @@ export const en: LocaleType = {
     signIn: 'Sign In',
     signUp: 'Sign Up',
     termsOfService: 'Term Of Service',
+  },
+  notConfirmEmail: {
+    button: 'Resend verification link',
+    subTitle:
+      'Looks like the verification link has expired. Not to worry, we can send the link again',
+    title: 'Email verification link expired',
   },
   other: {
     agree: 'I agree to the',

@@ -25,9 +25,9 @@ export const ControlledInput = <T extends FieldValues>({
     <Input
       {...{
         errorMessage: emailControl.fieldState.error?.message,
+        onBlur: emailControl.field.onBlur,
         onChangeValue: emailControl.field.onChange,
         value: emailControl.field.value,
-
         ...InputProps,
       }}
     />
