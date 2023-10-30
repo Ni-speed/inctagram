@@ -8,15 +8,24 @@ import { useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 
 export const SignIn = () => {
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams?.get('callbackUrl') || '/profile'
+
+  const handleSignIn = (provider: string) => {
+    signIn(provider, { callbackUrl })
+  }
+
   return (
     <>
       <Card>
         <p style={{ marginBottom: '13px' }}>Sign In</p>
         <div style={{ display: 'flex', gap: '80px', marginBottom: '24px', width: '330px' }}>
-          <GoogleButton>
+          <Button onClick={() => handleSignIn('google')} variant={'text'}>
             <Google />
-          </GoogleButton>
-          <Github />
+          </Button>
+          <Button onClick={() => handleSignIn('github')} variant={'text'}>
+            <Github />
+          </Button>
         </div>
         <form style={{ display: 'flex', flexDirection: 'column', gap: '24px', width: '330px' }}>
           <input name={'email'} placeholder={'Email'} />
@@ -30,19 +39,5 @@ export const SignIn = () => {
         <a href={'https://www.youtube.com/watch?v=eQLxAGEV_6U'}>Sigh Up</a>
       </Card>
     </>
-  )
-}
-
-export const GoogleButton = ({ children }: { children: ReactNode }) => {
-  const searchParams = useSearchParams()
-  const callbackUrl = searchParams?.get('callbackUrl') || '/profile'
-  const signInHandler = () => {
-    signIn('google', { callbackUrl })
-  }
-
-  return (
-    <Button onClick={signInHandler} variant={'text'}>
-      {children}
-    </Button>
   )
 }
