@@ -9,7 +9,11 @@ export const ru = {
     ru: 'Русский',
   },
   linksButtons: {
+    backToSignIn: 'Вернуться к регистрации',
     backToSignUp: 'Вернуться к регистрации ',
+    newPass: 'Создать новый пароль',
+    resendLink: 'Отправить ссылку повторно',
+    sendLink: 'Отправить ссылку',
     forgotPassword: 'Забыли пароль',
     signIn: 'Войти',
     signUp: 'Регистрация',
@@ -44,6 +48,9 @@ export const ru = {
     and: 'и',
     dontHaveAcc: 'У вас нет учетной записи?',
     haveAcc: 'У тебя уже есть аккаунт?',
+    infoExpired: 'Похоже, ссылка для восстановления пароля истекла. Попробуйте ещё раз',
+    infoForgotPass: 'Введите свой адрес электронной почты',
+    infoNewPass: 'Ваш пароль должен быть от 6 до 20 символов',
   },
   privacyPolicy: {
     privacyPolicy: 'Политику конфиденциальности',
@@ -72,6 +79,10 @@ export const ru = {
       passwordConfirm: 'Подтверждение пароля',
       username: 'Имя пользователя',
     },
+  },
+  titles: {
+    expiredLinkPass: '  Пароль восстановления ссылки истек',
+    forgotPassword: 'Забыли пароль',
   },
 }
 export type LocaleType = typeof ru
