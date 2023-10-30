@@ -12,8 +12,12 @@ export const en: LocaleType = {
   },
   linksButtons: {
     backToSignUp: 'Back to Sig Up ',
+    forgotPassword: 'Forgot Password',
     signIn: 'Sign In',
     signUp: 'Sign Up',
+  },
+  logInForm: {
+    password: 'The email or password are incorrect. Try again please',
   },
   modalSignUp: {
     button: 'Email sent',
@@ -40,6 +44,7 @@ export const en: LocaleType = {
   other: {
     agree: 'I agree to the',
     and: 'and',
+    dontHaveAcc: 'Don’t have an account?',
     haveAcc: 'Do you have an account?',
   },
   privacyPolicy: {

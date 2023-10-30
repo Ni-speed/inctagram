@@ -10,8 +10,12 @@ export const ru = {
   },
   linksButtons: {
     backToSignUp: 'Вернуться к регистрации ',
+    forgotPassword: 'Забыли пароль',
     signIn: 'Войти',
     signUp: 'Регистрация',
+  },
+  logInForm: {
+    password: 'Электронная почта или пароль неправильно. Попробуйте еще раз, пожалуйста',
   },
   modalSignUp: {
     button: 'OK',
@@ -38,6 +42,7 @@ export const ru = {
   other: {
     agree: 'Я принимаю',
     and: 'и',
+    dontHaveAcc: 'У вас нет учетной записи?',
     haveAcc: 'У тебя уже есть аккаунт?',
   },
   privacyPolicy: {
