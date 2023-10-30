@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useTranslation } from '../../hooks/useTranslation'
 import Link from 'next/link'
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { signOut, useSession } from 'next-auth/react'
 
 import s from './Navbar.module.scss'
 
