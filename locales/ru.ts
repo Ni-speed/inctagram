@@ -11,11 +11,15 @@ export const ru = {
   linksButtons: {
     backToSignIn: 'Вернуться к регистрации',
     backToSignUp: 'Вернуться к регистрации ',
+    forgotPassword: 'Забыли пароль',
     newPass: 'Создать новый пароль',
     resendLink: 'Отправить ссылку повторно',
     sendLink: 'Отправить ссылку',
     signIn: 'Войти',
     signUp: 'Регистрация',
+  },
+  logInForm: {
+    password: 'Электронная почта или пароль неправильно. Попробуйте еще раз, пожалуйста',
   },
   modalSignUp: {
     button: 'OK',
@@ -42,6 +46,7 @@ export const ru = {
   other: {
     agree: 'Я принимаю',
     and: 'и',
+    dontHaveAcc: 'У вас нет учетной записи?',
     haveAcc: 'У тебя уже есть аккаунт?',
     infoExpired: 'Похоже, ссылка для восстановления пароля истекла. Попробуйте ещё раз',
     infoForgotPass: 'Введите свой адрес электронной почты',

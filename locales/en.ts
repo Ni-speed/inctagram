@@ -13,20 +13,20 @@ export const en: LocaleType = {
   linksButtons: {
     backToSignIn: 'Back to Sign In',
     backToSignUp: 'Back to Sig Up ',
+    forgotPassword: 'Forgot Password',
     newPass: 'Create New Password',
     resendLink: 'Resend Link',
     sendLink: 'Send Link',
     signIn: 'Sign In',
     signUp: 'Sign Up',
   },
-
-  titles: {
-    forgotPassword: 'Забыли пароль',
-    expiredLinkPass: 'Password Recovery link expired
+  logInForm: {
+    password: 'The email or password are incorrect. Try again please',
+  },
   modalSignUp: {
     button: 'Email sent',
     text: 'We have sent a link to confirm your email to epam@epam.com',
-    title: 'Электронное письмо отправлено
+    title: 'Электронное письмо отправлено',
   },
   navBar: {
     confirmEmail: 'Сonfirm Email',
@@ -48,6 +48,7 @@ export const en: LocaleType = {
   other: {
     agree: 'I agree to the',
     and: 'and',
+    dontHaveAcc: 'Don’t have an account?',
     haveAcc: 'Do you have an account?',
     infoExpired:
       'Looks like the verification link hasexpired. Not to worry, we can send the link again',
@@ -82,5 +83,9 @@ export const en: LocaleType = {
       passwordConfirm: 'Password confirmation',
       username: 'Username',
     },
+  },
+  titles: {
+    expiredLinkPass: 'Password Recovery link expired',
+    forgotPassword: 'Забыли пароль',
   },
 }
