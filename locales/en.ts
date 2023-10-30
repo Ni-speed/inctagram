@@ -13,19 +13,15 @@ export const en: LocaleType = {
   linksButtons: {
     backToSignIn: 'Back to Sign In',
     backToSignUp: 'Back to Sig Up ',
+    forgotPassword: 'Forgot Password',
     newPass: 'Create New Password',
     resendLink: 'Resend Link',
     sendLink: 'Send Link',
-    forgotPassword: 'Forgot Password',
     signIn: 'Sign In',
     signUp: 'Sign Up',
   },
   logInForm: {
     password: 'The email or password are incorrect. Try again please',
-  },
-  titles: {
-    forgotPassword: 'Забыли пароль',
-    expiredLinkPass: 'Password Recovery link expired',
   },
   modalSignUp: {
     button: 'Email sent',
@@ -52,8 +48,8 @@ export const en: LocaleType = {
   other: {
     agree: 'I agree to the',
     and: 'and',
-    haveAcc: 'Do you have an account?',
     dontHaveAcc: 'Don’t have an account?',
+    haveAcc: 'Do you have an account?',
     infoExpired:
       'Looks like the verification link hasexpired. Not to worry, we can send the link again',
     infoForgotPass: 'Enter your email address and we will send you further instructions',
@@ -87,5 +83,9 @@ export const en: LocaleType = {
       passwordConfirm: 'Password confirmation',
       username: 'Username',
     },
+  },
+  titles: {
+    expiredLinkPass: 'Password Recovery link expired',
+    forgotPassword: 'Забыли пароль',
   },
 }

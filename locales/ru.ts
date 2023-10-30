@@ -11,10 +11,10 @@ export const ru = {
   linksButtons: {
     backToSignIn: 'Вернуться к регистрации',
     backToSignUp: 'Вернуться к регистрации ',
+    forgotPassword: 'Забыли пароль',
     newPass: 'Создать новый пароль',
     resendLink: 'Отправить ссылку повторно',
     sendLink: 'Отправить ссылку',
-    forgotPassword: 'Забыли пароль',
     signIn: 'Войти',
     signUp: 'Регистрация',
   },
@@ -75,6 +75,7 @@ export const ru = {
     },
     fields: {
       email: 'Электронная почта',
+      newPassword: 'Новый пароль',
       password: 'Пароль',
       passwordConfirm: 'Подтверждение пароля',
       username: 'Имя пользователя',
