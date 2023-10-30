@@ -18,7 +18,7 @@ export const schema = (t: ErrorRegisterFormType) => {
 
 export type Form = z.infer<ReturnType<typeof schema>>
 
-const useSingInForm = (
+export const useSingInForm = (
   onSubmit: SubmitHandler<{
     email: string
     password: string
