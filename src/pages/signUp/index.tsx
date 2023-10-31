@@ -1,4 +1,4 @@
-import { SignUp, getLayout } from '../../widgets/ui'
+import { SignUp, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 type Props = {}

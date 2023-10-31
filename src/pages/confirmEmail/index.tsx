@@ -1,4 +1,4 @@
-import { ConfirmEmail, NotConfirmEmail, getLayout } from '../../widgets/ui'
+import { ConfirmEmail, NotConfirmEmail, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 const ConfirmEmailPage = () => {

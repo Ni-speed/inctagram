@@ -1,0 +1,1 @@
+export { TermOfService } from './ui'

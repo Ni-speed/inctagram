@@ -1,7 +1,0 @@
-export * from './header'
-export * from './layout'
-export * from './termOfService'
-export * from './signUp'
-export * from './privacyPolicy'
-export * from './confirmEmail'
-export * from './notConfirmEmail'
