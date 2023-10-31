@@ -1,4 +1,4 @@
-import { PrivacyPolicy, getLayout } from '../../widgets/ui'
+import { PrivacyPolicy, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 const PrivacyPolicyPage = () => {

@@ -1,6 +1,5 @@
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { getLayout } from '@/widgets/ui'
-import { SingIn } from '@/widgets/ui/SingIn/SingIn'
+import { SingIn, getLayout } from '@/widgets'
 
 type Props = {}
 
