@@ -5,10 +5,19 @@ import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, Typography } from '@/shared/ui'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
+import { signIn } from 'next-auth/react'
 
 import s from './singIn.module.scss'
 
 export const SingIn = () => {
+  const searchParams = useSearchParams()
+  const callbackUrl = searchParams?.get('callbackUrl') || '/profile'
+
+  const handleSignIn = (provider: string) => {
+    signIn(provider, { callbackUrl })
+  }
+
   const { t } = useTranslation()
   const onSubmitHandler = (props: { email: string; password: string }) => {
     console.log(props)
@@ -19,8 +28,12 @@ export const SingIn = () => {
     <Card className={s.signIn}>
       <Typography variant={'h1'}>{t.linksButtons.signIn}</Typography>
       <div className={s.icons}>
-        <Google />
-        <Github />
+        <Button onClick={() => handleSignIn('google')} variant={'text'}>
+          <Google />
+        </Button>
+        <Button onClick={() => handleSignIn('github')} variant={'text'}>
+          <Github />
+        </Button>
       </div>
       <SingInForm
         className={s.form}

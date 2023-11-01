@@ -1,4 +1,5 @@
-import { getLayout } from '@/widgets/ui'
+// import { getLayout } from '@/widgets/ui'
+import { getLayout } from '@/widgets'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
 
