@@ -1,0 +1,49 @@
+.overlay {
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    inset: 0;
+    animation: overlayShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.content {
+    position: fixed;
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-dark-300);
+    border: 1px solid var(--color-dark-100);
+    border-radius: 2px;
+    animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+
+    .title {
+        border-bottom: 1px solid var(--color-dark-100);
+        padding: 12px 24px;
+        position: relative;
+
+        .close {
+            position: absolute;
+            top: 50%;
+            right: 24px;
+            transform: translate(0, -50%);
+        }
+    }
+
+    .main {
+        padding: 24px;
+    }
+
+
+}
+
+.sm {
+    width: 378px;
+}
+
+.md {
+    width: 492px;
+}
+
+.lg {
+    width: 644px;
+}

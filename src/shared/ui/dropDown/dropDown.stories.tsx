@@ -1,6 +1,4 @@
-import { Typography } from '..'
 import { BallNotification } from '../../../entities/user/ui'
-import { Button } from '../button'
 import { DropDown } from './DropDown'
 import { Meta, StoryObj } from '@storybook/react'
 

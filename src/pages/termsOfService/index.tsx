@@ -1,12 +1,10 @@
-import { TermOfService, getLayout } from '../../widgets/ui'
+import { TermOfService, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
-type Props = {}
-
-function TermOfServiceIndex({}: Props) {
+const TermOfServiceIndex = () => {
   return (
     <>
-      <HeadMeta title={'Term Of Service'} />
+      <HeadMeta title={'Term of service'} />
       <TermOfService />
     </>
   )
