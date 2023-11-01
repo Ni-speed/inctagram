@@ -18,7 +18,7 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     login: build.mutation<void, LogInArgs>({
-      query: params => ({ method: 'POST', params, url: 'auth/login' }),
+      query: body => ({ body, method: 'POST', url: 'auth/login' }),
     }),
 
     logout: build.mutation<void, void>({
@@ -26,23 +26,23 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     newPassword: build.mutation<void, NewPasswordArgs>({
-      query: params => ({ method: 'POST', params, url: 'auth/logout' }),
+      query: body => ({ body, method: 'POST', url: 'auth/logout' }),
     }),
 
     passwordRecovery: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
-      query: params => ({ method: 'POST', params, url: 'auth/password-recovery' }),
+      query: body => ({ body, method: 'POST', url: 'auth/password-recovery' }),
     }),
 
     registration: build.mutation<void, RegistrationArgs>({
-      query: params => ({ method: 'POST', params, url: 'auth/registration' }),
+      query: body => ({ body, method: 'POST', url: 'auth/registration' }),
     }),
 
     registrationConfirmation: build.mutation<void, RegistrationConfirmationArgs>({
-      query: params => ({ method: 'POST', params, url: 'auth/registration-confirmation' }),
+      query: body => ({ body, method: 'POST', url: 'auth/registration-confirmation' }),
     }),
 
     registrationEmailResending: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
-      query: params => ({ method: 'POST', params, url: 'auth/registration-email-resending' }),
+      query: body => ({ body, method: 'POST', url: 'auth/registration-email-resending' }),
     }),
   }),
   overrideExisting: false,
