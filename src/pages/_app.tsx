@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import type { ReactElement, ReactNode } from 'react'
 import { Provider } from 'react-redux'
 
-import { store } from '@/app/appStore'
+import { store } from '../app'
 
 import '@fontsource-variable/inter'
 
