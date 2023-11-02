@@ -23,10 +23,11 @@ export const en: LocaleType = {
   logInForm: {
     password: 'The email or password are incorrect. Try again please',
   },
-  modalSignUp: {
-    button: 'Email sent',
-    text: 'We have sent a link to confirm your email to epam@epam.com',
-    title: 'Электронное письмо отправлено',
+  modalEmailSent: {
+    button: 'ОК',
+    textForgotPassword: 'We have sent a link to your email to',
+    textSignUp: 'We have sent a link to confirm your email to epam@epam.com',
+    title: 'Email sent',
   },
   navBar: {
     confirmEmail: 'Сonfirm Email',
@@ -54,6 +55,9 @@ export const en: LocaleType = {
       'Looks like the verification link hasexpired. Not to worry, we can send the link again',
     infoForgotPass: 'Enter your email address and we will send you further instructions',
     infoNewPass: 'Your password must be between 6 and 20 characters',
+    infoSent:
+      'The link has been sent by email.\n' +
+      '                If you don’t receive an email send link again',
   },
   privacyPolicy: {
     privacyPolicy: 'Privacy Policy',
@@ -62,12 +66,15 @@ export const en: LocaleType = {
   registerForm: {
     error: {
       email: {
-        format: 'Required format example@example.com',
+        format: 'Invalid format of email',
+        requiredEmail: 'Email is required',
       },
       password: {
         characters: 'Invalid characters present',
         max: 'Maximum number of characters 20',
         min: 'Minimum number of characters 6',
+        reqConfirmPassword: ' Password confirmation is required',
+        reqNewPassword: ' New password is required',
       },
       passwordConfirm: 'The passwords must match',
       username: {
@@ -86,6 +93,6 @@ export const en: LocaleType = {
   },
   titles: {
     expiredLinkPass: 'Password Recovery link expired',
-    forgotPassword: 'Забыли пароль',
+    forgotPassword: 'Forgot Password',
   },
 }
