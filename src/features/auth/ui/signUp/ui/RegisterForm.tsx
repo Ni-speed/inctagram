@@ -2,9 +2,9 @@ import { FormEvent, useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useTranslation } from '../../../../../shared/hooks'
-import { ModalSignUp } from '../../../../../shared/ui/'
 import { useRegisterForm } from '../lib'
 import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared/ui'
+import { ModalEmailSent } from '@/shared/ui/modal/modalEmailSent'
 import Link from 'next/link'
 
 import s from './registerForm.module.scss'
@@ -87,11 +87,12 @@ export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => 
           <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
         </Button>
       </form>
-      <ModalSignUp
-        handleButtonClick={() => console.log('Button Click')}
+      <ModalEmailSent
+        handleButtonClick={() => setModalIsOpen(false)}
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
-      ></ModalSignUp>
+        text={`${t.modalEmailSent.textSignUp}`}
+      />
     </>
   )
 }
