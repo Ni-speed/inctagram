@@ -14,8 +14,8 @@ type RegisterFormPropsType = {
   onSubmit: SubmitHandler<{
     confirmPassword: string
     email: string
+    login: string
     password: string
-    username: string
   }>
 }
 
@@ -25,8 +25,10 @@ export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => 
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    await handleSubmit()
-    setModalIsOpen(true)
+
+    handleSubmit().then(() => {
+      setModalIsOpen(true)
+    })
   }
 
   return (
@@ -38,7 +40,7 @@ export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => 
           control={control}
           inputIsSearch={false}
           label={t.registerForm.fields.username}
-          name={'username'}
+          name={'login'}
         ></ControlledInput>
         <ControlledInput
           className={s.textField}
@@ -88,7 +90,7 @@ export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => 
         </Button>
       </form>
       <ModalSignUp
-        handleButtonClick={() => console.log('Button Click')}
+        handleButtonClick={() => setModalIsOpen(false)}
         isOpen={modalIsOpen}
         onClose={() => setModalIsOpen(false)}
       ></ModalSignUp>
