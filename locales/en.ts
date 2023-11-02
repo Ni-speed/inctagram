@@ -69,6 +69,11 @@ export const en: LocaleType = {
         format: 'Invalid format of email',
         requiredEmail: 'Email is required',
       },
+      login: {
+        characters: 'Invalid characters present',
+        max: 'Maximum number of characters 30',
+        min: 'Minimum number of characters 6',
+      },
       password: {
         characters: 'Invalid characters present',
         max: 'Maximum number of characters 20',
@@ -77,11 +82,6 @@ export const en: LocaleType = {
         reqNewPassword: ' New password is required',
       },
       passwordConfirm: 'The passwords must match',
-      username: {
-        characters: 'Invalid characters present',
-        max: 'Maximum number of characters 30',
-        min: 'Minimum number of characters 6',
-      },
     },
     fields: {
       email: 'Email',

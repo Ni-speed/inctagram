@@ -14,6 +14,12 @@ export const schema = (t: ErrorRegisterFormType) => {
         .trim()
         .email(t.email.format)
         .regex(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/, t.email.format),
+      login: z
+        .string()
+        .trim()
+        .min(6, t.login.min)
+        .max(30, t.login.max)
+        .regex(/^[a-zA-Z0-9_-]*$/, t.login.characters),
       password: z
         .string()
         .trim()
@@ -21,12 +27,6 @@ export const schema = (t: ErrorRegisterFormType) => {
         .max(20, t.password.max)
         .regex(/^[a-zA-Z0-9_-]*$/, t.password.characters),
       privacyPolicy: z.literal<boolean>(true),
-      username: z
-        .string()
-        .trim()
-        .min(6, t.username.min)
-        .max(30, t.username.max)
-        .regex(/^[a-zA-Z0-9_-]*$/, t.username.characters),
     })
     .refine(data => data.password === data.confirmPassword, {
       message: t.passwordConfirm,
@@ -43,9 +43,9 @@ export const useRegisterForm = (
   onSubmit: SubmitHandler<{
     confirmPassword: string
     email: string
+    login: string
     password: string
     privacyPolicy: boolean
-    username: string
   }>
 ) => {
   const { t } = useTranslation()
@@ -53,9 +53,9 @@ export const useRegisterForm = (
     defaultValues: {
       confirmPassword: '',
       email: '',
+      login: '',
       password: '',
       privacyPolicy: true,
-      username: '',
     },
     mode: 'onBlur',
     resolver: zodResolver(schema(t.registerForm.error)),
