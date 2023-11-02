@@ -17,8 +17,8 @@ const authApi = baseApi.injectEndpoints({
       query: () => ({ url: 'auth/google/login' }),
     }),
 
-    login: build.mutation<void, LogInArgs>({
-      query: params => ({ method: 'POST', params, url: 'auth/login' }),
+    login: build.mutation<any, LogInArgs>({
+      query: params => ({ body: params, method: 'POST', url: 'auth/login' }),
     }),
 
     logout: build.mutation<void, void>({

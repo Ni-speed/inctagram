@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useLoginMutation } from '@/features/auth/api/authApi'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
@@ -9,9 +10,12 @@ import Link from 'next/link'
 import s from './singIn.module.scss'
 
 export const SingIn = () => {
+  const [login] = useLoginMutation()
   const { t } = useTranslation()
   const onSubmitHandler = (props: { email: string; password: string }) => {
-    console.log(props)
+    console.log('email', typeof props.email)
+    console.log('password', typeof props.email)
+    login({ loginOrEmail: props.email, password: props.password })
   }
   const errorMessage = ''
 
