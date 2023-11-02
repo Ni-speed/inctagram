@@ -1,23 +1,28 @@
 import { useForm } from 'react-hook-form'
 
+import { ErrorRegisterFormType } from '../../../../locales/ru'
+import { useTranslation } from '@/shared/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-export const forgotPasswordSchema = z.object({
-  email: z
-    .string({
-      invalid_type_error: 'Email must be a string',
-      required_error: 'Email is required',
-    })
-    .trim()
-    .email('Invalid Email Address!')
-    .nonempty('Enter Email!'),
-})
-export type ForgotPasswordFormType = z.infer<typeof forgotPasswordSchema>
+export const schema = (t: ErrorRegisterFormType) => {
+  return z.object({
+    email: z
+      .string({ required_error: t.email.requiredEmail })
+      .trim()
+      .email(t.email.format)
+      .nonempty('Enter Email!'),
+  })
+}
+
+export type ForgotPasswordFormType = z.infer<ReturnType<typeof schema>>
 
 export const useForgotPassword = () => {
+  const { t } = useTranslation()
+
   return useForm<ForgotPasswordFormType>({
     mode: 'onSubmit',
-    resolver: zodResolver(forgotPasswordSchema),
+    reValidateMode: 'onChange',
+    resolver: zodResolver(schema(t.registerForm.error)),
   })
 }
