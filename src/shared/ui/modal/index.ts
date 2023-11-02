@@ -1,2 +1,2 @@
 export * from './Modal'
-export * from './modalSignUp'
+export * from './modal.module.scss'
