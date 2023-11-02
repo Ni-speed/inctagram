@@ -45,7 +45,6 @@ const authApi = baseApi.injectEndpoints({
       query: body => ({ body, method: 'POST', url: 'auth/registration-email-resending' }),
     }),
   }),
-  overrideExisting: false,
 })
 
 export const {

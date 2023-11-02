@@ -64,17 +64,17 @@ export const en: LocaleType = {
       email: {
         format: 'Required format example@example.com',
       },
+      login: {
+        characters: 'Invalid characters present',
+        max: 'Maximum number of characters 30',
+        min: 'Minimum number of characters 6',
+      },
       password: {
         characters: 'Invalid characters present',
         max: 'Maximum number of characters 20',
         min: 'Minimum number of characters 6',
       },
       passwordConfirm: 'The passwords must match',
-      username: {
-        characters: 'Invalid characters present',
-        max: 'Maximum number of characters 30',
-        min: 'Minimum number of characters 6',
-      },
     },
     fields: {
       email: 'Email',
