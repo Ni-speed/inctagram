@@ -1,5 +1,5 @@
-.inputWrapper:not(:first-child) {
-    margin-top: 24px;
+.inputWrapper {
+    min-height: 86px;
 }
 
 .checkbox {
