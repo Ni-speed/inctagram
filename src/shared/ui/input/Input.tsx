@@ -8,7 +8,7 @@ import s from './Input.module.scss'
 
 export type InputProps = {
   className?: string
-  classNameError?: string
+  classNameError?: boolean
   classNameWrapper?: string
   disabled?: boolean
   errorMessage?: string
@@ -107,7 +107,7 @@ export const Input = (
           )}
         </div>
       </Label>
-      {showError && <div className={clsx(s.errorText, classNameError)}>{errorMessage}</div>}
+      {showError && <div className={clsx(s.errorText, classNameError? s.errorIndent: '')}>{errorMessage}</div>}
     </div>
   )
 }

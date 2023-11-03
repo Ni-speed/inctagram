@@ -13,6 +13,9 @@
         position: absolute;
         color: var(--color-danger-500);
     }
+    .errorIndent {
+        position: static ;
+    }
 
     .inputContainer {
         position: relative;
