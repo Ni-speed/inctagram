@@ -12,7 +12,6 @@ import s from './registerForm.module.scss'
 type RegisterFormPropsType = {
   className?: string
   onSubmit: SubmitHandler<{
-    confirmPassword: string
     email: string
     login: string
     password: string

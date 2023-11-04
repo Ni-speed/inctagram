@@ -107,7 +107,9 @@ export const Input = (
           )}
         </div>
       </Label>
-      {showError && <div className={clsx(s.errorText, classNameError? s.errorIndent: '')}>{errorMessage}</div>}
+      {showError && (
+        <div className={clsx(s.errorText, classNameError ? s.errorIndent : '')}>{errorMessage}</div>
+      )}
     </div>
   )
 }
