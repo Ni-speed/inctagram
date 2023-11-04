@@ -41,11 +41,9 @@ export type Form = z.infer<ReturnType<typeof schema>>
 
 export const useRegisterForm = (
   onSubmit: SubmitHandler<{
-    confirmPassword: string
     email: string
     login: string
     password: string
-    privacyPolicy: boolean
   }>
 ) => {
   const { t } = useTranslation()
@@ -62,7 +60,9 @@ export const useRegisterForm = (
   })
 
   return {
-    handleSubmit: handleSubmit(onSubmit),
+    handleSubmit: handleSubmit(({ confirmPassword, privacyPolicy, ...data }) => {
+      onSubmit(data)
+    }),
     ...rest,
   }
 }
