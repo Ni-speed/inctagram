@@ -1,26 +1,34 @@
 import { useState } from 'react'
 
 import axios from 'axios'
+/*async function verifyCaptcha(token: null | string) {
+  try {
+    const response = await axios.post('https://www.google.com/recaptcha/api/siteverify', null, {
+      params: {
+        response: token,
+        secret: process.env.NEXT_PUBLIC_SECRET_KEY,
+      },
+    })
 
-async function verifyCaptcha(token: null | string) {
-  const res = await axios.post(
-    `https://www.google.com/recaptcha/api/siteverify?secret=${'process.env.NEXT_PUBLIC_SECRET_KEY'}&response=${token}`
-  )
-
-  if (res.data.success) {
-    return 'success!'
-  } else {
+    // Проверяем, прошла ли проверка рекапчи успешно
+    if (response.data.success) {
+      // Проверка рекапчи пройдена успешно
+      console.log('Проверка рекапчи пройдена успешно')
+    } else {
+      // Проверка рекапчи не пройдена успешно
+      console.log('Проверка рекапчи не пройдена успешно')
+    }
+  } catch (error) {
+    // Обработка ошибок при отправке запроса
+    console.error('Ошибка при отправке запроса:', error)
     throw new Error('Failed Captcha')
   }
-}
+}*/
 export const useCaptcha = () => {
-  const [isVerified, setIsverified] = useState<boolean>(false)
+  const [isVerified, setIsVerified] = useState<boolean>(true)
 
-  async function handleCaptchaSubmission(token: null | string) {
-    // Server function to verify captcha
-    await verifyCaptcha(token)
-      .then(() => setIsverified(true))
-      .catch(() => setIsverified(false))
+  function handleCaptchaSubmission() {
+    setIsVerified(!isVerified)
   }
 
   return { handleCaptchaSubmission, isVerified }

@@ -33,6 +33,7 @@ export const ControlledInput = <T extends FieldValues>({
         value: emailControl.field.value,
         ...InputProps,
       }}
+      classNameError={!!emailControl.fieldState.error?.message}
     />
   )
 }

@@ -8,12 +8,13 @@ import { Button, Card, ControlledInput, Input, Typography } from '@/shared/ui'
 import s from './forgotPassword.module.scss'
 
 type ForgotPasswordPropsType = {
+  isSent: boolean
   onSubmitHandler: (data: ForgotPasswordFormType) => void
 }
 
-export const ForgotPassword = ({ onSubmitHandler }: ForgotPasswordPropsType) => {
+export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsType) => {
   const recaptchaRef = useRef<ReCAPTCHA>(null)
-  const [isVisible, setIsVisible] = React.useState(true)
+
   const { handleCaptchaSubmission, isVerified } = useCaptcha()
   const { t } = useTranslation()
 
@@ -35,26 +36,27 @@ export const ForgotPassword = ({ onSubmitHandler }: ForgotPasswordPropsType) => 
           <Typography className={s.info} variant={'regularText14'}>
             {t.other.infoForgotPass}
           </Typography>
-          {!isVisible && (
+          {!isSent && (
             <Typography className={s.sentText} variant={'regularText14'}>
-              {'The link has been sent by email.\n' +
-                'If you don’t receive an email send link again '}
+              {t.other.infoSent}
             </Typography>
           )}
-          <Button disabled={isVerified} fullWidth type={'submit'}>
-            {t.linksButtons.sendLink}
+          <Button disabled={!isVerified} fullWidth type={'submit'}>
+            {isSent ? t.linksButtons.sendLink : t.linksButtons.resendLink}
           </Button>
         </form>
         <Button as={'a'} className={s.link} fullWidth variant={'text'}>
           {t.linksButtons.backToSignIn}
         </Button>
         <div style={{ display: 'inline-block' }}>
-          <ReCAPTCHA
-            onChange={handleCaptchaSubmission}
-            ref={recaptchaRef}
-            sitekey={process.env.NEXT_PUBLIC_SITE_KEY!}
-            theme={'dark'}
-          />
+          {isSent && (
+            <ReCAPTCHA
+              onChange={handleCaptchaSubmission}
+              ref={recaptchaRef}
+              sitekey={process.env.NEXT_PUBLIC_SITE_KEY!}
+              theme={'dark'}
+            />
+          )}
         </div>
       </Card>
     </>

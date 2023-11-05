@@ -1,6 +1,6 @@
 import { ElementRef, FC, ReactNode, forwardRef } from 'react'
 
-import s from './card.module.scss'
+import s from './Card.module.scss'
 
 type CardProps = {
   children: ReactNode

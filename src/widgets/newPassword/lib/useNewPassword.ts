@@ -1,36 +1,40 @@
 import { useForm } from 'react-hook-form'
 
+import { ErrorRegisterFormType } from '../../../../locales/ru'
+import { useTranslation } from '@/shared/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-const NewPasswordSchema = z
-  .object({
-    confirmPassword: z
-      .string({
-        invalid_type_error: 'Email must be a string',
-        required_error: 'Confirm password is required',
-      })
-      .trim(),
-    password: z
-      .string({
-        invalid_type_error: 'Email must be a string',
-        required_error: 'New password is required',
-      })
-      .trim()
-      .min(6, 'min simbols')
-      .max(20, 'max simbols')
-      .regex(/^[a-zA-Z0-9_-]*$/, 'krch chet ne tak'),
-  })
-  .refine(data => data.password === data.confirmPassword, {
-    message: 'ne sofpadaet',
-    path: ['confirmPassword'],
-  })
+export const schema = (t: ErrorRegisterFormType) => {
+  return z
+    .object({
+      confirmPassword: z
+        .string({
+          required_error: t.password.reqConfirmPassword,
+        })
+        .trim(),
+      password: z
+        .string({
+          required_error: t.password.reqNewPassword,
+        })
+        .trim()
+        .min(6, t.password.min)
+        .max(20, t.password.max)
+        .regex(/^[a-zA-Z0-9_-]*$/, t.login.characters),
+    })
+    .refine(data => data.password === data.confirmPassword, {
+      message: t.passwordConfirm,
+      path: ['confirmPassword'],
+    })
+}
 
-export type NewPasswordFormType = z.infer<typeof NewPasswordSchema>
+export type NewPasswordFormType = z.infer<ReturnType<typeof schema>>
 
 export const useNewPassword = () => {
+  const { t } = useTranslation()
+
   return useForm<NewPasswordFormType>({
-    mode: 'onSubmit',
-    resolver: zodResolver(NewPasswordSchema),
+    mode: 'onBlur',
+    resolver: zodResolver(schema(t.registerForm.error)),
   })
 }
