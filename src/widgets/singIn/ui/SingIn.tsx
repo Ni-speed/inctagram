@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { useLoginMutation } from '@/features/auth/api/authApi'
+import { loginErrors } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
@@ -19,14 +20,16 @@ export const SingIn = () => {
     signIn(provider, { callbackUrl })
   }
 
-  const [login] = useLoginMutation()
+  const [login, { error }] = useLoginMutation()
   const { t } = useTranslation()
   const onSubmitHandler = (props: { email: string; password: string }) => {
-    console.log('email', typeof props.email)
-    console.log('password', typeof props.email)
     login({ loginOrEmail: props.email, password: props.password })
   }
-  const errorMessage = 'Unauthorized (If the password or login is wrong)'
+  let loginError = undefined
+
+  if (error) {
+    loginError = error as loginErrors
+  }
 
   return (
     <Card className={s.signIn}>
@@ -41,7 +44,7 @@ export const SingIn = () => {
       </div>
       <SingInForm
         className={s.form}
-        errorMessage={errorMessage && errorMessage}
+        errorMessage={loginError && loginError}
         onSubmit={onSubmitHandler}
       />
       <div className={s.haveAcc}>

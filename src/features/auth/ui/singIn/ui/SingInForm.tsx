@@ -2,6 +2,7 @@ import React, { FormEvent } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useSingInForm } from '..'
+import { loginErrors } from '@/features/auth/model/types'
 import { useTranslation } from '@/shared/hooks'
 import { Button, ControlledInput, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'
@@ -11,7 +12,7 @@ import s from './singInForm.module.scss'
 
 type SingInFormProps = {
   className?: string
-  errorMessage?: string
+  errorMessage?: loginErrors
   onSubmit: SubmitHandler<{
     email: string
     password: string
@@ -19,12 +20,50 @@ type SingInFormProps = {
 }
 
 export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProps) => {
-  const { control, handleSubmit } = useSingInForm(onSubmit)
+  const { control, handleSubmit, setError } = useSingInForm(onSubmit)
   const { t } = useTranslation()
 
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     await handleSubmit()
+  }
+
+  if (errorMessage) {
+    switch (errorMessage.originalStatus) {
+      case 400:
+        setError('email', {
+          message: t.logInForm.error.incorrectInputData,
+          type: 'manual',
+        })
+        break
+      case 411:
+        setError('email', {
+          message: t.logInForm.error.userNotCreated,
+          type: 'manual',
+        })
+        break
+      case 412:
+        setError('email', {
+          message: t.logInForm.error.emailNotConfirmed,
+          type: 'manual',
+        })
+        break
+      case 413:
+        setError('email', {
+          message: t.logInForm.error.invalidPasswordOrEmail,
+          type: 'manual',
+        })
+        setError('password', {
+          message: t.logInForm.error.invalidPasswordOrEmail,
+          type: 'manual',
+        })
+        break
+      default:
+        setError('email', {
+          message: 'Some Error',
+          type: 'manual',
+        })
+    }
   }
 
   return (
@@ -43,7 +82,6 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
           classNameError={s.errorResponse}
           classNameWrapper={clsx(s.password, errorMessage && s.errorHeight)}
           control={control}
-          errorMes={errorMessage}
           inputIsSearch={false}
           inputType={'password'}
           label={t.registerForm.fields.password}
