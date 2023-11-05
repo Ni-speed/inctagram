@@ -1,4 +1,4 @@
-import { Ref, SVGProps, forwardRef, memo } from 'react'
+import { SVGProps } from 'react'
 
 export const CloseEyeSvg = (props: SVGProps<SVGSVGElement>) => (
   <svg
