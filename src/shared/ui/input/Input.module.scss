@@ -1,9 +1,9 @@
-@mixin errorStyle {
+@mixin error-style {
   color: var(--color-light-100);
   border-color: var(--color-danger-500);
 }
 
-@mixin disableOnHover {
+@mixin disable-on-hover {
   border-color: var(--color-dark-100);
   outline: none;
 }
@@ -100,12 +100,8 @@
         border-color: var(--color-dark-100);
       }
 
-      &:disabled:hover {
-        @include disableOnHover;
-      }
-
       &.error {
-        @include errorStyle;
+        @include error-style;
       }
 
       &:focus {
@@ -123,6 +119,10 @@
         color: var(--color-accent-500);
         background-color: var(--color-dark-500);
         border-color: var(--color-light-100);
+      }
+
+      &:disabled:hover {
+        @include disable-on-hover;
       }
     }
 
@@ -142,12 +142,8 @@
         border-color: var(--color-dark-100);
       }
 
-      &:disabled:hover {
-        @include disableOnHover;
-      }
-
       &.error {
-        @include errorStyle;
+        @include error-style;
       }
 
       &:focus {
@@ -165,6 +161,10 @@
         color: var(--color-accent-500);
         background-color: var(--color-dark-500);
         border-color: var(--color-light-100);
+      }
+
+      &:disabled:hover {
+        @include disable-on-hover;
       }
     }
 
@@ -184,12 +184,8 @@
         border-color: var(--color-dark-100);
       }
 
-      &:disabled:hover {
-        @include disableOnHover;
-      }
-
       &.error {
-        @include errorStyle;
+        @include error-style;
       }
 
       &:focus {
@@ -206,6 +202,10 @@
       &:active {
         color: var(--color-accent-500);
         border-color: var(--color-light-100);
+      }
+
+      &:disabled:hover {
+        @include disable-on-hover;
       }
 
       &:hover + .searchButton {
