@@ -102,7 +102,12 @@ export const Input = (
             value={props.value}
           />
           {inputIsPassword && (
-            <button className={s.showPasswordButton} onClick={onClickHandler} type={'button'}>
+            <button
+              className={s.showPasswordButton}
+              disabled={disabled}
+              onClick={onClickHandler}
+              type={'button'}
+            >
               {internalInput === 'password' ? (
                 <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
               ) : (

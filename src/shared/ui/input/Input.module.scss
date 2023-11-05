@@ -1,3 +1,13 @@
+@mixin errorStyle {
+  color: var(--color-light-100);
+  border-color: var(--color-danger-500);
+}
+
+@mixin disableOnHover {
+  border-color: var(--color-dark-100);
+  outline: none;
+}
+
 .internalBlock {
   .inputName {
     color: var(--color-light-900);
@@ -90,9 +100,12 @@
         border-color: var(--color-dark-100);
       }
 
+      &:disabled:hover {
+        @include disableOnHover;
+      }
+
       &.error {
-        color: var(--color-light-100);
-        border-color: var(--color-danger-500);
+        @include errorStyle;
       }
 
       &:focus {
@@ -129,9 +142,12 @@
         border-color: var(--color-dark-100);
       }
 
+      &:disabled:hover {
+        @include disableOnHover;
+      }
+
       &.error {
-        color: var(--color-light-100);
-        border-color: var(--color-danger-500);
+        @include errorStyle;
       }
 
       &:focus {
@@ -168,9 +184,12 @@
         border-color: var(--color-dark-100);
       }
 
+      &:disabled:hover {
+        @include disableOnHover;
+      }
+
       &.error {
-        color: var(--color-light-100);
-        border-color: var(--color-danger-500);
+        @include errorStyle;
       }
 
       &:focus {
