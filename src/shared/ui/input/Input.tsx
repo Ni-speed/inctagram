@@ -1,6 +1,7 @@
 import React, { ChangeEvent, ComponentPropsWithoutRef, useState } from 'react'
 
 import { EyeSvg, SearchSvg } from '../../assets/svg'
+import { CloseEyeSvg } from '@/shared/assets/svg/inputSvg'
 import { Label, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'
 
@@ -8,7 +9,7 @@ import s from './Input.module.scss'
 
 export type InputProps = {
   className?: string
-  classNameError?: boolean
+  classNameError?: boolean | string
   classNameWrapper?: string
   disabled?: boolean
   errorMessage?: string
@@ -102,7 +103,11 @@ export const Input = (
           />
           {inputIsPassword && (
             <button className={s.showPasswordButton} onClick={onClickHandler} type={'button'}>
-              <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+              {internalInput === 'password' ? (
+                <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+              ) : (
+                <CloseEyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+              )}
             </button>
           )}
         </div>
