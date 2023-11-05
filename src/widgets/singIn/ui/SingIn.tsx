@@ -26,7 +26,7 @@ export const SingIn = () => {
     console.log('password', typeof props.email)
     login({ loginOrEmail: props.email, password: props.password })
   }
-  const errorMessage = ''
+  const errorMessage = 'Unauthorized (If the password or login is wrong)'
 
   return (
     <Card className={s.signIn}>
