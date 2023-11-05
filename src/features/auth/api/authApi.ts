@@ -9,6 +9,10 @@ import {
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({
+    getMe: build.query<any, void>({
+      query: () => ({ url: 'auth/me' }),
+    }),
+
     gitHubLogin: build.query<Token, void>({
       query: () => ({ url: 'auth/github/login' }),
     }),
@@ -48,6 +52,7 @@ const authApi = baseApi.injectEndpoints({
 })
 
 export const {
+  useGetMeQuery,
   useGitHubLoginQuery,
   useGoogleLoginQuery,
   useLoginMutation,
