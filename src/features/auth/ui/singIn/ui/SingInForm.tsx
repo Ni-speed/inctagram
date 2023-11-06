@@ -78,6 +78,7 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
           inputType={'email'}
           label={t.registerForm.fields.email}
           name={'email'}
+          placeholder={t.logInForm.placeholder.email}
         />
         <ControlledInput
           className={s.textField}
@@ -88,6 +89,7 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
           inputType={'password'}
           label={t.registerForm.fields.password}
           name={'password'}
+          placeholder={t.logInForm.placeholder.password}
         />
         <div className={s.link}>
           <Link href={'/forgotPassword'}>

@@ -19,6 +19,7 @@ export type InputProps = {
   inputType?: 'email' | 'password' | 'text'
   label?: string
   onChangeValue?: (e: string) => void
+  placeholder?: string
   value: string
 } & ComponentPropsWithoutRef<'input'>
 
@@ -37,6 +38,7 @@ export const Input = (
     label,
     onBlur,
     onChangeValue,
+    placeholder,
   } = props
 
   const [internalInput, setInternalInput] = useState<string>(inputType)
@@ -100,7 +102,7 @@ export const Input = (
             disabled={disabled}
             onBlur={onBlur}
             onChange={onChangeHandler}
-            placeholder={props.placeholder}
+            placeholder={placeholder}
             type={internalInput}
             value={props.value}
           />
