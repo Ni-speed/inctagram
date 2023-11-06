@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import { getLayout } from '../../widgets'
 import { ForgotPassword, ForgotPasswordFormType } from '../../widgets/forgotPassword'
+import { usePasswordRecoveryMutation } from '@/features/auth/api/authApi'
 import { useTranslation } from '@/shared/hooks'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 import { ModalEmailSent } from '@/shared/ui/modal/modalEmailSent'
@@ -9,13 +10,19 @@ import { ModalEmailSent } from '@/shared/ui/modal/modalEmailSent'
 type Props = {}
 
 function ForgotPasswordIndex({}: Props) {
+  const [recoverPassword] = usePasswordRecoveryMutation()
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false)
-  const [isSent, setIsSent] = useState<boolean>(true)
+  const [isSent, setIsSent] = useState<boolean>(false)
   const [email, setEmail] = useState<string>('')
+
   const recoverPasswordHandler = (data: ForgotPasswordFormType) => {
-    setModalIsOpen(true)
-    setIsSent(false)
-    setEmail(data.email)
+    recoverPassword(data)
+      .unwrap()
+      .then(() => {
+        setEmail(data.email)
+        setIsSent(true)
+        setModalIsOpen(true)
+      })
   }
   const { t } = useTranslation()
 
