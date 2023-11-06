@@ -16,6 +16,10 @@
     .textLink {
       color: var(--color-light-900);
       text-align: right;
+
+      &:hover {
+        color: var(--color-light-300);
+      }
     }
   }
 }
