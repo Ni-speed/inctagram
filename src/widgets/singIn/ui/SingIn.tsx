@@ -1,19 +1,20 @@
 import React from 'react'
 
-import { useGetMeQuery, useLoginMutation } from '@/features/auth/api/authApi'
+import { useLoginMutation } from '@/features/auth/api/authApi'
 import { loginErrors } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, Typography } from '@/shared/ui'
-import { router } from 'next/client'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 
 import s from './singIn.module.scss'
 
 export const SingIn = () => {
+  const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams?.get('callbackUrl') || '/profile'
 
@@ -22,12 +23,10 @@ export const SingIn = () => {
   }
 
   const [login, { error, isSuccess: loginSuccess }] = useLoginMutation()
-  const { data: me, isSuccess } = useGetMeQuery()
   const { t } = useTranslation()
 
   if (loginSuccess) {
-    //alert('all is good')
-    //router.push('/')
+    router.push('/')
   }
 
   const onSubmitHandler = (props: { email: string; password: string }) => {
