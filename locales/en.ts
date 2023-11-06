@@ -28,6 +28,10 @@ export const en: LocaleType = {
       userNotCreated: 'User not found.',
     },
     password: 'The email or password are incorrect. Try again please',
+    placeholder: {
+      email: 'Enter your email address or username',
+      password: 'Enter your password',
+    },
   },
   modalEmailSent: {
     button: 'ОК',
