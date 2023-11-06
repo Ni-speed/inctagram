@@ -26,13 +26,8 @@ export const SingIn = () => {
   const { t } = useTranslation()
 
   if (loginSuccess) {
-    alert('all is good')
-    /* router.replace('/')*/
-  }
-
-  if (me && isSuccess) {
-    console.log('me', me)
-    alert('all is good')
+    //alert('all is good')
+    //router.push('/')
   }
 
   const onSubmitHandler = (props: { email: string; password: string }) => {
