@@ -13,7 +13,7 @@ export type RegistrationConfirmationArgs = {
 }
 export type NewPasswordArgs = {
   password: string
-  recoveryCode: string
+  recoveryCode: string | string[]
 }
 export type Token = {
   accessToken: 'string'
