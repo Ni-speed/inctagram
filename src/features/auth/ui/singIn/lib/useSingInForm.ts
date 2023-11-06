@@ -7,7 +7,7 @@ import { z } from 'zod'
 
 export const schema = (t: ErrorRegisterFormType) => {
   return z.object({
-    email: z.string().trim(),
+    email: z.string().trim().min(6).max(30),
     password: z.string().trim().min(6, t.password.min).max(20, t.password.max),
   })
 }

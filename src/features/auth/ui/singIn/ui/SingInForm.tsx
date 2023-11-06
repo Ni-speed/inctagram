@@ -70,10 +70,12 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
     <>
       <form className={clsx(s.form, className)} onSubmit={handleSubmitForm}>
         <ControlledInput
+          autoComplete={'email'}
           className={s.textField}
           classNameWrapper={s.email}
           control={control}
           inputIsSearch={false}
+          inputType={'email'}
           label={t.registerForm.fields.email}
           name={'email'}
         />

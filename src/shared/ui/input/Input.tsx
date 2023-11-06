@@ -8,6 +8,7 @@ import { clsx } from 'clsx'
 import s from './Input.module.scss'
 
 export type InputProps = {
+  autoComplete?: string
   className?: string
   classNameError?: boolean | string
   classNameWrapper?: string
@@ -15,7 +16,7 @@ export type InputProps = {
   errorMessage?: string
   inputIsSearch: boolean
   inputName?: string
-  inputType?: 'password' | 'text'
+  inputType?: 'email' | 'password' | 'text'
   label?: string
   onChangeValue?: (e: string) => void
   value: string
@@ -25,6 +26,7 @@ export const Input = (
   props: InputProps & Omit<ComponentPropsWithoutRef<'input'>, keyof InputProps>
 ) => {
   const {
+    autoComplete,
     className,
     classNameError,
     classNameWrapper,
@@ -93,6 +95,7 @@ export const Input = (
             </button>
           )}
           <input
+            autoComplete={autoComplete}
             className={styleNameForInput}
             disabled={disabled}
             onBlur={onBlur}
