@@ -29,7 +29,7 @@ export const en: LocaleType = {
     },
     password: 'The email or password are incorrect. Try again please',
     placeholder: {
-      email: 'Enter your email address or username',
+      email: 'Enter your email address',
       password: 'Enter your password',
     },
   },
