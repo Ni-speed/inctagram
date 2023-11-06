@@ -7,11 +7,7 @@ import { z } from 'zod'
 
 export const schema = (t: ErrorRegisterFormType) => {
   return z.object({
-    email: z
-      .string()
-      .trim()
-      .email(t.email.format)
-      .regex(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/, t.email.format),
+    email: z.string().trim(),
     password: z.string().trim().min(6, t.password.min).max(20, t.password.max),
   })
 }
@@ -30,7 +26,7 @@ export const useSingInForm = (
       email: '',
       password: '',
     },
-    mode: 'onBlur',
+    mode: 'onSubmit',
     resolver: zodResolver(schema(t.registerForm.error)),
   })
 
