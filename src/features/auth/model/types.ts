@@ -18,3 +18,21 @@ export type NewPasswordArgs = {
 export type Token = {
   accessToken: 'string'
 }
+
+export type errorMessage = {
+  field: string
+  message: string
+}
+
+export type loginIncorrectData = {
+  errorsMessages: errorMessage[]
+}
+
+export type errorLoginResponse<T> = {
+  data: T
+  error: string
+  originalStatus: number
+  status: string
+}
+
+export type loginErrors = errorLoginResponse<loginIncorrectData> | errorLoginResponse<string>

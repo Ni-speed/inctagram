@@ -21,7 +21,17 @@ export const en: LocaleType = {
     signUp: 'Sign Up',
   },
   logInForm: {
+    error: {
+      emailNotConfirmed: 'The user has not confirmed their email.',
+      incorrectInputData: 'Invalid data entered.',
+      invalidPasswordOrEmail: 'Invalid email address or password.',
+      userNotCreated: 'User not found.',
+    },
     password: 'The email or password are incorrect. Try again please',
+    placeholder: {
+      email: 'Enter your email address',
+      password: 'Enter your password',
+    },
   },
   modalEmailSent: {
     button: 'ОК',

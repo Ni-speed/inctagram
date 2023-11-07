@@ -19,7 +19,17 @@ export const ru = {
     signUp: 'Регистрация',
   },
   logInForm: {
+    error: {
+      emailNotConfirmed: 'Пользователь не подтвердил електронную почту.',
+      incorrectInputData: 'Введены некорректные данные.',
+      invalidPasswordOrEmail: 'Неверный адрес электронной почты, имя пользователя или пароль.',
+      userNotCreated: 'Пользователь с таким именем или почтой не найде.',
+    },
     password: 'Электронная почта или пароль неправильно. Попробуйте еще раз, пожалуйста',
+    placeholder: {
+      email: 'Введите адрес электронной почты',
+      password: 'Введите пароль',
+    },
   },
   modalEmailSent: {
     button: 'OK',

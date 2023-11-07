@@ -9,11 +9,17 @@
   }
 
   .link {
+    display: flex;
+    justify-content: right;
     margin: 36px 4px 24px 0;
 
     .textLink {
       color: var(--color-light-900);
       text-align: right;
+
+      &:hover {
+        color: var(--color-light-300);
+      }
     }
   }
 }

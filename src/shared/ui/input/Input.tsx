@@ -1,22 +1,25 @@
 import React, { ChangeEvent, ComponentPropsWithoutRef, useState } from 'react'
 
 import { EyeSvg, SearchSvg } from '../../assets/svg'
+import { CloseEyeSvg } from '@/shared/assets/svg/inputSvg'
 import { Label, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'
 
 import s from './Input.module.scss'
 
 export type InputProps = {
+  autoComplete?: string
   className?: string
-  classNameError?: boolean
+  classNameError?: boolean | string
   classNameWrapper?: string
   disabled?: boolean
   errorMessage?: string
   inputIsSearch: boolean
   inputName?: string
-  inputType?: 'password' | 'text'
+  inputType?: 'email' | 'password' | 'text'
   label?: string
   onChangeValue?: (e: string) => void
+  placeholder?: string
   value: string
 } & ComponentPropsWithoutRef<'input'>
 
@@ -24,6 +27,7 @@ export const Input = (
   props: InputProps & Omit<ComponentPropsWithoutRef<'input'>, keyof InputProps>
 ) => {
   const {
+    autoComplete,
     className,
     classNameError,
     classNameWrapper,
@@ -34,6 +38,7 @@ export const Input = (
     label,
     onBlur,
     onChangeValue,
+    placeholder,
   } = props
 
   const [internalInput, setInternalInput] = useState<string>(inputType)
@@ -92,17 +97,27 @@ export const Input = (
             </button>
           )}
           <input
+            autoComplete={autoComplete}
             className={styleNameForInput}
             disabled={disabled}
             onBlur={onBlur}
             onChange={onChangeHandler}
-            placeholder={props.placeholder}
+            placeholder={placeholder}
             type={internalInput}
             value={props.value}
           />
           {inputIsPassword && (
-            <button className={s.showPasswordButton} onClick={onClickHandler} type={'button'}>
-              <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+            <button
+              className={s.showPasswordButton}
+              disabled={disabled}
+              onClick={onClickHandler}
+              type={'button'}
+            >
+              {internalInput === 'password' ? (
+                <EyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+              ) : (
+                <CloseEyeSvg className={clsx(disabled ? s.disabledProps : s.eyeSVG)} />
+              )}
             </button>
           )}
         </div>
