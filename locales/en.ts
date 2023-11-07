@@ -26,7 +26,7 @@ export const en: LocaleType = {
   modalEmailSent: {
     button: 'ОК',
     textForgotPassword: 'We have sent a link to your email to',
-    textSignUp: 'We have sent a link to confirm your email to epam@epam.com',
+    textSignUp: 'We have sent a link to confirm your email to',
     title: 'Email sent',
   },
   navBar: {

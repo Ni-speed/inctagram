@@ -3,7 +3,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 
 import { ForgotPasswordFormType, useCaptcha, useForgotPassword } from '..'
 import { useTranslation } from '@/shared/hooks'
-import { Button, Card, ControlledInput, Input, Typography } from '@/shared/ui'
+import { Button, Card, ControlledInput, Typography } from '@/shared/ui'
 
 import s from './forgotPassword.module.scss'
 

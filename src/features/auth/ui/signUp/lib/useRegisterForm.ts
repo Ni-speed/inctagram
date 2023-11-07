@@ -60,9 +60,7 @@ export const useRegisterForm = (
   })
 
   return {
-    handleSubmit: handleSubmit(({ confirmPassword, privacyPolicy, ...data }) => {
-      onSubmit(data)
-    }),
+    handleSubmit: handleSubmit(({ confirmPassword, privacyPolicy, ...data }) => onSubmit(data)),
     ...rest,
   }
 }

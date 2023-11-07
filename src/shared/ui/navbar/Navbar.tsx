@@ -20,8 +20,6 @@ export const Navbar = () => {
   ]
   const session = useSession()
 
-  console.log(session)
-
   const signOutHandler = () => {
     signOut({
       callbackUrl: '/',
