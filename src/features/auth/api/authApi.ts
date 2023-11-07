@@ -26,7 +26,7 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     newPassword: build.mutation<void, NewPasswordArgs>({
-      query: body => ({ body, method: 'POST', url: 'auth/logout' }),
+      query: body => ({ body, method: 'POST', url: 'auth/new-password' }),
     }),
 
     passwordRecovery: build.mutation<void, Pick<RegistrationArgs, 'email'>>({

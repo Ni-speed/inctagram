@@ -7,11 +7,11 @@ import { Button, Card, ControlledInput, Typography } from '@/shared/ui'
 
 import s from './newPassword.module.scss'
 
-type ForgotPasswordPropsType = {
+type Props = {
   onSubmitHandler: (data: NewPasswordFormType) => void
 }
 
-export const NewPassword = ({ onSubmitHandler }: ForgotPasswordPropsType) => {
+export const NewPassword = ({ onSubmitHandler }: Props) => {
   const { control, handleSubmit } = useNewPassword()
   const onSubmit = handleSubmit(data => onSubmitHandler(data))
   const { t } = useTranslation()
@@ -40,7 +40,7 @@ export const NewPassword = ({ onSubmitHandler }: ForgotPasswordPropsType) => {
         <Typography className={s.info} variant={'regularText14'}>
           {t.other.infoNewPass}
         </Typography>
-        <Button className={s.submitButton} fullWidth>
+        <Button className={s.submitButton} fullWidth type={'submit'}>
           {t.linksButtons.newPass}
         </Button>
       </form>

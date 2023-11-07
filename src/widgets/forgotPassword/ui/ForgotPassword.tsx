@@ -36,20 +36,20 @@ export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsT
           <Typography className={s.info} variant={'regularText14'}>
             {t.other.infoForgotPass}
           </Typography>
-          {!isSent && (
+          {isSent && (
             <Typography className={s.sentText} variant={'regularText14'}>
               {t.other.infoSent}
             </Typography>
           )}
-          <Button disabled={!isVerified} fullWidth type={'submit'}>
-            {isSent ? t.linksButtons.sendLink : t.linksButtons.resendLink}
+          <Button disabled={isVerified} fullWidth type={'submit'}>
+            {!isSent ? t.linksButtons.sendLink : t.linksButtons.resendLink}
           </Button>
         </form>
         <Button as={'a'} className={s.link} fullWidth variant={'text'}>
           {t.linksButtons.backToSignIn}
         </Button>
         <div style={{ display: 'inline-block' }}>
-          {isSent && (
+          {!isSent && (
             <ReCAPTCHA
               onChange={handleCaptchaSubmission}
               ref={recaptchaRef}

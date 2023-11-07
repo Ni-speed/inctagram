@@ -5,7 +5,11 @@ import { useTranslation } from '@/shared/hooks'
 import { Button, Typography } from '@/shared/ui'
 
 import s from './PasswordRecoveryExpired.module.scss'
-export const PasswordRecoveryExpired = () => {
+
+type Props = {
+  onSubmitHandler: () => void
+}
+export const PasswordRecoveryExpired = ({ onSubmitHandler }: Props) => {
   const { t } = useTranslation()
 
   return (
@@ -15,7 +19,7 @@ export const PasswordRecoveryExpired = () => {
         <Typography className={s.info} variant={'regularText16'}>
           {t.other.infoExpired}
         </Typography>
-        <Button fullWidth onClick={() => alert('ты лох ты сдох')}>
+        <Button fullWidth onClick={onSubmitHandler}>
           {t.linksButtons.resendLink}
         </Button>
       </div>
