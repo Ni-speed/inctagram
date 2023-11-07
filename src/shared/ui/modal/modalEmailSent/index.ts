@@ -1,1 +1,1 @@
-export * from './ModalEmailSent'
+export { ModalEmailSent } from './ModalEmailSent'

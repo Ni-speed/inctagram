@@ -43,6 +43,9 @@ const authApi = baseApi.injectEndpoints({
 
     registrationConfirmation: build.mutation<void, RegistrationConfirmationArgs>({
       query: body => ({ body, method: 'POST', url: 'auth/registration-confirmation' }),
+      transformResponse(baseQueryReturnValue, meta, arg) {
+        console.log(baseQueryReturnValue, meta, arg)
+      },
     }),
 
     registrationEmailResending: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
