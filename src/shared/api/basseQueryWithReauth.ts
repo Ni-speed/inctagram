@@ -8,7 +8,7 @@ import { Mutex } from 'async-mutex'
 
 const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'baseURLFromEnv',
+  baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
 })
 
@@ -34,7 +34,7 @@ export const baseQueryWithReauth: BaseQueryFn<
         if (refreshResult.meta?.response?.status === 204) {
           result = await baseQuery(args, api, extraOptions)
         } else {
-          console.log('else')
+          console.log('Error')
         }
       } finally {
         release()
