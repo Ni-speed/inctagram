@@ -76,11 +76,14 @@ export const en: LocaleType = {
   registerForm: {
     error: {
       email: {
+        emailExist: 'Email exist',
         format: 'Invalid format of email',
+        incorrectInputData: 'Incorrect input data',
         requiredEmail: 'Email is required',
       },
       login: {
         characters: 'Invalid characters present',
+        loginExist: 'Login exist',
         max: 'Maximum number of characters 30',
         min: 'Minimum number of characters 6',
       },

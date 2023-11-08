@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useLoginMutation } from '@/features/auth/api/authApi'
-import { loginErrors } from '@/features/auth/model/types'
+import { LoginErrors } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
@@ -35,7 +35,7 @@ export const SingIn = () => {
   let loginError = undefined
 
   if (error) {
-    loginError = error as loginErrors
+    loginError = error as LoginErrors
   }
 
   return (

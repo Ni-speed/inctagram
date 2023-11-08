@@ -2,7 +2,7 @@ import React, { FormEvent } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useSingInForm } from '..'
-import { loginErrors } from '@/features/auth/model/types'
+import { LoginErrors } from '@/features/auth/model/types'
 import { useTranslation } from '@/shared/hooks'
 import { Button, ControlledInput, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'
@@ -12,7 +12,7 @@ import s from './singInForm.module.scss'
 
 type SingInFormProps = {
   className?: string
-  errorMessage?: loginErrors
+  errorMessage?: LoginErrors
   onSubmit: SubmitHandler<{
     email: string
     password: string
