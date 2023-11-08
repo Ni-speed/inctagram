@@ -98,8 +98,8 @@ export const ru = {
     },
   },
   titles: {
-    expiredLinkPass: '  Пароль восстановления ссылки истек',
-    forgotPassword: 'Забыли пароль',
+    expiredLinkPass: 'Ссылка восстановления пароля истекла',
+    forgotPassword: 'Восстановление пароля',
   },
 }
 export type LocaleType = typeof ru
