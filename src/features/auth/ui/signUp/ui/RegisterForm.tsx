@@ -1,7 +1,9 @@
-import { FormEvent } from 'react'
+import { FormEvent, useEffect } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useTranslation } from '../../../../../shared/hooks'
+import { serverErrorSignUpHandler } from '../../../lib/serverErrorSignUpHandler'
+import { LoginErrors } from '../../../model/types'
 import { useRegisterForm } from '../lib'
 import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared/ui'
 import Link from 'next/link'
@@ -10,6 +12,7 @@ import s from './registerForm.module.scss'
 
 type RegisterFormPropsType = {
   className?: string
+  errorMessage?: LoginErrors
   onSubmit: SubmitHandler<{
     email: string
     login: string
@@ -17,17 +20,27 @@ type RegisterFormPropsType = {
   }>
 }
 
-export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => {
-  const { control, handleSubmit, reset } = useRegisterForm(onSubmit)
+export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterFormPropsType) => {
+  const {
+    control,
+    formState: { isValid },
+    handleSubmit,
+    reset,
+    setError,
+  } = useRegisterForm(onSubmit)
   const { t } = useTranslation()
 
   const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-
     handleSubmit()
-
     reset()
   }
+
+  useEffect(() => {
+    if (errorMessage) {
+      serverErrorSignUpHandler(errorMessage.originalStatus, setError, t.registerForm.error)
+    }
+  }, [errorMessage, setError, t.registerForm.error])
 
   return (
     <>
@@ -83,7 +96,7 @@ export const RegisterForm = ({ className, onSubmit }: RegisterFormPropsType) => 
           }
           name={'privacyPolicy'}
         ></ControlledCheckbox>
-        <Button className={s.button} fullWidth type={'submit'}>
+        <Button className={s.button} disabled={!isValid} fullWidth type={'submit'}>
           <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
         </Button>
       </form>

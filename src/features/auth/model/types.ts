@@ -19,20 +19,20 @@ export type Token = {
   accessToken: 'string'
 }
 
-export type errorMessage = {
+export type ErrorMessage = {
   field: string
   message: string
 }
 
-export type loginIncorrectData = {
-  errorsMessages: errorMessage[]
+export type LoginIncorrectData = {
+  errorsMessages: ErrorMessage[]
 }
 
-export type errorLoginResponse<T> = {
+export type ErrorLoginResponse<T> = {
   data: T
   error: string
   originalStatus: number
   status: string
 }
 
-export type loginErrors = errorLoginResponse<loginIncorrectData> | errorLoginResponse<string>
+export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>

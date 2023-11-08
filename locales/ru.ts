@@ -72,11 +72,14 @@ export const ru = {
   registerForm: {
     error: {
       email: {
+        emailExist: 'Электронная почта существует',
         format: 'Недопустимый формат почты',
+        incorrectInputData: 'Введены некорректные данные',
         requiredEmail: 'Обязательное поле Email',
       },
       login: {
         characters: 'Недопустимые символы',
+        loginExist: 'Имя пользователя существует',
         max: 'Максимальное количество знаков 30',
         min: 'Минимальное количество знаков 6',
       },
