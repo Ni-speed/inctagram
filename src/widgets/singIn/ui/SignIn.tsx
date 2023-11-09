@@ -11,9 +11,9 @@ import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { signIn } from 'next-auth/react'
 
-import s from './singIn.module.scss'
+import s from '@/widgets/singIn/ui/signIn.module.scss'
 
-export const SingIn = () => {
+export const SignIn = () => {
   const router = useRouter()
   const searchParams = useSearchParams()
   const callbackUrl = searchParams?.get('callbackUrl') || '/profile'

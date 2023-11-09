@@ -1,1 +1,1 @@
-export { SingIn } from './ui'
+export { SignIn } from './ui'

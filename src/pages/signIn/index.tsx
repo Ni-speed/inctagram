@@ -1,6 +1,7 @@
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { SignIn } from '@/shared/ui/signIn/SignIn'
-import { SingIn, getLayout } from '@/widgets'
+import { getLayout } from '@/widgets'
+import { SignIn } from '@/widgets/singIn/ui/SignIn'
+
 type Props = {}
 
 function SignIpIndex({}: Props) {
@@ -8,7 +9,7 @@ function SignIpIndex({}: Props) {
     <>
       <HeadMeta title={'Sign In'} />
       {/*<SignIn />*/}
-      <SingIn />
+      <SignIn />
     </>
   )
 }
