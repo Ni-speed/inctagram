@@ -1,1 +1,1 @@
-export * from './SingIn'
+export * from '@/widgets/singIn/ui/SignIn'

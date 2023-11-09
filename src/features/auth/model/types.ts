@@ -1,3 +1,5 @@
+import { serverErrorSignUp } from '@/features/auth/model/errors'
+
 export type LogInArgs = {
   loginOrEmail: string
   password: string
@@ -34,5 +36,7 @@ export type ErrorLoginResponse<T> = {
   originalStatus: number
   status: string
 }
+
+export type ErrorResponse = ReturnType<typeof serverErrorSignUp>
 
 export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>

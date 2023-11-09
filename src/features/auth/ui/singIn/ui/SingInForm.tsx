@@ -2,6 +2,8 @@ import React, { FormEvent } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { useSingInForm } from '..'
+import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
+import { serverErrorSignIn } from '@/features/auth/model/errors'
 import { LoginErrors } from '@/features/auth/model/types'
 import { useTranslation } from '@/shared/hooks'
 import { Button, ControlledInput, Typography } from '@/shared/ui'
@@ -29,41 +31,12 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
   }
 
   if (errorMessage) {
-    switch (errorMessage.originalStatus) {
-      case 400:
-        setError('email', {
-          message: t.logInForm.error.incorrectInputData,
-          type: 'manual',
-        })
-        break
-      case 411:
-        setError('email', {
-          message: t.logInForm.error.userNotCreated,
-          type: 'manual',
-        })
-        break
-      case 412:
-        setError('email', {
-          message: t.logInForm.error.emailNotConfirmed,
-          type: 'manual',
-        })
-        break
-      case 413:
-        setError('email', {
-          message: t.logInForm.error.invalidPasswordOrEmail,
-          type: 'manual',
-        })
-        setError('password', {
-          message: t.logInForm.error.invalidPasswordOrEmail,
-          type: 'manual',
-        })
-        break
-      default:
-        setError('email', {
-          message: 'Some Error',
-          type: 'manual',
-        })
-    }
+    serverErrorResponseHandler({
+      code: errorMessage.originalStatus,
+      serverErrorHandler: serverErrorSignIn,
+      setError,
+      t,
+    })
   }
 
   return (

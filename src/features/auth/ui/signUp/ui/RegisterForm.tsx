@@ -1,10 +1,11 @@
 import { FormEvent, useEffect } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
-import { useTranslation } from '../../../../../shared/hooks'
-import { serverErrorSignUpHandler } from '../../../lib/serverErrorSignUpHandler'
 import { LoginErrors } from '../../../model/types'
 import { useRegisterForm } from '../lib'
+import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
+import { serverErrorSignUp } from '@/features/auth/model/errors'
+import { useTranslation } from '@/shared/hooks'
 import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
@@ -38,9 +39,14 @@ export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterForm
 
   useEffect(() => {
     if (errorMessage) {
-      serverErrorSignUpHandler(errorMessage.originalStatus, setError, t.registerForm.error)
+      serverErrorResponseHandler({
+        code: errorMessage.originalStatus,
+        serverErrorHandler: serverErrorSignUp,
+        setError,
+        t,
+      })
     }
-  }, [errorMessage, setError, t.registerForm.error])
+  }, [errorMessage, setError, t])
 
   return (
     <>

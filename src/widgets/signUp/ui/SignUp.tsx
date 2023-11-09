@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import { useRegistrationMutation } from '../../../features/auth/api/authApi'
-import { LoginErrors } from '../../../features/auth/model/types'
-import { RegisterForm } from '../../../features/auth/ui/signUp/ui'
-import { useTranslation } from '../../../shared/hooks'
-import { Card, ModalEmailSent, Typography } from '../../../shared/ui'
+import { useRegistrationMutation } from '@/features/auth/api/authApi'
+import { LoginErrors } from '@/features/auth/model/types'
+import { RegisterForm } from '@/features/auth/ui/signUp/ui'
+import { useTranslation } from '@/shared/hooks'
+import { Card, ModalEmailSent, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './signUp.module.scss'
@@ -16,7 +16,7 @@ export const SignUp = () => {
 
   const [registration, { error, isLoading, isSuccess }] = useRegistrationMutation()
 
-  const onSubimtHandler = async (body: { email: string; login: string; password: string }) => {
+  const onSubmitHandler = async (body: { email: string; login: string; password: string }) => {
     await registration(body)
     setModalIsOpen(true)
     setEmail(body.email)
@@ -34,7 +34,7 @@ export const SignUp = () => {
       <RegisterForm
         className={s.form}
         errorMessage={loginError && loginError}
-        onSubmit={onSubimtHandler}
+        onSubmit={onSubmitHandler}
       ></RegisterForm>
       <div className={s.haveAcc}>
         <Typography variant={'regularText16'}>{t.other.haveAcc}</Typography>
