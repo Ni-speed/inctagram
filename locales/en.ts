@@ -35,9 +35,14 @@ export const en: LocaleType = {
   },
   modalEmailSent: {
     button: 'ОК',
+    mailResend: 'Link to confirm your email resend to',
     textForgotPassword: 'We have sent a link to your email to',
     textSignUp: 'We have sent a link to confirm your email to',
     title: 'Email sent',
+  },
+  modalInputEmail: {
+    button: 'OK',
+    title: 'Inter email for resend',
   },
   navBar: {
     confirmEmail: 'Сonfirm Email',

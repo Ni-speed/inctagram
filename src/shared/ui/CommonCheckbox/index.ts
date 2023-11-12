@@ -1,1 +1,1 @@
-export * from './CommonCheckbox'
+export { CommonCheckbox } from './CommonCheckbox'

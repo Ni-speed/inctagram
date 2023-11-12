@@ -22,6 +22,8 @@ type RegisterFormPropsType = {
 }
 
 export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterFormPropsType) => {
+  console.log(errorMessage)
+
   const {
     control,
     formState: { isValid },
@@ -31,9 +33,9 @@ export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterForm
   } = useRegisterForm(onSubmit)
   const { t } = useTranslation()
 
-  const handleSubmitForm = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    handleSubmit()
+    await handleSubmit()
     reset()
   }
 
