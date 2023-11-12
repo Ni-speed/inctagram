@@ -16,6 +16,9 @@ const ConfirmEmailPage = () => {
   if (isLoading) {
     return <div>Loading...</div>
   }
+  const resendHandler = () => {
+    mailConfirm({ code: router.query.token as string })
+  }
 
   return (
     <>
