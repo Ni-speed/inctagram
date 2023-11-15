@@ -44,17 +44,7 @@ export const en: LocaleType = {
     button: 'OK',
     title: 'Inter email for resend',
   },
-  navBar: {
-    confirmEmail: 'Сonfirm Email',
-    contacts: 'Contacts',
-    forgotPassword: 'Forgot Password',
-    home: 'Home',
-    privacyPolicy: 'Privacy Policy',
-    profile: 'Profile',
-    signIn: 'Sign In',
-    signUp: 'Sign Up',
-    termsOfService: 'Term Of Service',
-  },
+
   notConfirmEmail: {
     button: 'Resend verification link',
     subTitle:
@@ -112,5 +102,6 @@ export const en: LocaleType = {
   titles: {
     expiredLinkPass: 'Password Recovery link expired',
     forgotPassword: 'Forgot Password',
+    privacyPolicy: 'Privacy Policy',
   },
 }

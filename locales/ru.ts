@@ -42,17 +42,7 @@ export const ru = {
     button: 'OK',
     title: 'Введите адрес электронной почты',
   },
-  navBar: {
-    confirmEmail: 'Подтверждение электронной почты',
-    contacts: 'Контакты',
-    forgotPassword: 'Восстановить пароль',
-    home: 'Главная',
-    privacyPolicy: 'Политика конфиденциальности',
-    profile: 'Профиль',
-    signIn: 'Войти',
-    signUp: 'Регистрация',
-    termsOfService: 'Срок службы',
-  },
+
   notConfirmEmail: {
     button: 'Повторно отправить ссылку',
     subTitle:
@@ -108,6 +98,7 @@ export const ru = {
   titles: {
     expiredLinkPass: 'Ссылка восстановления пароля истекла',
     forgotPassword: 'Восстановление пароля',
+    privacyPolicy: 'Политика конфиденциальности',
   },
 }
 export type LocaleType = typeof ru
