@@ -1,1 +1,1 @@
-export * from './useRegisterForm'
+export { useRegisterForm } from './useRegisterForm'

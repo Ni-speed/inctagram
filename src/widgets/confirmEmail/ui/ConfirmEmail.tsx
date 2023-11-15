@@ -1,6 +1,6 @@
-import { ImageConfirmEmail } from '../../../shared/assets/svg'
-import { useTranslation } from '../../../shared/hooks'
-import { Button, Typography } from '../../../shared/ui'
+import { ImageConfirmEmail } from '@/shared/assets/svg'
+import { useTranslation } from '@/shared/hooks'
+import { Button, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './confirmEmail.module.scss'

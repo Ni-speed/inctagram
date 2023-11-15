@@ -1,1 +1,1 @@
-export * from './ballNotification'
+export { BallNotification } from './ballNotification'

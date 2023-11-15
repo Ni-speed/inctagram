@@ -1,13 +1,14 @@
 import { UseFormSetError } from 'react-hook-form'
 
-import { Form } from '../ui/signUp/lib'
+import { FormSignUp } from '../ui/signUp/lib/useRegisterForm'
+import { FormSignIn } from '../ui/singIn/lib/useSingInForm'
 import { LocaleType } from '@/../locales/ru'
 import { ErrorResponse } from '@/features/auth/model/types'
 
 type ServerErrorSignUpHandler = {
   code: number
   serverErrorHandler: (t: LocaleType) => ErrorResponse
-  setError: UseFormSetError<Form>
+  setError: UseFormSetError<FormSignIn | FormSignUp>
   t: LocaleType
 }
 
@@ -17,7 +18,7 @@ export const serverErrorResponseHandler = ({
   setError,
   t,
 }: ServerErrorSignUpHandler) => {
-  const errors = serverErrorHandler(t /*.registerForm.error*/)
+  const errors = serverErrorHandler(t)
 
   errors.map(e => {
     e.type === String(code) &&

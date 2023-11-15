@@ -1,4 +1,4 @@
-import { Bell } from '../../../../shared/assets/svg/bell'
+import { Bell } from '@/shared/assets/svg/bell'
 
 import s from './ballNotification.module.scss'
 

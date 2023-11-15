@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-import { useRegistrationEmailResendingMutation } from '../../../features/auth/api/authApi'
-import { ImageNotConfirmEmail } from '../../../shared/assets/svg'
-import { useTranslation } from '../../../shared/hooks'
-import { Button, ModalEmailSent, ModalInputEmail, Typography } from '../../../shared/ui'
+import { useRegistrationEmailResendingMutation } from '@/features/auth/api/authApi'
+import { ImageNotConfirmEmail } from '@/shared/assets/svg'
+import { useTranslation } from '@/shared/hooks'
+import { Button, ModalEmailSent, ModalInputEmail, Typography } from '@/shared/ui'
 
 import s from './notConfirmEmail.module.scss'
 

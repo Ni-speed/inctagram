@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
-import { Github, Google } from '../../../shared/assets/svg'
 import { useRegistrationMutation } from '@/features/auth/api/authApi'
 import { LoginErrors } from '@/features/auth/model/types'
 import { RegisterForm } from '@/features/auth/ui/signUp/ui'
+import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, ModalEmailSent, Typography } from '@/shared/ui'
 import Link from 'next/link'

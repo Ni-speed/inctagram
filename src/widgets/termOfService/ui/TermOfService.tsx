@@ -1,6 +1,6 @@
-import { LongArrow } from '../../../shared/assets/svg'
-import { useTranslation } from '../../../shared/hooks'
-import { Typography } from '../../../shared/ui'
+import { LongArrow } from '@/shared/assets/svg'
+import { useTranslation } from '@/shared/hooks'
+import { Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './termOfService.module.scss'

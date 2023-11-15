@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { ErrorRegisterFormType } from '../../../../../../locales/ru'
-import { useTranslation } from '../../../../../shared/hooks'
+import { useTranslation } from '@/shared/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 
@@ -33,11 +33,8 @@ export const schema = (t: ErrorRegisterFormType) => {
       path: ['confirmPassword'],
     })
 }
-const ewq = () => {
-  return 'fgh'
-}
 
-export type Form = z.infer<ReturnType<typeof schema>>
+export type FormSignUp = z.infer<ReturnType<typeof schema>>
 
 export const useRegisterForm = (
   onSubmit: SubmitHandler<{
@@ -47,7 +44,7 @@ export const useRegisterForm = (
   }>
 ) => {
   const { t } = useTranslation()
-  const { handleSubmit, ...rest } = useForm<Form>({
+  const { handleSubmit, ...rest } = useForm<FormSignUp>({
     defaultValues: {
       confirmPassword: '',
       email: '',

@@ -12,7 +12,7 @@ export const schema = (t: ErrorRegisterFormType) => {
   })
 }
 
-export type Form = z.infer<ReturnType<typeof schema>>
+export type FormSignIn = z.infer<ReturnType<typeof schema>>
 
 export const useSingInForm = (
   onSubmit: SubmitHandler<{
@@ -21,7 +21,7 @@ export const useSingInForm = (
   }>
 ) => {
   const { t } = useTranslation()
-  const { handleSubmit, ...rest } = useForm<Form>({
+  const { handleSubmit, ...rest } = useForm<FormSignIn>({
     defaultValues: {
       email: '',
       password: '',
