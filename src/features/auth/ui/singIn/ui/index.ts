@@ -1,1 +1,1 @@
-export * from './SingInForm'
+export { SingInForm } from './SingInForm'

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { BallNotification } from '../../../entities/user/ui'
-import { Button, DropDown, LanguageSelect, Typography } from '../../../shared/ui'
+import { BallNotification } from '@/entities/user/ui'
+import { Button, DropDown, LanguageSelect, Typography } from '@/shared/ui'
 
 import s from './header.module.scss'
 

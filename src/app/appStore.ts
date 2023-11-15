@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux'
 
-import { baseApi, errorCatchingMiddleware } from '../shared/api'
+import { baseApi, errorCatchingMiddleware } from '@/shared/api'
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 

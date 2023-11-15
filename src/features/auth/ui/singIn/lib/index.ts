@@ -1,1 +1,1 @@
-export * from './useSingInForm'
+export { useSingInForm } from './useSingInForm'
