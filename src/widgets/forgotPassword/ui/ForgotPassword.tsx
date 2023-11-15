@@ -4,6 +4,7 @@ import ReCAPTCHA from 'react-google-recaptcha'
 import { ForgotPasswordFormType, useCaptcha, useForgotPassword } from '..'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, ControlledInput, Typography } from '@/shared/ui'
+import Link from 'next/link'
 
 import s from './forgotPassword.module.scss'
 
@@ -46,7 +47,7 @@ export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsT
           </Button>
         </form>
         <Button as={'a'} className={s.link} fullWidth variant={'text'}>
-          {t.linksButtons.backToSignIn}
+          <Link href={'/signUp'}>{t.linksButtons.backToSignIn}</Link>
         </Button>
         <div style={{ display: 'inline-block' }}>
           {!isSent && (

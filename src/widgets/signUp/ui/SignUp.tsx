@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 
+import { Github, Google } from '../../../shared/assets/svg'
 import { useRegistrationMutation } from '@/features/auth/api/authApi'
 import { LoginErrors } from '@/features/auth/model/types'
 import { RegisterForm } from '@/features/auth/ui/signUp/ui'
 import { useTranslation } from '@/shared/hooks'
-import { Card, ModalEmailSent, Typography } from '@/shared/ui'
+import { Button, Card, ModalEmailSent, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './signUp.module.scss'
@@ -27,10 +28,24 @@ export const SignUp = () => {
     loginError = error as LoginErrors
   }
 
+  const locationGoogle = () =>
+    window.location.assign('https://inctagram-tau.vercel.app/api/v1/auth/google/login')
+
+  const locationGithub = () =>
+    window.location.assign('https://inctagram-tau.vercel.app/api/v1/auth/github/login')
+
   return (
     <Card className={`${s.signUp} ${isLoading && s.loading}`}>
       <Typography variant={'h1'}>{t.linksButtons.signUp}</Typography>
       <div className={s.icons}></div>
+      <div className={s.icons}>
+        <Button onClick={locationGoogle} variant={'text'}>
+          <Google />
+        </Button>
+        <Button onClick={locationGithub} variant={'text'}>
+          <Github />
+        </Button>
+      </div>
       <RegisterForm
         className={s.form}
         errorMessage={loginError && loginError}

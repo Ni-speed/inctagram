@@ -1,32 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-import { useLoginMutation } from '@/features/auth/api/authApi'
+import { useGoogleLoginQuery, useLoginMutation } from '@/features/auth/api/authApi'
 import { LoginErrors } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, Typography } from '@/shared/ui'
 import Link from 'next/link'
-import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
-import { signIn } from 'next-auth/react'
 
 import s from '@/widgets/singIn/ui/signIn.module.scss'
 
 export const SignIn = () => {
   const router = useRouter()
-  const searchParams = useSearchParams()
-  const callbackUrl = searchParams?.get('callbackUrl') || '/profile'
-
-  const handleSignIn = (provider: string) => {
-    signIn(provider, { callbackUrl })
-  }
 
   const [login, { error, isSuccess: loginSuccess }] = useLoginMutation()
   const { t } = useTranslation()
 
   if (loginSuccess) {
-    router.push('/')
+    router.push('/profile')
   }
 
   const onSubmitHandler = (props: { email: string; password: string }) => {
@@ -38,14 +30,20 @@ export const SignIn = () => {
     loginError = error as LoginErrors
   }
 
+  const locationGoogle = () =>
+    window.location.assign('https://inctagram-tau.vercel.app/api/v1/auth/google/login')
+
+  const locationGithub = () =>
+    window.location.assign('https://inctagram-tau.vercel.app/api/v1/auth/github/login')
+
   return (
     <Card className={s.signIn}>
       <Typography variant={'h1'}>{t.linksButtons.signIn}</Typography>
       <div className={s.icons}>
-        <Button onClick={() => handleSignIn('google')} variant={'text'}>
+        <Button onClick={locationGoogle} variant={'text'}>
           <Google />
         </Button>
-        <Button onClick={() => handleSignIn('github')} variant={'text'}>
+        <Button onClick={locationGithub} variant={'text'}>
           <Github />
         </Button>
       </div>
