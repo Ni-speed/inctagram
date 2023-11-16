@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 432px;
+    align-items: center;
+    margin: 35px auto 0;
+
+    .subTitle {
+        margin-top: 19px;
+    }
+
+    .button {
+        margin-top: 54px;
+    }
+
+    .image {
+        margin-top: 72px;
+
+    }
+}

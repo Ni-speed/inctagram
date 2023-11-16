@@ -1,0 +1,1 @@
+export { ModalEmailSent } from './ModalEmailSent'
