@@ -3,7 +3,8 @@ import React, { ReactNode } from 'react'
 import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
-import s from './commonCheckbox.module.scss'
+// eslint-disable-next-line import/no-unresolved
+import s from '/commonCheckbox.module.scss'
 
 export type CheckboxPropsType = {
   checked: boolean
