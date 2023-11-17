@@ -10,6 +10,7 @@ const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({
   baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
+  //   headers: {"accessToken":"token"}
 })
 
 export const baseQueryWithReauth: BaseQueryFn<
