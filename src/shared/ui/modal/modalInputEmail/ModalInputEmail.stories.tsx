@@ -13,6 +13,6 @@ type Story = StoryObj<typeof meta>
 export const ModalInputEmailCommon: Story = {
   args: {
     isOpen: true,
-    value: 'You can write anything you want.',
+    value: 'You can write anything you want!!!.',
   },
 }
