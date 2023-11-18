@@ -11,6 +11,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
   //   headers: {"accessToken":"token"}
+  // build
 })
 
 export const baseQueryWithReauth: BaseQueryFn<
