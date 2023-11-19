@@ -1,0 +1,34 @@
+.signIn {
+  margin: 36px auto 0;
+  padding: 23px 24px 24px;
+  text-align: center;
+  box-shadow: 0 0 0 1px var(--color-dark-300);
+
+  .icons {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 13px;
+  }
+
+  .form {
+    margin-top: 24px;
+    text-align: left;
+  }
+
+  .haveAcc {
+    margin-top: 18px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: center;
+    margin-top: 6px;
+
+    .buttonLink {
+      .textLink {
+        color: var(--color-accent-500);
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.form {
+  .email {
+    height: 60px;
+  }
+
+  .password {
+    height: 60px;
+    margin-top: 24px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: right;
+    margin: 36px 4px 24px 0;
+
+    .textLink {
+      color: var(--color-light-900);
+      text-align: right;
+
+      &:hover {
+        color: var(--color-light-300);
+      }
+    }
+  }
+}
+
+.errorResponse {
+  position: static;
+  max-width: 330px;
+  word-wrap: break-word;
+}
+
+.errorHeight {
+  margin-bottom: 50px;
+}

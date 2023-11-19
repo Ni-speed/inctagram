@@ -1,6 +1,5 @@
-import { getLayout } from '@/components/layout/Layout'
+import { SignUp, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { SignUp } from '@/shared/ui/signUp/signUp'
 
 type Props = {}
 

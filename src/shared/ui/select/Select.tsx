@@ -12,7 +12,7 @@ type Props = {
   label?: string
   onChange: (value: string) => void
   open?: boolean
-  options: Array<Option>
+  options: Option[]
   placeholder?: ReactElement | string
   rootClassName?: string
   value: ReactElement | string
