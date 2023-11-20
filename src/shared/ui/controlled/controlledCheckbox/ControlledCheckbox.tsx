@@ -1,7 +1,7 @@
 import { FieldValues, UseControllerProps, useController } from 'react-hook-form'
 
 import { CommonCheckbox } from '../..'
-import { CheckboxPropsType } from '../../СommonCheckbox/CommonCheckbox'
+import { CheckboxPropsType } from '@/shared/ui/CommonCheckbox/CommonCheckbox'
 
 type TypeControlledTextFieldProps<T extends FieldValues> = Omit<
   UseControllerProps<T>,
