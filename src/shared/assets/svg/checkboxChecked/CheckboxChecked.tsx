@@ -4,7 +4,7 @@ type PropsType = {
   size?: number
 } & SVGProps<SVGSVGElement>
 
-export const СheckboxChecked = ({ size = 18, ...props }: PropsType) => (
+export const CheckboxChecked = ({ size = 18, ...props }: PropsType) => (
   <svg
     fill={'none'}
     height={size}
