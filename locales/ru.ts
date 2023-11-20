@@ -95,6 +95,16 @@ export const ru = {
       username: 'Имя пользователя',
     },
   },
+  sidebar: {
+    create: 'Создать',
+    favorites: 'Избранное',
+    home: 'Домой',
+    logOut: 'Выйти',
+    messenger: 'Сообщения',
+    myProfile: 'Моя страница',
+    search: 'Поиск',
+    statistics: 'Статистика',
+  },
   titles: {
     expiredLinkPass: 'Ссылка восстановления пароля истекла',
     forgotPassword: 'Восстановление пароля',

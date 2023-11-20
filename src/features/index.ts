@@ -1,1 +1,1 @@
-export { RegisterForm, SingInForm } from './auth'
+export * from './auth'

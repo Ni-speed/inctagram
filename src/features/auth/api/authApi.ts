@@ -1,11 +1,12 @@
-import { baseApi } from '../../../shared/api'
-import {
+import type {
   LogInArgs,
   NewPasswordArgs,
   RegistrationArgs,
   RegistrationConfirmationArgs,
   Token,
 } from '../model/types'
+
+import { baseApi } from '../../../shared/api'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({

@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react'
 import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
-import s from './СommonCheckbox.module.scss'
+import s from './CommonCheckbox.module.scss'
 
 export type CheckboxPropsType = {
   checked: boolean
