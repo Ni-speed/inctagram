@@ -99,6 +99,16 @@ export const en: LocaleType = {
       username: 'Username',
     },
   },
+  sidebar: {
+    create: 'Create',
+    favorites: 'Favorites',
+    home: 'Home',
+    logOut: 'Log Out',
+    messenger: 'Messenger',
+    myProfile: 'My Profile',
+    search: 'Search',
+    statistics: 'Statistics',
+  },
   titles: {
     expiredLinkPass: 'Password Recovery link expired',
     forgotPassword: 'Forgot Password',
