@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { useTranslation } from '../../../shared/hooks'
 import { BallNotification } from '@/entities/user/ui'
 import { Button, DropDown, LanguageSelect, Typography } from '@/shared/ui'
 
@@ -11,6 +12,8 @@ type HeaderPropsType = {
 }
 
 export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
+  const { t } = useTranslation()
+
   return (
     <header className={s.header}>
       <div className={s.container}>
@@ -38,10 +41,10 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
           {isAuth || (
             <>
               <Button className={s.middleButton} variant={'text'}>
-                <Typography variant={'h3'}>Log in</Typography>
+                <Typography variant={'h3'}>{t.linksButtons.signIn}</Typography>
               </Button>
               <Button variant={'primary'}>
-                <Typography variant={'h3'}>Sign up</Typography>
+                <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
               </Button>
             </>
           )}

@@ -4,6 +4,11 @@ import { CheckboxChecked, CheckboxCheckedDisabled } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
 import s from './СommonCheckbox.module.scss'
+import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
+import * as CheckboxRadix from '@radix-ui/react-checkbox'
+
+import s from './CommonCheckbox.module.scss'
+
 
 export type CheckboxPropsType = {
   checked: boolean
@@ -36,6 +41,7 @@ export const CommonCheckbox: React.FC<CheckboxPropsType> = ({
           required={required}
         >
           <CheckboxRadix.Indicator asChild className={s.checkboxIndicator}>
+
             {!disabled ? <CheckboxChecked /> : <CheckboxCheckedDisabled />}
           </CheckboxRadix.Indicator>
         </CheckboxRadix.Root>

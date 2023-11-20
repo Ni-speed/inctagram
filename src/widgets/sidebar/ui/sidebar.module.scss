@@ -1,0 +1,47 @@
+.sidebarList {
+    display: flex;
+    flex-direction: column;
+    // gap: 24px;
+    margin: 72px 49px 36px 60px;
+    max-width: 150px;
+    height: 552px;
+
+    .button {
+        display: flex;
+        justify-content: flex-start;
+        gap: 12px;
+        height: 24px;
+        margin-top: 180px;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .item {
+        display: flex;
+        gap: 12px;
+        height: 24px;
+        margin-bottom: 24px;
+
+        &:nth-child(5) {
+            margin-bottom: auto;
+        }
+
+        &:last-child {
+            margin-top: 180px;
+            margin-bottom: 0;
+        }
+
+        &:nth-last-child(2) {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.icon {
+    fill: var(--color-light-100);
+}
+
+.search {
+    height: 24px;
+    width: 24px;
+}
