@@ -1,0 +1,14 @@
+.dots {
+    display: flex;
+    gap: 8px;
+    position: absolute;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 12px;
+    bottom: 8px;
+    left: 50%;
+    background-color: var(--color-dark-300);
+    border-radius: 2px;
+    transform: translateX(-50%)
+}

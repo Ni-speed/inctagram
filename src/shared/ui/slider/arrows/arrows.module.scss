@@ -1,0 +1,21 @@
+  .arrows {
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      padding-left: 6px;
+      padding-right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 1;
+
+      .arrow {
+
+
+          &:hover {
+              cursor: pointer;
+          }
+      }
+  }
