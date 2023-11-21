@@ -22,8 +22,6 @@ type RegisterFormPropsType = {
 }
 
 export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterFormPropsType) => {
-  console.log(errorMessage)
-
   const {
     control,
     formState: { isValid },

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-import { useGoogleLoginQuery, useLoginMutation } from '@/features/auth/api/authApi'
+import { useLoginMutation } from '@/features/auth/api/authApi'
 import { LoginErrors } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
 import { Github, Google } from '@/shared/assets/svg'
