@@ -1,0 +1,38 @@
+.wrapper {
+    height: 391px;
+    width: 234px;
+    display: flex;
+    flex-direction: column;
+
+    .avatarName {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+        align-items: center;
+
+        .avatar {
+            border-radius: 50%;
+        }
+
+        .name {}
+    }
+
+    .timeOnline {
+        margin-top: 9px;
+        color: var(--color-light-900)
+    }
+
+
+
+
+    .text {
+        margin-top: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 234px;
+        flex-grow: 1;
+        text-overflow: ellipsis;
+        // background-color: #000;
+    }
+
+}

@@ -20,7 +20,7 @@ export const useSidebarItems = () => {
     home: {
       icon: <Home className={s.icon} />,
       title: t.sidebar.home,
-      url: '/home',
+      url: '/',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     create: {
