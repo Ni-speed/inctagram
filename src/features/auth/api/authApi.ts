@@ -1,5 +1,6 @@
 import type {
   LogInArgs,
+  MeResponse,
   NewPasswordArgs,
   RegistrationArgs,
   RegistrationConfirmationArgs,
@@ -10,8 +11,8 @@ import { baseApi } from '../../../shared/api'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    getMe: build.query<any, void>({
-      query: () => ({ url: 'auth/me' }),
+    getMe: build.query<MeResponse, void>({
+      query: body => ({ body, url: 'auth/me' }),
     }),
 
     gitHubLogin: build.query<Token, void>({

@@ -2,9 +2,7 @@ import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 import { getLayout } from '@/widgets'
 import { SignIn } from '@/widgets/singIn/ui/SignIn'
 
-type Props = {}
-
-function SignIpIndex({}: Props) {
+function SignUpIndex({}) {
   return (
     <>
       <HeadMeta title={'Sign In'} />
@@ -14,5 +12,5 @@ function SignIpIndex({}: Props) {
   )
 }
 
-SignIpIndex.getLayout = getLayout
-export default SignIpIndex
+SignUpIndex.getLayout = getLayout
+export default SignUpIndex

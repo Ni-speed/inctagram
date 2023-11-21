@@ -104,8 +104,7 @@
 
 .text {
     @include button;
-
-    min-width: 100px;
+    padding: 0;
     color: var(--color-accent-500);
     background-color: transparent;
 

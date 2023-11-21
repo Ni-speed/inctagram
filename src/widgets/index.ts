@@ -1,7 +1,7 @@
 export { ConfirmEmail } from './confirmEmail'
 export { ForgotPassword } from './forgotPassword'
 export { Header } from './header'
-export { Layout, getLayout } from './layout'
+export { Layout, LayoutSidebar, getLayout, getLayoutSidebar } from './layouts'
 export { NewPassword } from './newPassword'
 export { NotConfirmEmail } from './notConfirmEmail'
 export { PasswordRecoveryExpired } from './passwordRecoveryExpired'

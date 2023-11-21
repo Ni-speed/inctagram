@@ -15,8 +15,10 @@ export const PrivacyPolicy = () => {
         <Typography variant={'regularText14'}>{t.linksButtons.backToSignUp}</Typography>
       </Link>
       <div className={s.textWrapper}>
-        <Typography variant={'h1'}>{t.titles.privacyPolicy}</Typography>
-        <Typography className={s.text} variant={'regularText14'}>
+        <Typography as={'h1'} variant={'h1'}>
+          {t.titles.privacyPolicy}
+        </Typography>
+        <Typography as={'p'} className={s.text} variant={'regularText14'}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Fames ac turpis egestas integer eget aliquet nibh. Amet
           consectetur adipiscing elit ut aliquam purus sit amet luctus. Tortor vitae purus faucibus

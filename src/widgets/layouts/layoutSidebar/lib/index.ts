@@ -1,0 +1,1 @@
+export { getLayoutSidebar } from './getLayoutSidebar'

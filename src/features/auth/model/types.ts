@@ -10,6 +10,12 @@ export type RegistrationArgs = {
   password: string
 }
 
+export type MeResponse = {
+  email: string
+  id: string
+  username: string
+}
+
 export type RegistrationConfirmationArgs = {
   code: string
 }
