@@ -2,7 +2,7 @@ import { PublicPost } from '../entities/publicPost/ui/PublicPost'
 import { getLayout } from '../widgets'
 import { CountUser } from '../widgets/countUsers/CountUser'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
-import { Profile } from '@/widgets/profile/Profile'
+import { Profile } from '@/widgets/profile/ui/Profile'
 
 import s from './publicPage.module.scss'
 function Home() {
@@ -113,7 +113,13 @@ function Home() {
             }}
           />
         </div>
-        <Profile />
+        <Profile
+          user={{
+            avatar:
+              'https://s3-alpha-sig.figma.com/img/0864/e8b2/ce4393ce58c5a816b9c5719f6c95e12f?Expires=1701648000&Signature=UTkHB1b8st5qxm4hIryCgZ~nq4Ga7xAQ593q9bYQMpVrbISvm5Q17nPEQ1Hr9BiCYtVmaY5LcBoBx2mGhboK6JAsoTxzMXbtTChsn0vSaL4BVkcfSnvDANafnvwCY3K8-qjpgoMd~figRZQ0szqSVL-adOTU-cG73bRFWC9EFrfC92UlxX5KTQYDmlwD69gp2BpkzMsxwWJR9Y2X~nn6EUnBniE-STXovYwgn8MvrYHMvRzXegI16To6az7NIKUVa6OG6kJjXbsX2ZvKq6GCyK3ymVrA5EqzPM1tCQAOfOBTymN8s1QSk8Q-qNF21DkohDgXGfdeeezVThfqVc8Cwg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4',
+            name: 'URLProfile',
+          }}
+        />
       </div>
     </div>
   )
