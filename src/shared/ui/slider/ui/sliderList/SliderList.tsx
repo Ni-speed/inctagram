@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 
-import { SliderContext } from '../Slider'
+import { SliderContext } from '../../model/sliderContext'
 import Slide from './slide/Slide'
 
 import s from './sliderList.module.scss'
