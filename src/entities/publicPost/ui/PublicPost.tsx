@@ -1,5 +1,3 @@
-import { useEffect, useRef } from 'react'
-
 import { Slider, Typography } from '@/shared'
 import Image from 'next/image'
 
