@@ -15,6 +15,7 @@ const nextConfig = {
       'i.pinimg.com',
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
+      's3-alpha-sig.figma.com',
     ],
   },
   reactStrictMode: true,
