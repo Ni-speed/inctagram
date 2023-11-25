@@ -6,6 +6,15 @@ export const en: LocaleType = {
     subTitle: 'Your email has been confirmed',
     title: 'Congratulations!',
   },
+  generalInfo: {
+    aboutMe: 'About Me',
+    city: 'Select your city',
+    country: 'Select your country',
+    dateOfBirth: 'Date of birth',
+    firstname: 'First Name',
+    lastname: 'Last Name',
+    username: 'Username',
+  },
   languageSelector: {
     en: 'English',
     ru: 'Russian',
