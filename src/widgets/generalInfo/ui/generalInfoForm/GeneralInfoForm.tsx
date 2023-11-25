@@ -24,22 +24,14 @@ type GeneralInfoFormProps = {
   options: any
 }
 export const GeneralInfoForm = ({ className, onSubmit, options }: GeneralInfoFormProps) => {
-  const { control, handleSubmit, register, setError } = useGeneralInfoForm(onSubmit)
+  //todo change the 'username' to the "username" that came from the backend
+  const { control, handleSubmit, register, setError } = useGeneralInfoForm(onSubmit, 'username')
   const { t } = useTranslation()
   const [birthday, setBirthday] = useState<Date | null>(null)
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     await handleSubmit()
   }
-
-  //const [value, setValue] = useState<string>('s')
-
-  console.log('options', options)
-  /*const changeHandler = (country: string) => {
-                const countryList = options.getValueList()
-            
-                setValue(countryList[country.toLowerCase()])
-              }*/
 
   return (
     <>
