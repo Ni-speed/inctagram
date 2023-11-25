@@ -2,7 +2,8 @@ import React, { FormEvent, useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { ControlledInput, Select, useTranslation } from '@/shared'
-import { ControlledSelect } from '@/shared/ui/controlled/controlledSelect/controlledSelect'
+import { ControlledSelect } from '@/shared/ui/controlled/controlledSelect/ControlledSelect'
+import { ControlledTextArea } from '@/shared/ui/controlled/controlledTextArea/ControlledTextArea'
 import { DatePicker } from '@/widgets/datePicker'
 import { useGeneralInfoForm } from '@/widgets/generalInfo/ui/generalInfoForm/useGeneralInfoForm'
 import { clsx } from 'clsx'
@@ -15,7 +16,7 @@ type GeneralInfoFormProps = {
     aboutMe?: string
     city?: string
     country?: string
-    dateOfBirth?: Date
+    /*dateOfBirth?: Date*/
     firstname: string
     lastname: string
     username: string
@@ -28,18 +29,17 @@ export const GeneralInfoForm = ({ className, onSubmit, options }: GeneralInfoFor
   const [birthday, setBirthday] = useState<Date | null>(null)
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log(e)
-    /*await handleSubmit()*/
+    await handleSubmit()
   }
 
   //const [value, setValue] = useState<string>('s')
 
   console.log('options', options)
   /*const changeHandler = (country: string) => {
-            const countryList = options.getValueList()
-        
-            setValue(countryList[country.toLowerCase()])
-          }*/
+                const countryList = options.getValueList()
+            
+                setValue(countryList[country.toLowerCase()])
+              }*/
 
   return (
     <>
@@ -84,6 +84,8 @@ export const GeneralInfoForm = ({ className, onSubmit, options }: GeneralInfoFor
           name={'city'}
           options={options.data}
         />
+        <ControlledTextArea control={control} label={t.generalInfo.aboutMe} name={'aboutMe'} />
+
         <button type={'submit'}>submit</button>
       </form>
     </>

@@ -1,4 +1,4 @@
-import { CSSProperties, ComponentPropsWithoutRef, ReactElement } from 'react'
+import { CSSProperties, ComponentPropsWithoutRef, JSXElementConstructor, ReactElement } from 'react'
 
 import { ArrowDownIcon } from '@/shared/assets/svg/arrowDownIcon'
 import * as SelectRadix from '@radix-ui/react-select'
@@ -52,11 +52,11 @@ export const Select = (props: SelectProps) => {
   //const withoutPlaceholder = variant === 'pagination' ? value : 'Select Box'
   const rootStyles = { width }
   const onChangeHandler = (value: string) => {
-    console.log('onChangeHandler', value)
+    //console.log('onChangeHandler', value)
     onChange(value)
   }
 
-  console.log('value', value)
+  //console.log('value', value)
 
   return (
     <div className={classNames.root}>
@@ -66,7 +66,7 @@ export const Select = (props: SelectProps) => {
           disabled={disabled}
           onValueChange={onChangeHandler}
           open={open}
-          value={value as any}
+          value={'value' as string}
         >
           <SelectRadix.Trigger className={classNames.trigger} onBlur={onBlur} style={rootStyles}>
             <SelectRadix.Value>{value}</SelectRadix.Value>
@@ -83,7 +83,7 @@ export const Select = (props: SelectProps) => {
                     asChild
                     className={classNames.item}
                     key={`${option.value}`}
-                    value={option.value}
+                    value={option.label}
                   >
                     {<span>{option.label}</span>}
                   </SelectRadix.Item>

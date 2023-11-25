@@ -24,7 +24,6 @@ export const ControlledSelect = <T extends FieldValues>({
   return (
     <Select
       {...{
-        ...selectControl,
         ...SelectProps,
         onBlur: selectControl.field.onBlur,
         onChange: selectControl.field.onChange,

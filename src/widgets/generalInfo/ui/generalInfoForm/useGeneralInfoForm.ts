@@ -19,7 +19,7 @@ export const schema = (t: ErrorRegisterFormType) => {
     aboutMe: z.string(),
     city: z.string(),
     country: z.string(),
-    dateOfBirth: z.date(),
+    /* dateOfBirth: z.date(),*/
     firstname: z.string(),
     lastname: z.string(),
     username: z.string(),
@@ -33,7 +33,7 @@ export const useGeneralInfoForm = (
     aboutMe: string
     city: string
     country: string
-    dateOfBirth: Date
+    /* dateOfBirth: Date*/
     firstname: string
     lastname: string
     username: string

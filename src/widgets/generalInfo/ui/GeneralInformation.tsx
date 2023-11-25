@@ -8,13 +8,14 @@ import s from './GeneralInformation.module.scss'
 type GeneralIngo = {
   aboutMe?: string
   city?: string
-  dateOfBirth?: Date
+  country?: string
+  /* dateOfBirth?: Date*/
   firstname: string
   lastname: string
   username: string
 }
 export const GeneralInformation = () => {
-  const handler = (generalIngo: GeneralIngo) => {
+  const onSubmitHandler = (generalIngo: GeneralIngo) => {
     console.log('generalIngo', generalIngo)
   }
   const options = useMemo(() => countryList(), [])
@@ -25,7 +26,7 @@ export const GeneralInformation = () => {
     <div className={s.genContainer}>
       <div className={s.photo}>Foto</div>
       <div className={s.form}>
-        <GeneralInfoForm onSubmit={handler} options={options} />
+        <GeneralInfoForm onSubmit={onSubmitHandler} options={options} />
       </div>
     </div>
   )
