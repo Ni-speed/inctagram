@@ -1,5 +1,6 @@
 export { ConfirmEmail } from './confirmEmail'
 export { ForgotPassword } from './forgotPassword'
+export { GeneralInformation } from './generalInfo'
 export { Header } from './header'
 export { Layout, LayoutSidebar, getLayout, getLayoutSidebar } from './layouts'
 export { NewPassword } from './newPassword'

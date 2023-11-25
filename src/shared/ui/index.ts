@@ -12,4 +12,5 @@ export * from './languageSelect'
 export * from './select'
 export * from './modal'
 export * from './CommonCheckbox'
-export * from './slider'
+/*export * from './settingsButtonBar'*/
+/*export * from './slider'*/
