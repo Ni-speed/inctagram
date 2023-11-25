@@ -10,6 +10,7 @@ export type Option = { label: ReactElement | string; value: string }
 
 type Props = {
   label?: string
+  onBlur?: () => void
   onChange: (value: string) => void
   open?: boolean
   options: Option[]
@@ -25,6 +26,7 @@ export const Select = (props: SelectProps) => {
     className,
     disabled,
     label,
+    onBlur,
     onChange,
     open,
     options,
@@ -47,18 +49,27 @@ export const Select = (props: SelectProps) => {
     root: rootClassName,
     trigger: clsx(s.trigger, s[variant], className),
   }
-  const withoutPlaceholder = variant === 'pagination' ? value : 'Select Box'
+  //const withoutPlaceholder = variant === 'pagination' ? value : 'Select Box'
   const rootStyles = { width }
+  const onChangeHandler = (value: string) => {
+    console.log('onChangeHandler', value)
+    onChange(value)
+  }
+
+  console.log('value', value)
 
   return (
     <div className={classNames.root}>
       <SelectRadix.Group>
         <SelectRadix.Label className={classNames.label}>{label}</SelectRadix.Label>
-        <SelectRadix.Root disabled={disabled} onValueChange={onChange} open={open}>
-          <SelectRadix.Trigger className={classNames.trigger} style={rootStyles}>
-            <SelectRadix.Value placeholder={placeholder || withoutPlaceholder}>
-              {value}
-            </SelectRadix.Value>
+        <SelectRadix.Root
+          disabled={disabled}
+          onValueChange={onChangeHandler}
+          open={open}
+          value={value as any}
+        >
+          <SelectRadix.Trigger className={classNames.trigger} onBlur={onBlur} style={rootStyles}>
+            <SelectRadix.Value>{value}</SelectRadix.Value>
             <SelectRadix.Icon className={classNames.icon}>
               <ArrowDownIcon size={variant === 'pagination' ? IconSize.Small : IconSize.Large} />
             </SelectRadix.Icon>
