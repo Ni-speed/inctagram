@@ -6,7 +6,10 @@ import { clsx } from 'clsx'
 
 import s from './Select.module.scss'
 
-export type Option = { label: ReactElement | string; value: string }
+export type Option = {
+  label: ReactElement | string
+  value: string
+}
 
 type Props = {
   label?: string
@@ -77,18 +80,20 @@ export const Select = (props: SelectProps) => {
 
           <SelectRadix.Portal>
             <SelectRadix.Content className={classNames.content} position={'popper'}>
-              {options.map(option => {
-                return (
-                  <SelectRadix.Item
-                    asChild
-                    className={classNames.item}
-                    key={`${option.value}`}
-                    value={option.label}
-                  >
-                    {<span>{option.label}</span>}
-                  </SelectRadix.Item>
-                )
-              })}
+              <SelectRadix.Viewport>
+                {options.map(option => {
+                  return (
+                    <SelectRadix.Item
+                      asChild
+                      className={classNames.item}
+                      key={`${option.value}`}
+                      value={option.label}
+                    >
+                      {<span>{option.label}</span>}
+                    </SelectRadix.Item>
+                  )
+                })}
+              </SelectRadix.Viewport>
             </SelectRadix.Content>
           </SelectRadix.Portal>
         </SelectRadix.Root>
