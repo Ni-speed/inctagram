@@ -4,6 +4,15 @@ export const ru = {
     subTitle: 'Ваша электронная почта подтверждена',
     title: 'Поздравляем!',
   },
+  generalInfo: {
+    aboutMe: 'Обо мне',
+    city: 'Выберите свой город',
+    country: 'Выберите свою страну',
+    dateOfBirth: 'Дата рождения',
+    firstname: 'Имя пользователя',
+    lastname: 'Фамилия пользователя',
+    username: '"Ник" пользователя',
+  },
   languageSelector: {
     en: 'Английский',
     ru: 'Русский',
