@@ -81,10 +81,6 @@ export const useGeneralInfoForm = (
   const { t } = useTranslation()
   const { handleSubmit, ...rest } = useForm<FormGeneralInfo>({
     defaultValues: {
-      city: '',
-      country: '',
-      firstname: '',
-      lastname: '',
       username: name,
     },
     mode: 'onSubmit',
