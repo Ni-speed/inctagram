@@ -1,4 +1,4 @@
-import { CSSProperties, ComponentPropsWithoutRef, JSXElementConstructor, ReactElement } from 'react'
+import { CSSProperties, ComponentPropsWithoutRef, ReactElement } from 'react'
 
 import { ArrowDownIcon } from '@/shared/assets/svg/arrowDownIcon'
 import * as SelectRadix from '@radix-ui/react-select'
@@ -7,8 +7,8 @@ import { clsx } from 'clsx'
 import s from './Select.module.scss'
 
 export type Option = {
-  label: ReactElement | string
-  value: string
+  label?: ReactElement | string
+  value?: string
 }
 
 type Props = {
@@ -16,7 +16,7 @@ type Props = {
   onBlur?: () => void
   onChange: (value: string) => void
   open?: boolean
-  options: Option[]
+  options: Option[] | null
   placeholder?: ReactElement | string
   rootClassName?: string
   value: ReactElement | string
@@ -52,14 +52,13 @@ export const Select = (props: SelectProps) => {
     root: rootClassName,
     trigger: clsx(s.trigger, s[variant], className),
   }
-  //const withoutPlaceholder = variant === 'pagination' ? value : 'Select Box'
+  const withoutPlaceholder = variant === 'pagination' ? value : 'Select Box'
   const rootStyles = { width }
   const onChangeHandler = (value: string) => {
-    //console.log('onChangeHandler', value)
     onChange(value)
   }
 
-  //console.log('value', value)
+  console.log(value)
 
   return (
     <div className={classNames.root}>
@@ -69,10 +68,12 @@ export const Select = (props: SelectProps) => {
           disabled={disabled}
           onValueChange={onChangeHandler}
           open={open}
-          value={'value' as string}
+          value={'value'}
         >
           <SelectRadix.Trigger className={classNames.trigger} onBlur={onBlur} style={rootStyles}>
-            <SelectRadix.Value>{value}</SelectRadix.Value>
+            <SelectRadix.Value placeholder={placeholder || withoutPlaceholder}>
+              {value}
+            </SelectRadix.Value>
             <SelectRadix.Icon className={classNames.icon}>
               <ArrowDownIcon size={variant === 'pagination' ? IconSize.Small : IconSize.Large} />
             </SelectRadix.Icon>
@@ -81,13 +82,13 @@ export const Select = (props: SelectProps) => {
           <SelectRadix.Portal>
             <SelectRadix.Content className={classNames.content} position={'popper'}>
               <SelectRadix.Viewport>
-                {options.map(option => {
+                {options?.map(option => {
                   return (
                     <SelectRadix.Item
                       asChild
                       className={classNames.item}
                       key={`${option.value}`}
-                      value={option.label}
+                      value={option.value as string}
                     >
                       {<span>{option.label}</span>}
                     </SelectRadix.Item>
