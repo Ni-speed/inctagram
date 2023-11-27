@@ -10,4 +10,19 @@
   .textField {
     width: 100%;
   }
+
+  .dataPicker {
+    width: 100%;
+  }
+
+  .area {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    width: 100%;
+
+    .areaItem {
+      width: 100%;
+    }
+  }
 }
