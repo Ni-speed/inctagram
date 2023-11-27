@@ -1,8 +1,9 @@
 import React from 'react'
 
-import { useTranslation } from '../../../shared/hooks'
 import { BallNotification } from '@/entities/user/ui'
+import { useTranslation } from '@/shared/hooks'
 import { Button, DropDown, LanguageSelect, Typography } from '@/shared/ui'
+import { useRouter } from 'next/router'
 
 import s from './header.module.scss'
 
@@ -13,6 +14,7 @@ type HeaderPropsType = {
 
 export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
   const { t } = useTranslation()
+  const router = useRouter()
 
   return (
     <header className={s.header}>
@@ -40,10 +42,14 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
           <LanguageSelect />
           {isAuth || (
             <>
-              <Button className={s.middleButton} variant={'text'}>
+              <Button
+                className={s.middleButton}
+                onClick={() => router.push('/signIn')}
+                variant={'text'}
+              >
                 <Typography variant={'h3'}>{t.linksButtons.signIn}</Typography>
               </Button>
-              <Button variant={'primary'}>
+              <Button onClick={() => router.push('/signUp')} variant={'primary'}>
                 <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
               </Button>
             </>
