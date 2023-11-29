@@ -96,9 +96,9 @@ export const Slider = ({
           slidesCount: items.length,
         }}
       >
-        <Arrows />
+        {items.length > 1 && <Arrows />}
         <SlidesList />
-        <Dots />
+        {items.length > 1 && <Dots />}
       </SliderContext.Provider>
     </div>
   )
