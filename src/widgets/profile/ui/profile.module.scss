@@ -1,7 +1,57 @@
-.avatar {
+.profilePageHeaderWrapper {
+  display: flex;
 }
+
+.avatar {
+  overflow: hidden;
+
+  width: 204px;
+  height: 204px;
+  margin-right: 38px;
+
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 .posts {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.statisticWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.profileStatistics {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  margin-bottom: 23px;
+}
+
+.statistic {
+  display: flex;
+  flex-direction: column;
+  margin-right: 100px;
+}
+
+.counterStats {
+  font-weight: var(--font-weight-bold);
+}
+
+.listText {
+}
+
+.textBlock {
+  max-width: 730px;
+}
+
+.text {
+}
+
+.link {
+  color: var(--color-accent-500);
+  text-decoration-line: underline;
 }
