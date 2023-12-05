@@ -11,7 +11,6 @@ export const LayoutSidebar = (props: PropsWithChildren<any>) => {
   const { data, isError, isLoading } = useGetMeQuery()
   const [logout] = useLogoutMutation()
   const router = useRouter()
-  const [ref] = useRefreshMutation()
 
   if (isLoading) {
     return <div>Loading...</div>
@@ -24,7 +23,6 @@ export const LayoutSidebar = (props: PropsWithChildren<any>) => {
     <div className={s.container}>
       <Sidebar accountPaid id={data?.id} logout={logout} />
       <div className={s.content}>{children}</div>
-      <button onClick={() => ref()}>qweqwe</button>
     </div>
   )
 }

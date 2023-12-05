@@ -2,7 +2,6 @@ import { ReactElement } from 'react'
 
 import { createSidebarListsItem } from '../lib/createSidebarListsItem'
 import { SidebarItemsType, useSidebarItems } from '../lib/useSidebarItems'
-import { useLogoutMutation } from '@/features'
 import { Undefineable } from '@/shared'
 
 import s from './sidebar.module.scss'
