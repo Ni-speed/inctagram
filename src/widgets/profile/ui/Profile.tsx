@@ -1,5 +1,6 @@
 import { FC } from 'react'
 
+import { useGetProfileQuery } from '@/features'
 import { Typography } from '@/shared'
 import { HeroProfilePlaceholder } from '@/widgets/heroProfilePlaceholder/HeroProfilePlaceholder'
 import Image from 'next/image'
@@ -11,10 +12,22 @@ type PropsType = {
   user: { avatar: string; name: string }
 }
 export const Profile: FC<PropsType> = ({ user }) => {
+  const { data, isLoading } = useGetProfileQuery({ id: 1 })
+
+  if (isLoading) {
+    return <>Loading...</>
+  }
+
   return (
     <>
       <div className={s.profilePageHeaderWrapper}>
-        <Image alt={'avatar'} className={s.avatar} height={204} src={user.avatar} width={204} />
+        <Image
+          alt={'avatar'}
+          className={s.avatar}
+          height={204}
+          src={data!.avatars[0].url}
+          width={204}
+        />
         <div className={s.statisticWrapper}>
           <Typography>URLProfile</Typography>
           <ul className={s.profileStatistics}>
