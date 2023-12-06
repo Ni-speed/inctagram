@@ -46,7 +46,7 @@ export type ErrorLoginResponse<T> = {
 export type ErrorResponse = ReturnType<typeof serverErrorSignUp>
 
 export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>
-export type ProfileType = {
+export type GetProfileResponseType = {
   aboutMe: string
   avatars: AvatarsType[]
   city: string
@@ -62,4 +62,13 @@ export type AvatarsType = {
   height: number
   url: string
   width: number
+}
+
+export type ProfileRequestType = {
+  aboutMe: string
+  city: string
+  dateOfBirth: string
+  firstname: string
+  lastname: string
+  username: string
 }
