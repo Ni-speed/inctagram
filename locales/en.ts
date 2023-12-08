@@ -15,6 +15,7 @@ export const en: LocaleType = {
     backToSignUp: 'Back to Sig Up ',
     forgotPassword: 'Forgot Password',
     newPass: 'Create New Password',
+    profileSettings: 'Profile Settings',
     resendLink: 'Resend Link',
     sendLink: 'Send Link',
     signIn: 'Sign In',
