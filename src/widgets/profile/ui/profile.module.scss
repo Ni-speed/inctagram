@@ -24,6 +24,11 @@
   flex-direction: column;
 }
 
+.profileURL {
+  display: flex;
+  justify-content: space-between;
+}
+
 .profileStatistics {
   display: flex;
   justify-content: flex-start;
@@ -31,17 +36,8 @@
   margin-bottom: 23px;
 }
 
-.statistic {
+.profileButtonsContainer {
   display: flex;
-  flex-direction: column;
-  margin-right: 100px;
-}
-
-.counterStats {
-  font-weight: var(--font-weight-bold);
-}
-
-.listText {
 }
 
 .textBlock {
