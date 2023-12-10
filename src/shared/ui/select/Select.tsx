@@ -58,8 +58,6 @@ export const Select = (props: SelectProps) => {
     onChange(value)
   }
 
-  console.log(value)
-
   return (
     <div className={classNames.root}>
       <SelectRadix.Group>
