@@ -12,7 +12,7 @@ export type RegistrationArgs = {
 
 export type MeResponse = {
   email: string
-  id: string
+  id: number
   username: string
 }
 
