@@ -10,17 +10,13 @@ const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({
   baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
-  //   prepareHeaders: (headers, { getState }) => {
-  //     // Добавляем нужные заголовки
-  //     headers.set('Authorization', `Bearer ${getState().auth.token}`)
+  prepareHeaders: (headers, { endpoint }) => {
+    if (endpoint === 'getMe') {
+      headers.set('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
+    }
 
-  //     return headers
-  //   },
-  headers: {
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI5YTExMzc1Mi0yNmMwLTQwMmMtOTZmNC02NWVlOTkzNDlhYmEiLCJpZCI6ImFjMDAzYjBmLWJjYmYtNDRiZi1iNTc3LWViNzBmMWYwZjZhOCIsImlwIjoiMTI3LjAuMC4xIiwidGl0bGUiOiJNb3ppbGxhLzUuMCAoV2luZG93cyBOVCAxMC4wOyBXaW42NDsgeDY0KSBBcHBsZVdlYktpdC81MzcuMzYgKEtIVE1MLCBsaWtlIEdlY2tvKSBDaHJvbWUvMTE5LjAuMC4wIFNhZmFyaS81MzcuMzYiLCJpYXQiOjE3MDA2NjkxMjIsImV4cCI6MTAxNzAwNjY5MTIyfQ.Rf-fIVGPjXxefjYijjUUVbXYsxN1iA9yB_m132kmwLc',
+    return headers
   },
-  // build
 })
 
 export const baseQueryWithReauth: BaseQueryFn<

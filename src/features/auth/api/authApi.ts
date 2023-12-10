@@ -7,11 +7,12 @@ import type {
   Token,
 } from '../model/types'
 
-import { baseApi } from '../../../shared/api'
+import { GET_ME, baseApi } from '@/shared/api'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({
     getMe: build.query<MeResponse, void>({
+      providesTags: [GET_ME],
       query: body => ({ body, url: 'auth/me' }),
     }),
 
@@ -23,7 +24,19 @@ const authApi = baseApi.injectEndpoints({
       query: () => ({ url: 'auth/google/login' }),
     }),
 
-    login: build.mutation<void, LogInArgs>({
+    login: build.mutation<Token, LogInArgs>({
+      //   invalidatesTags: [GET_ME],
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        try {
+          const { data } = await queryFulfilled
+          // `onSuccess` side-effect
+
+          localStorage.setItem('accessToken', data.accessToken)
+          dispatch(authApi.util.invalidateTags([GET_ME]))
+        } catch (err) {
+          // `onError` side-effect
+        }
+      },
       query: body => ({ body, method: 'POST', url: 'auth/login' }),
     }),
 
@@ -37,6 +50,10 @@ const authApi = baseApi.injectEndpoints({
 
     passwordRecovery: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
       query: body => ({ body, method: 'POST', url: 'auth/password-recovery' }),
+    }),
+
+    refresh: build.mutation<void, void>({
+      query: () => ({ method: 'POST', url: 'auth/refresh-token' }),
     }),
 
     registration: build.mutation<void, RegistrationArgs>({
@@ -61,6 +78,7 @@ export const {
   useLogoutMutation,
   useNewPasswordMutation,
   usePasswordRecoveryMutation,
+  useRefreshMutation,
   useRegistrationConfirmationMutation,
   useRegistrationEmailResendingMutation,
   useRegistrationMutation,

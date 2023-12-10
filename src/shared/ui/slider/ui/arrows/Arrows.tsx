@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 
-import { ArrowLeftIcon, ArrowRightIcon } from '../../..'
-import { SliderContext } from '../Slider'
+import { ArrowLeftIcon, ArrowRightIcon } from '../../../..'
+import { SliderContext } from '../../model/sliderContext'
 
 import s from './arrows.module.scss'
 

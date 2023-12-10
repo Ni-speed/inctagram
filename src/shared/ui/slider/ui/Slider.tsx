@@ -1,36 +1,27 @@
 import React, { TouchEvent, createContext, useEffect, useState } from 'react'
 
+import { SliderContext } from '../model/sliderContext'
 import Arrows from './arrows/Arrows'
 import { Dots } from './dots/Dots'
 import SlidesList from './sliderList/SliderList'
 
 import s from './slider.module.scss'
 
-type ContextType = {
-  changeSlide: (direction?: number) => void
-  goToSlide: (number: number) => void
-  items: { title: string; url: string }[]
-  slideNumber: number
-  slidesCount: number
-}
-
-export const SliderContext = createContext<ContextType>({
-  changeSlide: (direction?: number | undefined) => {},
-  goToSlide: (number: number) => {},
-  items: [{ title: '', url: '' }],
-  slideNumber: 0,
-  slidesCount: 0,
-})
-
 type PropsType = {
-  autoPlay: boolean
-  autoPlayTime: number
-  height: string
+  autoPlay?: boolean
+  autoPlayTime?: number
+  height?: string
   items: { title: string; url: string }[]
-  width: string
+  width?: string
 }
 
-export const Slider = ({ autoPlay, autoPlayTime, height, items, width }: PropsType) => {
+export const Slider = ({
+  autoPlay = false,
+  autoPlayTime = 5000,
+  height = '240px',
+  items,
+  width = '234px',
+}: PropsType) => {
   const [slide, setSlide] = useState(0)
   const [touchPosition, setTouchPosition] = useState<null | number>(null)
 
@@ -105,17 +96,10 @@ export const Slider = ({ autoPlay, autoPlayTime, height, items, width }: PropsTy
           slidesCount: items.length,
         }}
       >
-        <Arrows />
+        {items.length > 1 && <Arrows />}
         <SlidesList />
-        <Dots />
+        {items.length > 1 && <Dots />}
       </SliderContext.Provider>
     </div>
   )
-}
-
-Slider.defaultProps = {
-  autoPlay: false,
-  autoPlayTime: 5000,
-  height: '240px',
-  width: '234px',
 }

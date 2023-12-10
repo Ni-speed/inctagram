@@ -1,7 +1,4 @@
-import { useEffect, useRef } from 'react'
-
-import { Typography } from '@/shared'
-import { Slider } from '@/shared/ui/slider/Slider'
+import { Slider, Typography } from '@/shared'
 import Image from 'next/image'
 
 import s from './publicPost.module.scss'
