@@ -6,11 +6,18 @@ export const ru = {
   },
   generalInfo: {
     aboutMe: 'Обо мне',
+    addAvatar: 'Добавить фото',
     city: 'Выберите свой город',
     country: 'Выберите свою страну',
     dateOfBirth: 'Дата рождения',
     firstname: 'Имя пользователя',
+    imageFormatError: 'Файл должен иметь формат jpg или png.',
+    imageSizeError: 'Файл должен быть не больше 10 мб.',
+    imageUploadError: 'Ошибка загрузки файла.',
     lastname: 'Фамилия пользователя',
+    saveChanges: 'Сохранить',
+    saveSettingsChange: 'Сохранить изменения',
+    selectImage: 'Выбрать изображение с этого компьютера',
     username: '"Ник" пользователя',
   },
   languageSelector: {

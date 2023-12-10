@@ -8,11 +8,18 @@ export const en: LocaleType = {
   },
   generalInfo: {
     aboutMe: 'About Me',
+    addAvatar: 'Add a Profile Photo',
     city: 'Select your city',
     country: 'Select your country',
     dateOfBirth: 'Date of birth',
     firstname: 'First Name',
+    imageFormatError: 'File must be jpeg or png type',
+    imageSizeError: 'File must be less than 10 MB.',
+    imageUploadError: 'Upload error.',
     lastname: 'Last Name',
+    saveChanges: 'Save Changes',
+    saveSettingsChange: 'Save Change',
+    selectImage: 'Select from computer',
     username: 'Username',
   },
   languageSelector: {
