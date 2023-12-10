@@ -12,5 +12,7 @@ export * from './languageSelect'
 export * from './select'
 export * from './modal'
 export * from './CommonCheckbox'
+/*export { Avatar } from './avatar'*/
+export * from './loader'
 /*export * from './settingsButtonBar'*/
 /*export * from './slider'*/
