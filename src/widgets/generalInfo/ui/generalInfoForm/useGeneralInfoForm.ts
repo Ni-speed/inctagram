@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { ErrorRegisterFormType } from '@/../locales/ru'
 import { useTranslation } from '@/shared/hooks'
+import { ProfileProps } from '@/widgets/generalInfo/ui/generalInfoForm/GeneralInfoForm'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
@@ -57,7 +58,7 @@ export const schema = (t: ErrorRegisterFormType) => {
     aboutMe: z.string(),
     city: z.string(),
     country: z.string(),
-    /* dateOfBirth: z.date(),*/
+    dateOfBirth: z.date(),
     firstname: z.string(),
     lastname: z.string(),
     username: z.string(),
@@ -71,17 +72,23 @@ export const useGeneralInfoForm = (
     aboutMe: string
     city: string
     country: string
-    /* dateOfBirth: Date*/
+    dateOfBirth: Date
     firstname: string
     lastname: string
     username: string
   }>,
-  name: string
+  profile: ProfileProps | undefined,
+  myUserName: string
 ) => {
   const { t } = useTranslation()
   const { handleSubmit, ...rest } = useForm<FormGeneralInfo>({
     defaultValues: {
-      username: name,
+      aboutMe: profile?.aboutMe ?? '',
+      city: profile?.city ?? '',
+      dateOfBirth: profile?.dateOfBirth ? profile?.dateOfBirth : new Date(),
+      firstname: profile?.firstname ?? '',
+      lastname: profile?.lastname ?? '',
+      username: /*profile?.username*/ myUserName ?? '',
     },
     mode: 'onSubmit',
     resolver: zodResolver(schema(t.registerForm.error)),
