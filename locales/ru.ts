@@ -10,6 +10,24 @@ export const ru = {
     city: 'Выберите свой город',
     country: 'Выберите свою страну',
     dateOfBirth: 'Дата рождения',
+    errors: {
+      maxFieldLength: (max: number) => `Максимальное количество символов - ${max}`,
+      maxFirstname: (max: number) =>
+        `Максимальная длинна имени не должна превышать  ${max} символов`,
+      maxLastname: (max: number) =>
+        `Максимальная длина фамилии не должна превышать  ${max} символов`,
+      maxUsername: (max: number) =>
+        `Максимальная длина имени пользователя не должна превышать  ${max} символов`,
+      minUsername: (min: number) => `Длина имени пользователя должна быть не менее ${min} символов`,
+      nonemptyFirstname: 'Введите имя',
+      nonemptyLastname: 'Введите фамилию',
+      nonemptyUsername: 'Введите имя пользователя',
+      regexAboutMe: 'Поле должно содержать 0-9, a-z, A-Z, . _ -',
+      regexFirstname: 'Имя должно содержать а-я, А-Я',
+      regexLastname: 'Фамилия должна содержать а-я, А-Я',
+      regexUsername: 'Имя пользователя должно содержать 0-9, a-z, A-Z, . _ -',
+      under13: 'Возраст пользователя должен быть старше 13 лет.',
+    },
     firstname: 'Имя пользователя',
     imageFormatError: 'Файл должен иметь формат jpg или png.',
     imageSizeError: 'Файл должен быть не больше 10 мб.',

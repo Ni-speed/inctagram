@@ -12,6 +12,23 @@ export const en: LocaleType = {
     city: 'Select your city',
     country: 'Select your country',
     dateOfBirth: 'Date of birth',
+    errors: {
+      maxFieldLength: (max: number) => `Maximum number of characters - ${max}`,
+      maxFirstname: (max: number) =>
+        `The maximum length of the name must not exceed ${max} characters`,
+      maxLastname: (max: number) =>
+        `The maximum length of the last name must not exceed ${max} characters`,
+      maxUsername: (max: number) => `Maximum number of characters  ${max}`,
+      minUsername: (min: number) => `Username must be at least ${min} characters`,
+      nonemptyFirstname: 'Enter your name',
+      nonemptyLastname: 'Enter your last name',
+      nonemptyUsername: 'Enter your Username',
+      regexAboutMe: 'Field must contain 0-9, a-z, A-Z, . _ -',
+      regexFirstname: 'Firstname must contain a-z, A-Z',
+      regexLastname: 'Lastname must contain a-z, A-Z',
+      regexUsername: 'Username must contain  0-9, a-z, A-Z, . _ -',
+      under13: 'A user under 13 cannot create a profile.',
+    },
     firstname: 'First Name',
     imageFormatError: 'File must be jpeg or png type',
     imageSizeError: 'File must be less than 10 MB.',
