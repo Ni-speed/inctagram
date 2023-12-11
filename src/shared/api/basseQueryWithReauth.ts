@@ -11,7 +11,7 @@ const baseQuery = fetchBaseQuery({
   baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
   prepareHeaders: (headers, { endpoint }) => {
-    if (endpoint === 'getMe') {
+    if (endpoint === 'getMe' || endpoint === 'updateProfile') {
       headers.set('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
     }
 
