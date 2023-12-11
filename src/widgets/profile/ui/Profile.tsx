@@ -1,10 +1,10 @@
 import { FC } from 'react'
 
 import { useGetMeQuery, useGetProfileQuery } from '@/features'
+import { ProfileButtons } from '@/features/profile/ui/profileButtons/ProfileButtons'
+import { ProfileStatistic } from '@/features/profile/ui/profileStatisric/ProfileStatistic'
 import { Typography } from '@/shared'
 import { HeroProfilePlaceholder } from '@/widgets/heroProfilePlaceholder/HeroProfilePlaceholder'
-import { ProfileButtons } from '@/widgets/profile/ui/ProfileButtons'
-import { ProfileStatistic } from '@/widgets/profile/ui/ProfileStatistic'
 import Image from 'next/image'
 
 import s from './profile.module.scss'

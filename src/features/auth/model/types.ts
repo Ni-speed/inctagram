@@ -52,9 +52,9 @@ export type GetProfileResponseType = {
   city: string
   createdAt: string
   dateOfBirth: string
-  // TODO need add friend status " isFriend: boolean "
   firstname: string
   id: number
+  // TODO need add friend status " isFriend: boolean "
   isFriend: boolean
   lastname: string
   username: string
