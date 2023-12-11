@@ -16,13 +16,14 @@ export type GetProfileResponse = {
   username: string
 }
 export type ArgGetProfile = { profileId: number | string | undefined }
+
 export type ArgUpdateProfile = {
-  aboutMe: string | undefined
-  city: string | undefined
-  dateOfBirth: Date | string | undefined
+  aboutMe: null | string
+  city: null | string
+  dateOfBirth: Date | string
   firstname: string
   lastname: string
-  username: string
+  username: null | string
 }
 export type ArgUploadAvatar = FormData
 export type UploadAvatarResponse = { avatars: AvatarType[] }

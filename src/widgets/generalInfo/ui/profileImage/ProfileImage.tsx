@@ -73,7 +73,6 @@ export const ProfileImage = memo(({ avatars = '' }: ProfileImageProps) => {
       await deleteAvatar().unwrap()
       setUrl('')
     } catch (e: unknown) {
-      // const error = e as RegisterError
       const error = e as any
 
       console.log(error)
@@ -92,7 +91,6 @@ export const ProfileImage = memo(({ avatars = '' }: ProfileImageProps) => {
       setIsModalOpen(false)
       setAvatarEditMode(false)
     } catch (e: unknown) {
-      // const error = e as RegisterError
       const error = e as any
 
       setUploadError(error.data.message)
@@ -127,12 +125,7 @@ export const ProfileImage = memo(({ avatars = '' }: ProfileImageProps) => {
           {t.generalInfo.addAvatar}
         </Button>
       </div>
-      <Modal
-        onClose={handleCloseModal}
-        /* className={s.modalContent}*/
-        open={isModalOpen}
-        title={t.generalInfo.addAvatar}
-      >
+      <Modal onClose={handleCloseModal} open={isModalOpen} title={t.generalInfo.addAvatar}>
         <div className={s.modalInnerContent}>
           {isAvatarUploading ? (
             <Loader className={s.modalLoader} />

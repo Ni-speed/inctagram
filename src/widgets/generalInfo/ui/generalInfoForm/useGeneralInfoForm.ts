@@ -1,97 +1,91 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { ErrorRegisterFormType } from '@/../locales/ru'
+import { LocaleType } from '@/../locales/ru'
+import { aboutMeRegex, firstNameRegex, lastNameRegex, usernameRegex } from '@/shared'
 import { useTranslation } from '@/shared/hooks'
 import { ProfileProps } from '@/widgets/generalInfo/ui/generalInfoForm/GeneralInfoForm'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 
-/*{
-  "username": "string",
-    "firstname": "string",
-    "lastname": "string",
-    "city": "string",
-    "dateOfBirth": "2023-11-17T11:51:20.585Z",
-    "aboutMe": "string"
-}*/
-/*
-//todo add validation and check dateOfBirth
- username: z
-      .string()
-      .trim()
-      .nonempty(t.errors.nonemptyUsername)
-      .min(6, t.errors.minUsername(6))
-      .max(30, t.errors.maxUsername(30))
-      .regex(usernameRegex, t.errors.regexUsername),
-    firstname: z
-      .string()
-      .trim()
-      .nonempty(t.errors.nonemptyFirstname)
-      .max(50, t.errors.maxFirstname(50))
-      .regex(firstNameRegex, t.errors.regexFirstname),
-    lastname: z
-      .string()
-      .trim()
-      .nonempty(t.errors.nonemptyLastname)
-      .max(50, t.errors.maxLastname(50))
-      .regex(lastNameRegex, t.errors.regexLastname),
-    city: z.nullable(z.string().trim()),
+export const profileSettingsSchema = (t: LocaleType) => {
+  return z.object({
     aboutMe: z.nullable(
       z
         .string()
         .trim()
-        .max(200, t.errors.maxFieldLength(200))
-        .regex(aboutMeRegex, t.errors.regexAboutMe)
+        .max(200, t.generalInfo.errors.maxFieldLength(200))
+        .regex(aboutMeRegex, t.generalInfo.errors.regexAboutMe)
     ),
+    city: z.nullable(z.string().trim()),
+    country: z.nullable(z.string()),
     dateOfBirth: z.date().refine(
       data => {
-        if (data === null) return true
+        if (data === null) {
+          return true
+        }
         if (data) {
-          const dateOB = new Date(data)
+          const dob = new Date(data)
           const today = new Date()
-          const age = today.getFullYear() - dateOB.getFullYear()
-          return age >= 13
-*/
+          const age = today.getFullYear() - dob.getFullYear()
 
-export const schema = (t: ErrorRegisterFormType) => {
-  return z.object({
-    aboutMe: z.string(),
-    city: z.string(),
-    country: z.string(),
-    dateOfBirth: z.date(),
-    firstname: z.string(),
-    lastname: z.string(),
-    username: z.string(),
+          return age >= 13
+        }
+      },
+      {
+        message: t.generalInfo.errors.under13,
+      }
+    ),
+    firstname: z
+      .string()
+      .trim()
+      .nonempty(t.generalInfo.errors.nonemptyFirstname)
+      .max(50, t.generalInfo.errors.maxFirstname(50))
+      .regex(firstNameRegex, t.generalInfo.errors.regexFirstname),
+    lastname: z
+      .string()
+      .trim()
+      .nonempty(t.generalInfo.errors.nonemptyLastname)
+      .max(50, t.generalInfo.errors.maxLastname(50))
+      .regex(lastNameRegex, t.generalInfo.errors.regexLastname),
+    username: z
+      .string()
+      .trim()
+      .nonempty(t.generalInfo.errors.nonemptyUsername)
+      .min(6, t.generalInfo.errors.minUsername(6))
+      .max(30, t.generalInfo.errors.maxUsername(30))
+      .regex(usernameRegex, t.generalInfo.errors.regexUsername)
+      .nullable(),
   })
 }
 
-export type FormGeneralInfo = z.infer<ReturnType<typeof schema>>
+export type FormGeneralInfo = z.infer<ReturnType<typeof profileSettingsSchema>>
 
 export const useGeneralInfoForm = (
   onSubmit: SubmitHandler<{
-    aboutMe: string
-    city: string
-    country: string
+    aboutMe: null | string
+    city: null | string
+    country: null | string
     dateOfBirth: Date
     firstname: string
     lastname: string
-    username: string
+    username: null | string
   }>,
   profile: ProfileProps | undefined,
-  myUserName: string
+  myUserName: string | undefined
 ) => {
   const { t } = useTranslation()
   const { handleSubmit, ...rest } = useForm<FormGeneralInfo>({
     defaultValues: {
       aboutMe: profile?.aboutMe ?? '',
       city: profile?.city ?? '',
+      country: profile?.city ?? '',
       dateOfBirth: profile?.dateOfBirth ? profile?.dateOfBirth : new Date(),
       firstname: profile?.firstname ?? '',
       lastname: profile?.lastname ?? '',
-      username: /*profile?.username*/ myUserName ?? '',
+      username: myUserName ?? '',
     },
     mode: 'onSubmit',
-    resolver: zodResolver(schema(t.registerForm.error)),
+    resolver: zodResolver(profileSettingsSchema(t)),
   })
 
   return {

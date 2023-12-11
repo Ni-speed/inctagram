@@ -20,7 +20,7 @@ export type ProfileProps = {
   firstname: string
   id?: number
   lastname: string
-  username: string
+  username: null | string
 }
 
 type CountryType = {
@@ -33,36 +33,36 @@ type GeneralInfoFormProps = {
   className?: string
   myUserName?: string
   onSubmitProfile: SubmitHandler<{
-    aboutMe?: string
-    city?: string
-    country?: string
-    dateOfBirth?: Date
+    aboutMe: null | string
+    city: null | string
+    country: null | string
+    dateOfBirth: Date | string
     firstname: string
     lastname: string
-    username: string
+    username: null | string
   }>
-  options: any
+
   profile?: ProfileProps
 }
 export const GeneralInfoForm = ({
   className,
   myUserName,
   onSubmitProfile,
-  options,
   profile,
 }: GeneralInfoFormProps) => {
   //todo change the 'username' to the "username" that came from the backend
+  const { t } = useTranslation()
   const { control, handleSubmit, register, resetField, setError, watch } = useGeneralInfoForm(
     onSubmitProfile,
     profile,
     myUserName
   )
-  const { t } = useTranslation()
+
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     await handleSubmit()
   }
-  const [birhD, setBirhD] = useState<any>()
+
   const [countryList, setCountryList] = useState<CountriesList>(null)
   const [citiesList, setCitiesList] = useState<any>(null)
 

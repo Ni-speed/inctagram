@@ -8,23 +8,20 @@ import { omit } from 'remeda'
 import s from './GeneralInformation.module.scss'
 
 type GeneralInfo = {
-  aboutMe?: string
-  city?: string
-  country?: string
-  dateOfBirth?: Date
+  aboutMe: null | string
+  city: null | string
+  country: null | string
+  dateOfBirth: Date | string
   firstname: string
   lastname: string
-  username: string
+  username: null | string
 }
 export const GeneralInformation = () => {
   const [updateProfile, { error: updateProfileError }] = useUpdateProfileMutation()
   const { data: me } = useGetMeQuery()
   const { data: profile, isLoading } = useGetProfileQuery({ profileId: me?.id })
 
-  console.log('profile', profile)
   const onSubmitHandler = (generalIngo: GeneralInfo) => {
-    console.log('generalIngo', generalIngo)
-    //updateProfile(omit(generalIngo, ['country']))
     updateProfile(omit(generalIngo, ['country']))
   }
   const options = useMemo(() => countryList(), [])
@@ -40,12 +37,3 @@ export const GeneralInformation = () => {
     </div>
   )
 }
-/*
-"{
-    --""username"": ""string"",
-    --""firstname"": ""string"",
-    --""lastname"": ""string"",
-    --""city"": ""string"",
-    --""dateOfBirth"": ""2023-11-17T11:51:20.585Z"",
-    --""aboutMe"": ""string""
-}"*/
