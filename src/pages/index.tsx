@@ -2,6 +2,7 @@ import { PublicPost } from '../entities/publicPost/ui/PublicPost'
 import { getLayout } from '../widgets'
 import { CountUser } from '../widgets/countUsers/CountUser'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { Profile } from '@/widgets/profile/ui/Profile'
 
 import s from './publicPage.module.scss'
 function Home() {
@@ -112,6 +113,7 @@ function Home() {
             }}
           />
         </div>
+        <Profile />
       </div>
     </div>
   )
