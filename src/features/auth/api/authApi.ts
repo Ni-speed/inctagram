@@ -7,7 +7,7 @@ import type {
   Token,
 } from '../model/types'
 
-import { GET_ME, baseApi } from '@/shared/api'
+import { GET_ME, PROFILE, baseApi } from '@/shared/api'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({
@@ -25,7 +25,6 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     login: build.mutation<Token, LogInArgs>({
-      //   invalidatesTags: [GET_ME],
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         try {
           const { data } = await queryFulfilled
@@ -41,6 +40,19 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     logout: build.mutation<void, void>({
+      invalidatesTags: [GET_ME],
+      async onQueryStarted(_, { dispatch, queryFulfilled }) {
+        dispatch(
+          authApi.util.updateQueryData('getMe', undefined, draft => {
+            draft.username = undefined
+          })
+        )
+        try {
+          await queryFulfilled
+        } catch {
+          dispatch(authApi.util.invalidateTags([GET_ME]))
+        }
+      },
       query: () => ({ method: 'POST', url: 'auth/logout' }),
     }),
 

@@ -5,7 +5,7 @@ import {
 } from '@/features/auth/model/types'
 import { PROFILE, baseApi } from '@/shared/api'
 
-const profileApi = baseApi.injectEndpoints({
+export const profileApi = baseApi.injectEndpoints({
   endpoints: build => ({
     deleteAvatar: build.mutation<any, any>({
       query: () => ({
@@ -21,10 +21,10 @@ const profileApi = baseApi.injectEndpoints({
         url: `users/profile/${id}`,
       }),
     }),
-    getProfile: build.query<GetProfileResponseType, { id: number }>({
+    getProfile: build.query<GetProfileResponseType, string>({
       providesTags: [PROFILE],
 
-      query: ({ id }) => ({
+      query: id => ({
         method: 'GET',
         url: `users/profile/${id}`,
       }),

@@ -2,7 +2,7 @@ import { FC } from 'react'
 
 import { Slider } from '@/shared'
 
-import s from '@/widgets/profile/ui/profile.module.scss'
+import s from '@/widgets/heroProfilePlaceholder/heroProfilePlaceholder.module.scss'
 
 type PropsType = {}
 

@@ -1,53 +1,42 @@
 .profilePageHeaderWrapper {
-  display: flex;
+    display: flex;
 }
 
 .avatar {
-  overflow: hidden;
-
-  width: 204px;
-  height: 204px;
-  margin-right: 38px;
-
-  object-fit: cover;
-  border-radius: 50%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-.posts {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 
 .statisticWrapper {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    margin-left: 38px;
 }
 
 .profileURL {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
 .profileStatistics {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
-  margin-bottom: 23px;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-bottom: 23px;
 }
 
 .profileButtonsContainer {
-  display: flex;
+    display: flex;
 }
 
 .textBlock {
-  max-width: 730px;
+    max-width: 730px;
 }
 
-.text {
-}
+.text {}
 
 .link {
-  color: var(--color-accent-500);
-  text-decoration-line: underline;
+    color: var(--color-accent-500);
+    text-decoration-line: underline;
 }

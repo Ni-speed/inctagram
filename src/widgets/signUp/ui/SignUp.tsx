@@ -49,6 +49,7 @@ export const SignUp = () => {
       <RegisterForm
         className={s.form}
         errorMessage={loginError && loginError}
+        isQuery={isLoading}
         onSubmit={onSubmitHandler}
       ></RegisterForm>
       <div className={s.haveAcc}>

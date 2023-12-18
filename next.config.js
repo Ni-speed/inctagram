@@ -12,6 +12,7 @@ const nextConfig = {
       'png.pngtree.com',
       'img.championat.com',
       'cs11.livemaster.ru',
+      'encrypted-tbn0.gstatic.com',
       'i.pinimg.com',
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
