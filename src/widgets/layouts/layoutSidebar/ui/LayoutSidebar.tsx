@@ -1,6 +1,6 @@
-import { PropsWithChildren, useEffect } from 'react'
+import { PropsWithChildren } from 'react'
 
-import { useGetMeQuery, useLogoutMutation, useRefreshMutation } from '@/features/auth'
+import { useGetMeQuery, useLogoutMutation } from '@/features/auth'
 import { Sidebar } from '@/widgets/sidebar'
 import { useRouter } from 'next/router'
 
@@ -18,10 +18,14 @@ export const LayoutSidebar = (props: PropsWithChildren<any>) => {
   if (isError) {
     router.push('/signIn')
   }
+  const logoutHandler = () => {
+    router.push('/signIn')
+    logout()
+  }
 
   return (
     <div className={s.container}>
-      <Sidebar accountPaid id={data?.id} logout={logout} />
+      <Sidebar accountPaid id={data?.id} logout={logoutHandler} />
       <div className={s.content}>{children}</div>
     </div>
   )

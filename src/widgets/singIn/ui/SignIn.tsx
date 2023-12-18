@@ -14,7 +14,7 @@ import s from '@/widgets/singIn/ui/signIn.module.scss'
 export const SignIn = () => {
   const router = useRouter()
 
-  const [login, { error, isSuccess: loginSuccess }] = useLoginMutation()
+  const [login, { error, isLoading, isSuccess: loginSuccess }] = useLoginMutation()
   const { t } = useTranslation()
 
   if (loginSuccess) {
@@ -50,6 +50,7 @@ export const SignIn = () => {
       <SingInForm
         className={s.form}
         errorMessage={loginError && loginError}
+        isQuery={isLoading}
         onSubmit={onSubmitHandler}
       />
       <div className={s.haveAcc}>

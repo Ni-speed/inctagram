@@ -1,13 +1,12 @@
-import { PublicPost } from '../entities/publicPost/ui/PublicPost'
-import { getLayout } from '../widgets'
-import { CountUser } from '../widgets/countUsers/CountUser'
+import { CountUser } from '../../countUsers/CountUser'
+import { PublicPost } from '@/entities/publicPost/ui/PublicPost'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
-import s from './publicPage.module.scss'
-function Home() {
+import s from './public.module.scss'
+export const Public=()=> {
   return (
     <div className={s.container}>
-      <HeadMeta title={'Home'} />
+      <HeadMeta title={'Public page'} />
       <div className={s.content}>
         <CountUser />
         <div className={s.posts}>
@@ -106,5 +105,4 @@ function Home() {
   )
 }
 
-Home.getLayout = getLayout
-export default Home
+

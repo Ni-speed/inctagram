@@ -1,2 +1,2 @@
-export const GET_ME = 'GetMe'
-export const PROFILE = 'Profile'
+export const GET_ME = 'GetMeTag'
+export const PROFILE = 'ProfileTag'

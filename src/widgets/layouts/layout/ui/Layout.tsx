@@ -8,12 +8,14 @@ import s from './layout.module.scss'
 
 export const Layout: NextPage<PropsWithChildren<any>> = props => {
   const { children } = props
-  const { data } = useGetMeQuery()
+  const { data, isFetching, isLoading } = useGetMeQuery()
+
+  const classNameContainer = isLoading || isFetching ? s.disabled : undefined
 
   return (
     <main className={s.main}>
-      <Header countNotification={5} isAuth={!!data}></Header>
-      <div className={s.container}>{children}</div>
+      <Header username={data?.username}></Header>
+      <div className={`${s.container} ${classNameContainer}`}>{children}</div>
     </main>
   )
 }
