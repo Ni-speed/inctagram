@@ -5,6 +5,7 @@ import { aboutMeRegex, firstNameRegex, lastNameRegex, usernameRegex } from '@/sh
 import { useTranslation } from '@/shared/hooks'
 import { ProfileProps } from '@/widgets/generalInfo/ui/generalInfoForm/GeneralInfoForm'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { parseISO } from 'date-fns'
 import { z } from 'zod'
 
 export const profileSettingsSchema = (t: LocaleType) => {
@@ -16,9 +17,7 @@ export const profileSettingsSchema = (t: LocaleType) => {
         .max(200, t.generalInfo.errors.maxFieldLength(200))
         .regex(aboutMeRegex, t.generalInfo.errors.regexAboutMe)
     ),
-    city: z.nullable(z.string().trim()),
-    country: z.nullable(z.string()),
-    dateOfBirth: z.date().refine(
+    birthDate: z.date().refine(
       data => {
         if (data === null) {
           return true
@@ -35,6 +34,8 @@ export const profileSettingsSchema = (t: LocaleType) => {
         message: t.generalInfo.errors.under13,
       }
     ),
+    city: z.nullable(z.string().trim()),
+    country: z.nullable(z.string()),
     firstname: z
       .string()
       .trim()
@@ -63,9 +64,9 @@ export type FormGeneralInfo = z.infer<ReturnType<typeof profileSettingsSchema>>
 export const useGeneralInfoForm = (
   onSubmit: SubmitHandler<{
     aboutMe: null | string
+    birthDate: Date
     city: null | string
     country: null | string
-    dateOfBirth: Date
     firstname: string
     lastname: string
     username: null | string
@@ -73,18 +74,19 @@ export const useGeneralInfoForm = (
   profile: ProfileProps | undefined,
   myUserName: string | undefined
 ) => {
+  //console.log('profile useGeneralInfoForm', profile)
   const { t } = useTranslation()
   const { handleSubmit, ...rest } = useForm<FormGeneralInfo>({
     defaultValues: {
       aboutMe: profile?.aboutMe ?? '',
+      birthDate: profile?.birthDate ? parseISO(`${profile.birthDate}`) : new Date(),
       city: profile?.city ?? '',
-      country: profile?.city ?? '',
-      dateOfBirth: profile?.dateOfBirth ? profile?.dateOfBirth : new Date(),
+      country: '',
       firstname: profile?.firstname ?? '',
-      lastname: profile?.lastname ?? '',
+      lastname: profile ? profile.lastname : '',
       username: myUserName ?? '',
     },
-    mode: 'onSubmit',
+    mode: 'onChange',
     resolver: zodResolver(profileSettingsSchema(t)),
   })
 
