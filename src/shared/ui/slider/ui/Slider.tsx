@@ -1,4 +1,4 @@
-import React, { TouchEvent, createContext, useEffect, useState } from 'react'
+import React, { TouchEvent, useEffect, useState } from 'react'
 
 import { SliderContext } from '../model/sliderContext'
 import Arrows from './arrows/Arrows'

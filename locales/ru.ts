@@ -47,6 +47,7 @@ export const ru = {
     backToSignUp: 'Вернуться к регистрации ',
     forgotPassword: 'Забыли пароль',
     newPass: 'Создать новый пароль',
+    profileSettings: 'Настройки профиля',
     resendLink: 'Отправить ссылку повторно',
     sendLink: 'Отправить ссылку',
     signIn: 'Войти',

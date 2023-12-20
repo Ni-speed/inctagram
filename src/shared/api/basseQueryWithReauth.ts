@@ -12,7 +12,6 @@ const baseQuery = fetchBaseQuery({
   credentials: 'include',
   prepareHeaders: (headers, { endpoint }) => {
     if (
-      endpoint === 'getMe' ||
       endpoint === 'updateProfile' ||
       endpoint === 'uploadAvatar' ||
       endpoint === 'deleteAvatar'

@@ -1,0 +1,17 @@
+.container {
+    max-width: 972px;
+    padding-top: 24px;
+    margin: 0 auto;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+
+        .posts {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+}
