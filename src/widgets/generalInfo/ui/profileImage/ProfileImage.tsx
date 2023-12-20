@@ -28,12 +28,15 @@ export const ProfileImage = memo(({ avatars = '' }: ProfileImageProps) => {
   const [avatarEditMode, setAvatarEditMode] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
   const uploadHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    console.log('HTMLInputElement', e)
     const uploadInput = e.target
 
     if (uploadInput instanceof HTMLInputElement && uploadInput.files && uploadInput.files.length) {
       const file = uploadInput.files[0]
+      const file1 = uploadInput.files[0]
 
-      if (!file) {
+      console.log(file1)
+      if (!file && !file1) {
         return setUploadError(t.generalInfo.imageUploadError)
       }
       const fileName = file.name.toLowerCase()
@@ -53,7 +56,8 @@ export const ProfileImage = memo(({ avatars = '' }: ProfileImageProps) => {
 
         reader.addEventListener('load', previewPhoto.bind(this, reader))
         reader.readAsDataURL(file)
-        setNewAvatarFile(file)
+        //setNewAvatarFile(file)
+        setNewAvatarFile(file1)
       } else if (!matches) {
         setUploadError(t.generalInfo.imageFormatError)
       } else {
