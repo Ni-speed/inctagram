@@ -11,5 +11,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const PublicPostItem: Story = {
-  args: {},
+  args: {
+    description: 'ffffff',
+    items: [{ title: 'string', url: 'string' }],
+    time: 'dasdsad',
+    user: { avatar: 'string', name: 'string' },
+  },
 }

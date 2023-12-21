@@ -1,9 +1,10 @@
-import { PublicPost } from '../entities/publicPost/ui/PublicPost'
-import { getLayout } from '../widgets'
-import { CountUser } from '../widgets/countUsers/CountUser'
+import { PublicPost } from '@/entities/publicPost/ui/PublicPost'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { getLayout } from '@/widgets'
+import { CountUser } from '@/widgets/countUsers/CountUser'
 
 import s from './publicPage.module.scss'
+
 function Home() {
   return (
     <div className={s.container}>

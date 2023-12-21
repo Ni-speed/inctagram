@@ -10,12 +10,17 @@ const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({
   baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
   credentials: 'include',
-  //   prepareHeaders: (headers, { endpoint }) => {
-  //     if (endpoint === 'getMe') {
-  //       headers.set('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
-  //     }
-  //     return headers
-  //   },
+  prepareHeaders: (headers, { endpoint }) => {
+    if (
+      endpoint === 'updateProfile' ||
+      endpoint === 'uploadAvatar' ||
+      endpoint === 'deleteAvatar'
+    ) {
+      headers.set('Authorization', `Bearer ${localStorage.getItem('accessToken')}`)
+    }
+
+    return headers
+  },
 })
 
 export const baseQueryWithReauth: BaseQueryFn<

@@ -15,9 +15,9 @@ type PropsType = {}
 export const Profile: FC<PropsType> = () => {
   //TODO need fix Internationalization & add useTranslation
   const { data: meData, isLoading: isLoadingMe } = useGetMeQuery()
-  const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery(
-    meData?.id ?? skipToken
-  )
+  const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
+    profileId: meData?.id ?? skipToken,
+  })
 
   const isOwnProfile = meData?.id === profileData?.id
   const isFriend = profileData?.isFriend ?? true
