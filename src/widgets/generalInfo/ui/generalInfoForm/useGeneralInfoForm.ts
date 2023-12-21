@@ -80,7 +80,7 @@ export const useGeneralInfoForm = (
     defaultValues: {
       aboutMe: profile?.aboutMe ?? '',
       birthDate: profile?.birthDate ? parseISO(`${profile.birthDate}`) : new Date(),
-      city: profile?.city ?? '',
+      city: profile?.city ?? 'City',
       country: '',
       firstname: profile?.firstname ?? '',
       lastname: profile ? profile.lastname : '',
