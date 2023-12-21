@@ -25,7 +25,11 @@ export const ProfileButtons: FC<ProfileButtonsProps> = ({
   return (
     <>
       {isOwnProfile ? (
-        <Button as={'a'} onClick={() => router.push('/profileSettings')} variant={'secondary'}>
+        <Button
+          as={'a'}
+          onClick={() => router.push('/profile/profileSettings/generalInfo')}
+          variant={'secondary'}
+        >
           <Typography variant={'h3'}>Profile Settings</Typography>
         </Button>
       ) : (
