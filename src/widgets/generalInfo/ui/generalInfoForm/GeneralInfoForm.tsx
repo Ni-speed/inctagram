@@ -21,6 +21,7 @@ export type ProfileProps = {
   createdAt?: Date
   firstname: string
   id?: number
+  isFriend?: boolean
   lastname: string
   username: null | string
 }
