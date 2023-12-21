@@ -156,7 +156,7 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
                   <Cropper
                     ref={cropperRef}
                     src={previewAvatar}
-                    style={{ maxHeight: '316px', width: '316px' }}
+                    style={{ maxHeight: '340px', width: '332px' }}
                   />
                 )}
               </div>
