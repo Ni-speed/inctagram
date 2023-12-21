@@ -49,7 +49,7 @@ export type ErrorResponse = ReturnType<typeof serverErrorSignUp>
 export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>
 export type GetProfileResponseType = {
   aboutMe?: null | string
-  avatars?: AvatarType[]
+  avatars: AvatarType[]
   birthDate?: Date
   city?: null | string
   createdAt?: Date

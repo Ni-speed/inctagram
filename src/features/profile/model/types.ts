@@ -15,7 +15,7 @@ export type GetProfileResponse = {
   lastname: string
   username: string
 }
-export type ArgGetProfile = { profileId: number | string | symbol | undefined }
+export type ArgGetProfile = { profileId: string | symbol | undefined }
 
 export type ArgUpdateProfile = {
   aboutMe: null | string
