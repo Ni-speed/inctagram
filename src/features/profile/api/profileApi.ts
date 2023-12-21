@@ -1,3 +1,4 @@
+/*
 import {
   ArgGetProfile,
   ArgUpdateProfile,
@@ -55,3 +56,4 @@ export const {
   useUpdateProfileMutation,
   useUploadAvatarMutation,
 } = profileAPI
+*/

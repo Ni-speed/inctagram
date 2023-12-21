@@ -1,3 +1,4 @@
+import { ArgGetProfile } from '@/features'
 import {
   AvatarsType,
   GetProfileResponseType,
@@ -7,7 +8,7 @@ import { PROFILE, baseApi } from '@/shared/api'
 
 export const profileApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    deleteAvatar: build.mutation<any, any>({
+    deleteAvatar: build.mutation<any, void>({
       query: () => ({
         method: 'DELETE',
         url: `users/profile/avatar`,
@@ -21,12 +22,12 @@ export const profileApi = baseApi.injectEndpoints({
         url: `users/profile/${id}`,
       }),
     }),
-    getProfile: build.query<GetProfileResponseType, string>({
+    getProfile: build.query<GetProfileResponseType, ArgGetProfile>({
       providesTags: [PROFILE],
 
-      query: id => ({
+      query: ({ profileId }) => ({
         method: 'GET',
-        url: `users/profile/${id}`,
+        url: `users/profile/${profileId}`,
       }),
     }),
     updateProfile: build.mutation<any, ProfileRequestType>({
