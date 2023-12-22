@@ -27,7 +27,7 @@ export const profileApi = baseApi.injectEndpoints({
 
       query: ({ profileId }) => ({
         method: 'GET',
-        url: `users/profile/${profileId}`,
+        url: `users/profile/${String(profileId)}`,
       }),
     }),
     updateProfile: build.mutation<any, ProfileRequestType>({
