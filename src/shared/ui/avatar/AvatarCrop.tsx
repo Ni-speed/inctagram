@@ -8,13 +8,9 @@ import 'cropperjs/dist/cropper.css'
 type ImageCropperProps = {
   onCrop: (croppedImage: any) => void
 }
-type CustomCropper = Cropper & {
-  cropper: {
-    getCroppedCanvas(): HTMLCanvasElement
-  }
-}
+
 const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
-  const cropperRef = useRef<CustomCropper | null>(null)
+  const cropperRef = useRef<Cropper | null>(null)
   const [imageSrc, setImageSrc] = useState<null | string>(null)
   const [ava, setAva] = useState<any>('')
 
@@ -60,7 +56,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
 
   const handleCropClick = () => {
     if (cropperRef.current) {
-      const croppedCanvas = cropperRef.current.cropper.getCroppedCanvas()
+      const croppedCanvas = cropperRef.current?.getCroppedCanvas()
 
       if (croppedCanvas) {
         const newAva = croppedCanvas.toDataURL()
