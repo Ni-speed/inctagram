@@ -1,4 +1,5 @@
 import React, { ChangeEvent, memo, useCallback, useRef, useState } from 'react'
+// @ts-ignore
 import { Cropper } from 'react-cropper'
 
 import { useDeleteAvatarMutation, useUploadAvatarMutation } from '@/features'
@@ -23,7 +24,7 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
   const [uploadAvatar, { isLoading: isAvatarUploading }] = useUploadAvatarMutation()
   const [deleteAvatar] = useDeleteAvatarMutation()
 
-  const cropperRef = useRef<Cropper>(null)
+  const cropperRef = useRef<Cropper | any>(null)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [url, setUrl] = useState<string>(avatars)
   const [previewAvatar, setPreviewAvatar] = useState<string>('')
