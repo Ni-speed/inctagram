@@ -10,7 +10,7 @@ type ImageCropperProps = {
 }
 
 const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
-  const cropperRef = useRef<Cropper | null>(null)
+  const cropperRef = useRef<Cropper>(null)
   const [imageSrc, setImageSrc] = useState<null | string>(null)
   const [ava, setAva] = useState<any>('')
 
