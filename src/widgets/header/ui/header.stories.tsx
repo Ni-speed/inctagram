@@ -12,19 +12,16 @@ type Story = StoryObj<typeof meta>
 
 export const HeaderWithAuthUser: Story = {
   args: {
-    countNotification: 5,
-    isAuth: true,
+    username: '1',
   },
 }
 export const HeaderWithoutNotification: Story = {
   args: {
-    countNotification: 0,
-    isAuth: true,
+    username: '2',
   },
 }
 export const HeaderWithNotAuthUser: Story = {
   args: {
-    countNotification: 0,
-    isAuth: false,
+    username: '3',
   },
 }

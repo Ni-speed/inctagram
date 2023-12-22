@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { useGetMeQuery } from '../../../features'
 import { BallNotification } from '@/entities/user/ui'
 import { useTranslation } from '@/shared/hooks'
 import { Button, DropDown, LanguageSelect, Typography } from '@/shared/ui'
