@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import Cropper from 'react-cropper'
+import { Cropper, ReactCropperElement } from 'react-cropper'
 
 import { Avatar } from '@/shared/ui/avatar/Avatar'
 
@@ -10,7 +10,7 @@ type ImageCropperProps = {
 }
 
 const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
-  const cropperRef = useRef<Cropper>(null)
+  const cropperRef = useRef<HTMLImageElement | ReactCropperElement | null>(null)
   const [imageSrc, setImageSrc] = useState<null | string>(null)
   const [ava, setAva] = useState<any>('')
 
