@@ -13,11 +13,10 @@ type CustomCropper = Cropper & {
     getCroppedCanvas(): HTMLCanvasElement
   }
 }
-
 const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
-  const cropperRef = useRef<CustomCropper>(null)
+  const cropperRef = useRef<CustomCropper | null>(null)
   const [imageSrc, setImageSrc] = useState<null | string>(null)
-  const [ava, setAva] = useState<string>('')
+  const [ava, setAva] = useState<any>('')
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
@@ -61,7 +60,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
 
   const handleCropClick = () => {
     if (cropperRef.current) {
-      const croppedCanvas = cropperRef.current.crop().getCroppedCanvas()
+      const croppedCanvas = cropperRef.current.cropper.getCroppedCanvas()
 
       if (croppedCanvas) {
         const newAva = croppedCanvas.toDataURL()
