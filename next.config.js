@@ -8,13 +8,15 @@ const nextConfig = {
     locales: ['en', 'ru'],
   },
   images: {
-    domains: ['lh3.googleusercontent.com', 'avatars.githubusercontent.com'],
-    remotePatterns: [
-      {
-        hostname: 'rickandmortyapi.com',
-        pathname: '/api/character/avatar/**',
-        protocol: 'https',
-      },
+    domains: [
+      'png.pngtree.com',
+      'img.championat.com',
+      'cs11.livemaster.ru',
+      'encrypted-tbn0.gstatic.com',
+      'i.pinimg.com',
+      'lh3.googleusercontent.com',
+      'avatars.githubusercontent.com',
+      's3-alpha-sig.figma.com',
     ],
   },
   reactStrictMode: true,

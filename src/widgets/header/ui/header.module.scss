@@ -1,9 +1,13 @@
 .header {
-
+    position: fixed;
+    top: 0;
+    z-index: 100;
     display: flex;
     align-items: center;
     height: 60px;
+    width: 100%;
     border-bottom: 1px solid var(--color-dark-300);
+    background-color: var(--color-dark-700);
 
     .container {
         max-width: 1156px;

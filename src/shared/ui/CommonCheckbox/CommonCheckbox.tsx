@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { CheckboxCheckedDisabled, СheckboxChecked } from '../../assets/svg'
+import { CheckboxChecked, CheckboxCheckedDisabled } from '../../assets/svg'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
 import s from './CommonCheckbox.module.scss'
@@ -36,7 +36,7 @@ export const CommonCheckbox: React.FC<CheckboxPropsType> = ({
           required={required}
         >
           <CheckboxRadix.Indicator asChild className={s.checkboxIndicator}>
-            {!disabled ? <СheckboxChecked /> : <CheckboxCheckedDisabled />}
+            {!disabled ? <CheckboxChecked /> : <CheckboxCheckedDisabled />}
           </CheckboxRadix.Indicator>
         </CheckboxRadix.Root>
       </div>

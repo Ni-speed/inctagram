@@ -1,3 +1,4 @@
-export const TAG_ONE = 'TAG_ONE'
-export const TAG_TWO = 'TAG_TWO'
-export const TAG_THREE = 'TAG_THREE'
+export const GET_ME = 'GetMeTag'
+export const PROFILE = 'ProfileTag'
+//export const GET_ME = 'GetMe'
+//export const Profile = 'Profile'

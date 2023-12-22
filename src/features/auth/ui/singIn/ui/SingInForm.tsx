@@ -15,13 +15,14 @@ import s from './singInForm.module.scss'
 type SingInFormProps = {
   className?: string
   errorMessage?: LoginErrors
+  isQuery: boolean
   onSubmit: SubmitHandler<{
     email: string
     password: string
   }>
 }
 
-export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProps) => {
+export const SingInForm = ({ className, errorMessage, isQuery, onSubmit }: SingInFormProps) => {
   const { control, handleSubmit, setError } = useSingInForm(onSubmit)
   const { t } = useTranslation()
 
@@ -71,7 +72,7 @@ export const SingInForm = ({ className, errorMessage, onSubmit }: SingInFormProp
             </Typography>
           </Link>
         </div>
-        <Button className={s.button} fullWidth type={'submit'}>
+        <Button className={s.button} disabled={isQuery} fullWidth type={'submit'}>
           <Typography variant={'h3'}>{t.linksButtons.signIn}</Typography>
         </Button>
       </form>

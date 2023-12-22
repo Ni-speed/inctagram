@@ -1,25 +1,24 @@
 import { ReactElement } from 'react'
 
-import { useGetMeQuery, useLogoutMutation } from '../../../features'
 import { createSidebarListsItem } from '../lib/createSidebarListsItem'
 import { SidebarItemsType, useSidebarItems } from '../lib/useSidebarItems'
+import { Undefineable } from '@/shared'
 
 import s from './sidebar.module.scss'
 
-export const Sidebar = ({}) => {
-  const [logout] = useLogoutMutation()
-  const {
-    data: { id },
-  } = useGetMeQuery()
+type PropsType = {
+  accountPaid: boolean
+  id: Undefineable<string>
+  logout: () => void
+}
+
+export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
   const sidebarItems = useSidebarItems()
-  const accountPaid = true
   const sidebarList: ReactElement[] = []
 
   const addSidebarItemInList = (key: string, sidebarItems: SidebarItemsType) => {
     return sidebarList.push(
       createSidebarListsItem({
-        classNameButton: s.button,
-        classNameLink: s.item,
         id,
         items: sidebarItems,
         key,
@@ -39,7 +38,7 @@ export const Sidebar = ({}) => {
   }
 
   return (
-    <aside>
+    <aside className={s.aside}>
       <ul className={s.sidebarList}>{sidebarList}</ul>
     </aside>
   )

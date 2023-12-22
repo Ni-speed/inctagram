@@ -1,0 +1,59 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  margin-left: 24px;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+    width: 100%;
+    padding-bottom: 23px;
+
+    border-bottom: solid 1px var(--color-dark-300);
+
+    .profileImage {
+      width: 192px;
+      height: 252px;
+    }
+
+    .profileForm {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: 100%;
+
+      .username {
+        width: 100%;
+      }
+
+      .textField {
+        width: 100%;
+      }
+
+      .dataPicker {
+        width: 100%;
+      }
+
+      .area {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        width: 100%;
+
+        .areaItem {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .buttonSubmit {
+    width: 156px;
+    height: 36px;
+    margin-top: 24px;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,38 @@
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+
+  height: 36px;
+  margin-top: 36px;
+
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    text-align: center;
+
+    border-bottom: 2px solid var(--color-dark-100);
+
+    &:hover {
+      color: var(--color-accent-500);
+      border-color: var(--color-accent-500);
+    }
+
+    &:active {
+      color: var(--color-accent-100);
+      border-color: var(--color-accent-100);
+    }
+  }
+
+  .activeLink {
+    color: var(--color-accent-500);
+    border-color: var(--color-accent-500);
+  }
+}

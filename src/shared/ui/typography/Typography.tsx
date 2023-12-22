@@ -21,7 +21,7 @@ type TypographyProps<T extends ElementType = 'p'> = {
     | 'smallText'
 } & ComponentPropsWithoutRef<T>
 export const Typography = <T extends ElementType = 'p'>(props: TypographyProps<T>) => {
-  const { as: Component = 'p', className, variant = 'body1', ...rest } = props
+  const { as: Component = 'span', className, variant = 'regularText16', ...rest } = props
 
   return <Component className={`${s[variant]} ${className}`} {...rest}></Component>
 }

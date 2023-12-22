@@ -27,6 +27,7 @@ option {
 
 a {
     text-decoration: none;
+    color: #fff
 }
 
 a:visited {
@@ -46,6 +47,12 @@ body {
 
 }
 
-ul {
-    padding: 0
+ul,
+li {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
 }

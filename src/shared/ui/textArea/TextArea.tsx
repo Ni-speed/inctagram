@@ -9,12 +9,14 @@ export type TextFieldProps = {
   error?: string
   errorMessage?: string
   label?: string
+  onBlur?: () => void
   onChangeValue?: (value: string) => void
   onClearClick?: () => void
   onEnter?: ComponentPropsWithoutRef<'textarea'>['onKeyDown']
   onLeftIconClickHandler?: () => void
   onRightIconClickHandler?: () => void
   search?: boolean
+  value: string | undefined
 } & ComponentPropsWithoutRef<'textarea'>
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, ref) => {
@@ -23,6 +25,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
     error,
     errorMessage,
     label,
+    onBlur,
     onChange,
     onChangeValue,
     onClearClick,
@@ -31,11 +34,13 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
     onLeftIconClickHandler,
     onRightIconClickHandler,
     search = false,
+    value,
     ...rest
   } = props
 
   const onChangeValueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
     onChange?.(e)
+    console.log(e.currentTarget.value)
     onChangeValue?.(e.currentTarget.value)
   }
   const onKeyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -62,9 +67,11 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
         <textarea
           className={`${s.textArea} ${error ? s.error : ''}`}
           disabled={disabled}
+          onBlur={onBlur}
           onChange={onChangeValueHandler}
           onKeyDown={onKeyPressHandler}
           ref={ref}
+          value={value}
           {...rest}
         />
       </div>

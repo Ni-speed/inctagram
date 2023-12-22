@@ -14,6 +14,7 @@ import s from './registerForm.module.scss'
 type RegisterFormPropsType = {
   className?: string
   errorMessage?: LoginErrors
+  isQuery?: boolean
   onSubmit: SubmitHandler<{
     email: string
     login: string
@@ -21,22 +22,18 @@ type RegisterFormPropsType = {
   }>
 }
 
-export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterFormPropsType) => {
-  console.log(errorMessage)
-
-  const {
-    control,
-    formState: { isValid },
-    handleSubmit,
-    reset,
-    setError,
-  } = useRegisterForm(onSubmit)
+export const RegisterForm = ({
+  className,
+  errorMessage,
+  isQuery,
+  onSubmit,
+}: RegisterFormPropsType) => {
+  const { control, handleSubmit, setError } = useRegisterForm(onSubmit)
   const { t } = useTranslation()
 
   const handleSubmitForm = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     await handleSubmit()
-    reset()
   }
 
   useEffect(() => {
@@ -104,7 +101,7 @@ export const RegisterForm = ({ className, errorMessage, onSubmit }: RegisterForm
           }
           name={'privacyPolicy'}
         ></ControlledCheckbox>
-        <Button className={s.button} disabled={!isValid} fullWidth type={'submit'}>
+        <Button className={s.button} disabled={isQuery} fullWidth type={'submit'}>
           <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
         </Button>
       </form>

@@ -19,46 +19,46 @@ export const useSidebarItems = () => {
   const sidebarItems = {
     home: {
       icon: <Home className={s.icon} />,
-      title: <Typography variant={'mediumText14'}>{t.sidebar.home}</Typography>,
-      url: '/home',
+      title: t.sidebar.home,
+      url: '/',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     create: {
       icon: <Plus className={s.icon} />,
-      title: <Typography variant={'mediumText14'}> {t.sidebar.create}</Typography>,
+      title: t.sidebar.create,
       url: '/create',
     },
     myProfile: {
       icon: <User className={s.icon} />,
-      title: <Typography variant={'mediumText14'}> {t.sidebar.myProfile}</Typography>,
+      title: t.sidebar.myProfile,
       url: '/profile',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     messenger: {
       icon: <Message className={s.icon} />,
-      title: <Typography variant={'mediumText14'}>{t.sidebar.messenger}</Typography>,
+      title: t.sidebar.messenger,
       url: '/messenger',
     },
     search: {
       icon: <SearchSvg className={`${s.icon} ${s.search}`} />,
-      title: <Typography variant={'mediumText14'}> {t.sidebar.search}</Typography>,
+      title: t.sidebar.search,
       url: '/search',
     },
     statistics: {
       icon: <Statistics className={s.icon} />,
-      title: <Typography variant={'mediumText14'}>{t.sidebar.statistics}</Typography>,
+      title: t.sidebar.statistics,
       url: '/statistics',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     favorites: {
       icon: <Favorite className={s.icon} />,
-      title: <Typography variant={'mediumText14'}>{t.sidebar.favorites}</Typography>,
+      title: t.sidebar.favorites,
       url: '/favorites',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     logout: {
       icon: <Logout className={s.icon} />,
-      title: <Typography variant={'mediumText14'}> {t.sidebar.logOut}</Typography>,
+      title: t.sidebar.logOut,
       url: '',
     },
   }

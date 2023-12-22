@@ -1,18 +1,19 @@
 import React from 'react'
 
-import { useTranslation } from '../../../shared/hooks'
 import { BallNotification } from '@/entities/user/ui'
+import { useTranslation } from '@/shared/hooks'
 import { Button, DropDown, LanguageSelect, Typography } from '@/shared/ui'
+import { useRouter } from 'next/router'
 
 import s from './header.module.scss'
 
-type HeaderPropsType = {
-  countNotification: number
-  isAuth: boolean
+type HeaderProp = {
+  username: string | undefined
 }
 
-export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
+export const Header = ({ username }: HeaderProp) => {
   const { t } = useTranslation()
+  const router = useRouter()
 
   return (
     <header className={s.header}>
@@ -21,7 +22,7 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
           <Typography variant={'large'}>Inctagram</Typography>
         </div>
         <div className={s.blockButton}>
-          {isAuth && (
+          {!!username && (
             <DropDown
               items={[
                 'sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf',
@@ -32,18 +33,22 @@ export const Header = ({ countNotification, isAuth }: HeaderPropsType) => {
               modal
               trigger={
                 <div className={s.ball} style={{ display: 'inline-block', height: '20px' }}>
-                  <BallNotification countNotification={countNotification}></BallNotification>
+                  <BallNotification countNotification={5}></BallNotification>
                 </div>
               }
             ></DropDown>
           )}
           <LanguageSelect />
-          {isAuth || (
+          {!!username || (
             <>
-              <Button className={s.middleButton} variant={'text'}>
+              <Button
+                className={s.middleButton}
+                onClick={() => router.push('/signIn')}
+                variant={'text'}
+              >
                 <Typography variant={'h3'}>{t.linksButtons.signIn}</Typography>
               </Button>
-              <Button variant={'primary'}>
+              <Button onClick={() => router.push('/signUp')} variant={'primary'}>
                 <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
               </Button>
             </>

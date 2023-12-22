@@ -1,44 +1,77 @@
-.sidebarList {
-    display: flex;
-    flex-direction: column;
-    // gap: 24px;
-    margin: 72px 49px 36px 60px;
-    max-width: 150px;
-    height: 552px;
+.aside {
+    position: fixed;
+    top: 60px;
 
-    .button {
+    .sidebarList {
         display: flex;
-        justify-content: flex-start;
-        gap: 12px;
-        height: 24px;
-        margin-top: 180px;
-        margin-bottom: 0;
-        padding: 0;
+        flex-direction: column;
+        padding-right: 49px;
+        min-width: 180px;
+        height: calc(100vh - 60px);
+        border-right: 1px solid var(--color-dark-300);
+
+
+        .itemWrapper {
+            height: 24px;
+            margin-bottom: 24px;
+
+            &:nth-child(1) {
+                margin-top: 72px;
+            }
+
+            &:nth-child(5) {
+                margin-bottom: auto;
+            }
+
+            &:last-child {
+                margin-top: 20vh;
+            }
+
+            &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
+
+            .button {
+                display: flex;
+                justify-content: flex-start;
+                gap: 12px;
+                height: 24px;
+
+                color: var(--color-light-100);
+
+                .icon {
+                    fill: var(--color-light-100);
+                }
+
+                &:hover .text {
+                    color: var(--color-accent-100)
+                }
+
+                &:hover .icon {
+                    fill: var(--color-accent-100);
+                }
+            }
+
+            .item {
+
+                display: flex;
+                gap: 12px;
+                height: 24px;
+
+                .icon {
+                    fill: var(--color-light-100);
+                }
+
+                &:hover .text {
+                    color: var(--color-accent-100)
+                }
+
+                &:hover .icon {
+                    fill: var(--color-accent-100);
+                }
+            }
+        }
     }
-
-    .item {
-        display: flex;
-        gap: 12px;
-        height: 24px;
-        margin-bottom: 24px;
-
-        &:nth-child(5) {
-            margin-bottom: auto;
-        }
-
-        &:last-child {
-            margin-top: 180px;
-            margin-bottom: 0;
-        }
-
-        &:nth-last-child(2) {
-            margin-bottom: 0;
-        }
-    }
-}
-
-.icon {
-    fill: var(--color-light-100);
 }
 
 .search {
