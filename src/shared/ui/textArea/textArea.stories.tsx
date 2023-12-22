@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import { TextArea } from './TextArea'
+import { TextArea } from '@/shared'
 
 const meta = {
   component: TextArea,
@@ -15,6 +15,7 @@ export const Default: Story = {
   args: {
     label: 'Default Label ',
     placeholder: 'Text-area',
+    value: '',
   },
 }
 
@@ -22,6 +23,7 @@ export const Active: Story = {
   args: {
     label: 'Active',
     placeholder: 'Text-area',
+    value: '',
   },
 }
 
@@ -37,5 +39,6 @@ export const Disabled: Story = {
     disabled: true,
     label: 'Disabled',
     placeholder: 'Text-area',
+    value: '',
   },
 }
