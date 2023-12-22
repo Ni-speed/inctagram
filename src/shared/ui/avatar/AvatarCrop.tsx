@@ -56,7 +56,7 @@ const ImageCropper: React.FC<ImageCropperProps> = ({ onCrop }) => {
 
   const handleCropClick = () => {
     if (cropperRef.current) {
-      const croppedCanvas = cropperRef.current?.getCroppedCanvas()
+      const croppedCanvas = cropperRef.current?.getCroppedCanvas() as HTMLCanvasElement | null
 
       if (croppedCanvas) {
         const newAva = croppedCanvas.toDataURL()
