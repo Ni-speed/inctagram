@@ -8,14 +8,16 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@/shared/assets/svg'
 import { CalendarDefault } from '@/shared/assets/svg/calendarIconDefault'
 import { Label } from '@/shared/ui/label/Label'
 import { clsx } from 'clsx'
-import { format } from 'date-fns'
+import { format, isThisMonth, isToday } from 'date-fns'
 import { enUS, ru } from 'date-fns/locale'
 
 //don't touch this
 
-import 'react-datepicker/dist/react-datepicker.min.css'
+import { isWeekend } from 'date-fns/fp'
+
 // eslint-disable-next-line perfectionist/sort-imports
 import s from './DatePicker.module.scss'
+import 'react-datepicker/dist/react-datepicker.min.css'
 
 const RDPC = (((RDP.default as any).default as any) ||
   (RDP.default as any) ||
@@ -50,7 +52,12 @@ export const DatePicker: FC<DatePickerProps> = ({
 
   const classNames = {
     calendar: s.calendar,
-    day: () => s.day,
+    day: (date: Date) => {
+      const weekend = isWeekend(date) && s.weekend
+      const dayClassName = `${s.day} ${weekend}`
+
+      return dayClassName
+    },
     errorText: s.errorText,
     input: clsx(s.input, showError && s.error, isRange && s.range),
     inputContainer: s.inputContainer,
@@ -74,10 +81,9 @@ export const DatePicker: FC<DatePickerProps> = ({
       <RDPC
         calendarClassName={classNames.calendar}
         calendarStartDay={1}
-        className={classNames.input}
         customInput={<CustomInput disabled={disabled} label={label} />}
         dateFormat={'dd/MM/yyyy'}
-        dayClassName={classNames.day}
+        // dayClassName={classNames.day}
         disabled={disabled}
         endDate={endDate}
         formatWeekDay={formatWeekDay}
@@ -94,6 +100,7 @@ export const DatePicker: FC<DatePickerProps> = ({
           },
         ]}
         renderCustomHeader={CustomHeader}
+        renderDayContents={CustomDay}
         selected={startDate}
         selectsRange={isRange}
         showPopperArrow={false}
@@ -111,12 +118,12 @@ type CustomInputProps = {
 
 const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
   ({ disabled, label, ...rest }, ref) => {
+    const [isActive, setIsActive] = useState<boolean>(false)
     const classNames = {
       icon: clsx(s.icon, disabled && s.disabled),
+      input: clsx(s.input, isActive ? s.openInput : s.closedInput),
       inputContainer: s.inputContainer,
     }
-
-    const [isActive, setIsActive] = useState<boolean>(false)
 
     return (
       <Label label={label}>
@@ -125,7 +132,13 @@ const CustomInput = forwardRef<HTMLInputElement, CustomInputProps>(
           onBlur={() => setIsActive(false)}
           onFocus={() => setIsActive(true)}
         >
-          <input disabled={disabled} ref={ref} type={'text'} {...rest} />
+          <input
+            {...rest}
+            className={classNames.input}
+            disabled={disabled}
+            ref={ref}
+            type={'text'}
+          />
           <div className={classNames.icon}>{isActive ? <CalendarIcon /> : <CalendarDefault />}</div>
         </div>
       </Label>
@@ -157,8 +170,13 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
     </div>
   )
 }
+const CustomDay = (dayOfMonth: number, date?: Date | undefined) => {
+  const dayClassName = `${s.day} ${date && isWeekend(date) ? s.weekend : s.notWeekend} ${
+    date && isToday(date) && s.today
+  } ${date && isThisMonth(date) && s.notThisMonth}`
 
-// const formatWeekDay = (day: Date) => capitalizeFirstLetter(format(day, 'iiiiii', { locale: ru }))
+  return <span className={dayClassName}>{dayOfMonth}</span>
+}
 const formatWeekDay = (day: string) => capitalizeFirstLetter(day.substring(0, 2))
 
 const capitalizeFirstLetter = (text: string) => {
