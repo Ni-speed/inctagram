@@ -7,6 +7,7 @@ import { Typography } from '@/shared'
 import { HeroProfilePlaceholder } from '@/widgets/heroProfilePlaceholder/HeroProfilePlaceholder'
 import { skipToken } from '@reduxjs/toolkit/query'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import s from './profile.module.scss'
 
@@ -14,6 +15,7 @@ type PropsType = {}
 
 export const Profile: FC<PropsType> = () => {
   //TODO need fix Internationalization & add useTranslation
+  const router = useRouter()
   const { data: meData, isLoading: isLoadingMe } = useGetMeQuery()
   const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
     profileId: meData?.id ?? skipToken,

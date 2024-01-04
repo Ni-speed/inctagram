@@ -7,7 +7,7 @@ import type {
   Token,
 } from '../model/types'
 
-import { GET_ME, PROFILE, baseApi } from '@/shared/api'
+import { GET_ME, baseApi } from '@/shared/api'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({

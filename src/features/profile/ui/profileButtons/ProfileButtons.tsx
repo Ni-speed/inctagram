@@ -27,7 +27,7 @@ export const ProfileButtons: FC<ProfileButtonsProps> = ({
       {isOwnProfile ? (
         <Button
           as={'a'}
-          onClick={() => router.push('/profile/profileSettings/generalInfo')}
+          onClick={() => router.push(`/profileSettings/generalInfo/${router.query.id}`)}
           variant={'secondary'}
         >
           <Typography variant={'h3'}>Profile Settings</Typography>

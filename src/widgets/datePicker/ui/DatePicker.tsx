@@ -173,7 +173,7 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
 const CustomDay = (dayOfMonth: number, date?: Date | undefined) => {
   const dayClassName = `${s.day} ${date && isWeekend(date) ? s.weekend : s.notWeekend} ${
     date && isToday(date) && s.today
-  } ${date && isThisMonth(date) && s.notThisMonth}`
+  } `
 
   return <span className={dayClassName}>{dayOfMonth}</span>
 }
