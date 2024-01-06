@@ -1,4 +1,5 @@
 export * from './Modal'
 export * from './modal.module.scss'
+export { ModalAddPost } from './modalAddPost'
 export { ModalEmailSent } from './modalEmailSent'
 export { ModalInputEmail } from './modalInputEmail'

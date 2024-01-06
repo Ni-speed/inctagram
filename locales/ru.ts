@@ -66,6 +66,13 @@ export const ru = {
       password: 'Введите пароль',
     },
   },
+  modalAddPost: {
+    button: {
+      openDraft: 'Как перевести?',
+      selectFromComputer: 'Выбрать с компьютера',
+    },
+    title: 'Добавить фото',
+  },
   modalEmailSent: {
     button: 'OK',
     mailResend: 'Cсылка для подтверждения вашего электронного ящика отправлена повторно на',
@@ -73,6 +80,7 @@ export const ru = {
     textSignUp: 'Мы отправили ссылку для подтверждения вашего электронного ящика на',
     title: 'Электронное письмо отправлено',
   },
+
   modalInputEmail: {
     button: 'OK',
     title: 'Введите адрес электронной почты',

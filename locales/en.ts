@@ -67,6 +67,13 @@ export const en: LocaleType = {
       password: 'Enter your password',
     },
   },
+  modalAddPost: {
+    button: {
+      openDraft: 'Open Draft',
+      selectFromComputer: 'Select from Computer',
+    },
+    title: 'Add Photo',
+  },
   modalEmailSent: {
     button: 'ОК',
     mailResend: 'Link to confirm your email resend to',
