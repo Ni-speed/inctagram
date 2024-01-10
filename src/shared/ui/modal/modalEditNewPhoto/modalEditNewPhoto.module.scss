@@ -1,0 +1,25 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow {
+        cursor: pointer;
+    }
+
+    .next {
+        color: var(--color-accent-500)
+    }
+}
+
+.imageContainer {
+    height: 503px;
+    position: relative;
+    margin: -24px;
+
+
+    .image {
+        object-fit: contain;
+        border-radius: 1px;
+    }
+}

@@ -35,7 +35,7 @@ export const ru = {
     lastname: 'Фамилия пользователя',
     saveChanges: 'Сохранить',
     saveSettingsChange: 'Сохранить изменения',
-    selectImage: 'Выбрать изображение с этого компьютера',
+    selectImage: 'Выбрать с компьютера',
     username: '"Ник" пользователя',
   },
   languageSelector: {
@@ -68,10 +68,17 @@ export const ru = {
   },
   modalAddPost: {
     button: {
+      discard: 'Отменить',
+      next: 'Дальше',
       openDraft: 'Как перевести?',
+      saveDraft: 'Завершить',
       selectFromComputer: 'Выбрать с компьютера',
     },
-    title: 'Добавить фото',
+    textOne: 'Вы действительно хотите завершить создание публикации?',
+    textTwo: 'Если вы закроете, прогресс будет удален',
+    titleAddFhoto: 'Добавить фото',
+    titleCloseCreation: 'Завершить',
+    titleEditFhoto: 'Редактирование',
   },
   modalEmailSent: {
     button: 'OK',

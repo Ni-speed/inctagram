@@ -13,7 +13,7 @@ type PropsType = {
 }
 
 export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpenModal, setIsOpenModal] = useState(false)
   const sidebarItems = useSidebarItems()
   const sidebarList: ReactElement[] = []
 
@@ -24,7 +24,7 @@ export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
         items: sidebarItems,
         key,
         onClickCreateHandler: () => {
-          setIsOpen(true)
+          setIsOpenModal(true)
         },
         onClickLogoutHandler: logout,
       })
@@ -44,7 +44,7 @@ export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
   return (
     <aside className={s.aside}>
       <ul className={s.sidebarList}>{sidebarList}</ul>
-      <ModalAddPost isOpen={isOpen} onClose={() => setIsOpen(false)}></ModalAddPost>
+      <ModalAddPost isOpen={isOpenModal} onClose={() => setIsOpenModal(false)}></ModalAddPost>
     </aside>
   )
 }

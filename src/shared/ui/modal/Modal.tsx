@@ -12,7 +12,7 @@ export type ModalProps = {
   open: boolean
   showCloseButton?: boolean
   size?: ModalSize
-  title: string
+  title: ReactNode
 }
 
 export const Modal = ({
@@ -23,10 +23,6 @@ export const Modal = ({
   size = 'sm',
   title,
 }: ModalProps) => {
-  function handleModalClosed() {
-    onClose()
-  }
-
   let className
 
   switch (size) {
@@ -44,7 +40,7 @@ export const Modal = ({
   }
 
   return (
-    <Dialog.Root onOpenChange={handleModalClosed} open={open}>
+    <Dialog.Root onOpenChange={onClose} open={open}>
       <Dialog.Portal>
         <Dialog.Overlay className={s.overlay} />
         <Dialog.Content className={`${s.content} ${className}`}>

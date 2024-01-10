@@ -69,10 +69,17 @@ export const en: LocaleType = {
   },
   modalAddPost: {
     button: {
+      discard: 'Discard',
+      next: 'Next',
       openDraft: 'Open Draft',
+      saveDraft: 'Save draft',
       selectFromComputer: 'Select from Computer',
     },
-    title: 'Add Photo',
+    textOne: 'Do you really want to close the creation of a publication?',
+    textTwo: 'If you close everything will be deleted',
+    titleAddFhoto: 'Add Photo',
+    titleCloseCreation: 'Close',
+    titleEditFhoto: 'Cropping',
   },
   modalEmailSent: {
     button: 'ОК',

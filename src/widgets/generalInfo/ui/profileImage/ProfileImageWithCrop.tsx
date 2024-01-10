@@ -3,12 +3,17 @@ import React, { ChangeEvent, memo, useCallback, useRef, useState } from 'react'
 import { Cropper } from 'react-cropper'
 
 import { useDeleteAvatarMutation, useUploadAvatarMutation } from '@/features'
-import { Button, DeleteIcon, Loader, Modal, Typography, useTranslation } from '@/shared'
-import { Avatar } from '@/shared/ui/avatar/Avatar'
 import {
-  permittedFileSize,
+  Button,
+  DeleteIcon,
+  Loader,
+  Modal,
+  Typography,
+  permittedFileSizeForAvatar,
   permittedFileTypes,
-} from '@/widgets/generalInfo/ui/generalInfoForm/imageConst'
+  useTranslation,
+} from '@/shared'
+import { Avatar } from '@/shared/ui/avatar/Avatar'
 
 import s from './ProfileImage.module.scss'
 import 'cropperjs/dist/cropper.css'
@@ -46,7 +51,7 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
         return fileName.endsWith(it)
       })
 
-      if (matches && file.size <= permittedFileSize) {
+      if (matches && file.size <= permittedFileSizeForAvatar) {
         setUploadError('')
         const previewPhoto = function (reader: any) {
           setPreviewAvatar(reader.result)
