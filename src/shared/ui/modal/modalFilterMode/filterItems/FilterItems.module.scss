@@ -1,0 +1,14 @@
+.itemContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+
+    .image {
+        object-fit: contain;
+    }
+
+    .nameFilter {
+        text-align: center;
+    }
+}

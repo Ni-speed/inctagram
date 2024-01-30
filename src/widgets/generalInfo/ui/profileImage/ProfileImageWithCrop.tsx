@@ -1,5 +1,4 @@
 import React, { ChangeEvent, memo, useCallback, useRef, useState } from 'react'
-// @ts-ignore
 import { Cropper } from 'react-cropper'
 
 import { useDeleteAvatarMutation, useUploadAvatarMutation } from '@/features'

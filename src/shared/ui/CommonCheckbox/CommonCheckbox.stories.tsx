@@ -1,4 +1,4 @@
-import { CommonCheckbox } from './CommonCheckbox'
+import { CommonCheckbox } from '.'
 import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {

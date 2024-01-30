@@ -20,11 +20,7 @@ type Props = {
 export const ModalChoosePhoto = (props: Props) => {
   const { nextModal, onClose, open, setPreviewAvatar } = props
   const inputRef = useRef<HTMLInputElement>(null)
-  //   const cropperRef = useRef<Cropper | any>(null)
-  //   const [previewAvatar, setPreviewAvatar] = useState<string>('')
   const [uploadError, setUploadError] = useState<string>('')
-  //   const [avatarEditMode, setAvatarEditMode] = useState(false)
-  //   const [isPhoto, setIsPhoto] = useState(false)
 
   const { t } = useTranslation()
 
@@ -48,8 +44,6 @@ export const ModalChoosePhoto = (props: Props) => {
         const previewPhoto = function (reader: any) {
           setPreviewAvatar(reader.result)
           nextModal(true)
-          //   setAvatarEditMode(true)
-          //   setIsPhoto(true)
         }
 
         const reader = new FileReader()

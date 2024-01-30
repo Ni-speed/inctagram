@@ -10,6 +10,7 @@ export const HeroProfilePlaceholder: FC<PropsType> = ({}) => {
   return (
     <div className={s.posts}>
       <Slider
+        height={'228px'}
         items={[
           {
             title: 'qwe',
@@ -26,6 +27,7 @@ export const HeroProfilePlaceholder: FC<PropsType> = ({}) => {
         ]}
       ></Slider>
       <Slider
+        height={'228px'}
         items={[
           {
             title: 'qwe',
@@ -42,6 +44,7 @@ export const HeroProfilePlaceholder: FC<PropsType> = ({}) => {
         ]}
       ></Slider>
       <Slider
+        height={'228px'}
         items={[
           {
             title: 'qwe',
@@ -58,6 +61,7 @@ export const HeroProfilePlaceholder: FC<PropsType> = ({}) => {
         ]}
       ></Slider>
       <Slider
+        height={'228px'}
         items={[
           {
             title: 'qwe',
@@ -74,6 +78,7 @@ export const HeroProfilePlaceholder: FC<PropsType> = ({}) => {
         ]}
       ></Slider>
       <Slider
+        height={'228px'}
         items={[
           {
             title: 'qwe',

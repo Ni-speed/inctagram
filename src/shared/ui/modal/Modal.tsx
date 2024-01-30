@@ -5,7 +5,7 @@ import { Close } from '../../assets/svg'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import s from './modal.module.scss'
-export type ModalSize = 'lg' | 'md' | 'sm'
+export type ModalSize = 'lg' | 'md' | 'sm' | 'superLg'
 export type ModalProps = {
   children?: ReactNode
   onClose: () => void
@@ -34,6 +34,9 @@ export const Modal = ({
       break
     case 'lg':
       className = s.lg
+      break
+    case 'superLg':
+      className = s.superLg
       break
     default:
       break

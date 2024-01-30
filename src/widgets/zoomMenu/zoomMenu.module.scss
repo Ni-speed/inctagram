@@ -1,0 +1,46 @@
+.zoomMenu {
+    position: absolute;
+    left: 72px;
+    bottom: 49px;
+    display: flex;
+    padding: 17px 12px;
+
+    width: 124px;
+    opacity: 0.8;
+    border-radius: 2px;
+    background-color: var(--color-dark-500);
+
+    .root {
+        position: relative;
+        display: flex;
+        align-items: center;
+        user-select: none;
+        touch-action: none;
+        width: 200px;
+
+        .track {
+            background-color: var(--color-light-100);
+            position: relative;
+            flex-grow: 1;
+            border-radius: 1px;
+            height: 2px;
+
+            .range {
+                position: absolute;
+                background-color: var(--color-accent-500);
+                border-radius: 9999px;
+                height: 100%;
+            }
+        }
+
+        .thumb {
+            display: block;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-light-100);
+            box-shadow: 0px 0px 0px 3px var(--color-accent-500);
+            border-radius: 3px;
+        }
+    }
+
+}

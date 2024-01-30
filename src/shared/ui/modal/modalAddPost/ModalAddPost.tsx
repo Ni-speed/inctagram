@@ -1,20 +1,9 @@
-import { ChangeEvent, useRef, useState } from 'react'
-import { Cropper } from 'react-cropper'
+import { useState } from 'react'
 
-import { Button } from '../..'
-import {
-  ImageOutline,
-  ModalEditNewPhoto,
-  permittedFileSizeForPost,
-  permittedFileTypes,
-} from '../../..'
-import { useTranslation } from '../../../hooks'
-import { Typography } from '../../typography'
-import { Modal } from '../Modal'
+import { ModalEditNewPhoto } from '../../..'
 import { ModalChoosePhoto } from '../modalChoosePhoto/ModalChoosePhoto'
 import { ModalCloseCreationPost } from '../modalCloseCreationPost/ModalCloseCreationPost'
 
-import s from './ModalAddPost.module.scss'
 type Props = {
   isOpen: boolean
   onClose: () => void
@@ -25,7 +14,6 @@ export const ModalAddPost = (props: Props) => {
   const [isOpenEditPhotoModal, setIsOpenEditPhotoModal] = useState<boolean>(false)
   const [isOpenCloseCreationModal, setIsOpenCloseCreationModal] = useState<boolean>(false)
   const [imageForEdit, setImageForEdit] = useState<string>('')
-  const { t } = useTranslation()
 
   return (
     <>

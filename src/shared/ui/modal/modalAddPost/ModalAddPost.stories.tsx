@@ -13,6 +13,5 @@ type Story = StoryObj<typeof meta>
 export const ModalAddPostCommon: Story = {
   args: {
     isOpen: true,
-    text: 'You can write anything you want.',
   },
 }
