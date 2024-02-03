@@ -1,1 +1,1 @@
-export { addPhoto, photosSlice } from './model'
+export { addPhoto, changeCurrentPhoto, deletePhoto, photosSlice, setCurrentPhoto } from './model'

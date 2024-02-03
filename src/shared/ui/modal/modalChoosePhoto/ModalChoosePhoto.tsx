@@ -9,19 +9,23 @@ import {
   permittedFileTypes,
   useTranslation,
 } from '../../..'
+import { useAppDispatch } from '../../../../app'
+import { addPhoto } from '../../../../entities'
+import { v4 as uuidv4 } from 'uuid'
 
 import s from './modalChoosePhoto.module.scss'
 type Props = {
   nextModal: (value: boolean) => void
   onClose: () => void
   open: boolean
-  setPreviewAvatar: (avatar: string) => void
+  //   setPreviewAvatar: (avatar: string) => void
 }
 export const ModalChoosePhoto = (props: Props) => {
-  const { nextModal, onClose, open, setPreviewAvatar } = props
+  const { nextModal, onClose, open } = props
   const inputRef = useRef<HTMLInputElement>(null)
   const [uploadError, setUploadError] = useState<string>('')
 
+  const dispatch = useAppDispatch()
   const { t } = useTranslation()
 
   const uploadHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +46,8 @@ export const ModalChoosePhoto = (props: Props) => {
       if (matches && file.size <= permittedFileSizeForPost) {
         setUploadError('')
         const previewPhoto = function (reader: any) {
-          setPreviewAvatar(reader.result)
+          //   setPreviewAvatar(reader.result)
+          dispatch(addPhoto({ aspect: NaN, id: uuidv4(), src: reader.result }))
           nextModal(true)
         }
 

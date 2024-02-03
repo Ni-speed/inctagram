@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
-import { Cropper } from 'react-cropper'
+import { useRef, useState } from 'react'
+import { useSelector } from 'react-redux'
 
 import { Button } from '../..'
 import { ArrowLeftIcon, ExpandIcon, ImageOutline, MaximizeOutline, ModalFilterMode } from '../../..'
-import { AddPhotoMenu, ExpandMenu, ZoomMenu } from '../../../../widgets'
+import { RootState } from '../../../../app/appStore'
+import { AddPhotoMenu, CropImages, ExpandMenu, ZoomMenu } from '../../../../widgets'
 import { useTranslation } from '../../../hooks'
 import { Typography } from '../../typography'
 import { Modal } from '../Modal'
@@ -11,14 +12,16 @@ import { Modal } from '../Modal'
 import s from './modalEditNewPhoto.module.scss'
 
 type Props = {
-  image: string
+  //   images: Array<string>
   onClose: () => void
   open: boolean
 }
 
 export const ModalEditNewPhoto = (props: Props) => {
-  const { image, onClose, open } = props
-  const cropperRef = useRef<Cropper | any>(null)
+  const { onClose, open } = props
+  const photos = useSelector((state: RootState) => state.photos.photos)
+
+  //   const cropperRef = useRef<Cropper | any>(null)
   const { t } = useTranslation()
   const [isOpenExpendMenu, setIsOpenExpendMenu] = useState(false)
   const [isOpenAddPhotoMenu, setIsOpenAddPhotoMenu] = useState(false)
@@ -46,6 +49,8 @@ export const ModalEditNewPhoto = (props: Props) => {
   return !filterMode ? (
     <Modal onClose={onClose} open={open} showCloseButton={false} size={'md'} title={titleEditFhoto}>
       <div className={s.imageContainer}>
+        <CropImages></CropImages>
+        {/* 
         <Cropper
           aspectRatio={aspect}
           autoCropArea={1}
@@ -63,9 +68,9 @@ export const ModalEditNewPhoto = (props: Props) => {
           minContainerHeight={503}
           minContainerWidth={490}
           ref={cropperRef}
-          src={image}
+          src={photos[0].src}
           zoomOnWheel={false}
-        />
+        /> */}
       </div>
       <div className={s.filtersContainer}></div>
       <Button
@@ -119,7 +124,7 @@ export const ModalEditNewPhoto = (props: Props) => {
           value={[valueSlider]}
         />
       )}
-      {isOpenAddPhotoMenu && <AddPhotoMenu images={[cropImage]} onChange={() => {}} />}
+      {isOpenAddPhotoMenu && <AddPhotoMenu images={photos} onChange={() => {}} />}
     </Modal>
   ) : (
     <ModalFilterMode image={cropImage} onClose={onClose} open={open}></ModalFilterMode>

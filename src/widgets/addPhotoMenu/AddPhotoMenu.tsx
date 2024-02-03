@@ -1,16 +1,28 @@
-import { ChangeEvent, useRef } from 'react'
+import { ChangeEvent, useRef, useState } from 'react'
 
+import { useAppDispatch } from '../../app'
+import { PhotosState, addPhoto, deletePhoto } from '../../entities/post/model/slice'
+import {
+  Button,
+  Close,
+  permittedFileSizeForPost,
+  permittedFileTypes,
+  useTranslation,
+} from '../../shared'
 import { PlusCurcle } from '../../shared/assets/svg/plusCurcle'
 import Image from 'next/image'
+import { v4 as uuidv4 } from 'uuid'
 
 import s from './addPhotoMenu.module.scss'
 type PropsType = {
-  images: Array<string>
+  images: PhotosState
   onChange: () => void
 }
 export const AddPhotoMenu = ({ images, onChange }: PropsType) => {
   const inputRef = useRef<HTMLInputElement>(null)
-
+  const [uploadError, setUploadError] = useState<string>('')
+  const dispatch = useAppDispatch()
+  const { t } = useTranslation()
   const uploadHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const uploadInput = e.target
 
@@ -29,8 +41,12 @@ export const AddPhotoMenu = ({ images, onChange }: PropsType) => {
       if (matches && file.size <= permittedFileSizeForPost) {
         setUploadError('')
         const previewPhoto = function (reader: any) {
-          setPreviewAvatar(reader.result)
-          nextModal(true)
+          if (images.length < 10) {
+            dispatch(addPhoto({ aspect: NaN, id: uuidv4(), src: reader.result }))
+          } else {
+            //   Выдать предупреждение, что больше доюавить нельзя
+          }
+          //   nextModal(true)
         }
 
         const reader = new FileReader()
@@ -47,14 +63,16 @@ export const AddPhotoMenu = ({ images, onChange }: PropsType) => {
 
   const imagesList = images.map(image => {
     return (
-      <Image
-        alt={'Photo'}
-        className={s.image}
-        height={82}
-        key={image}
-        src={image}
-        width={80}
-      ></Image>
+      <div key={image.id} style={{ position: 'relative' }}>
+        <Image alt={'Photo'} className={s.image} height={82} src={image.src} width={80}></Image>
+        <Button
+          className={s.close}
+          onClick={() => dispatch(deletePhoto({ id: image.id }))}
+          variant={'text'}
+        >
+          <Close height={'12px'} viewBox={'0 0 24 24'} width={'12px'}></Close>
+        </Button>
+      </div>
     )
   })
 

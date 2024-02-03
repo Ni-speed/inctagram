@@ -1,5 +1,6 @@
 export { AddPhotoMenu } from './addPhotoMenu'
 export { ConfirmEmail } from './confirmEmail'
+export { CropImages } from './cropImages'
 export { ExpandMenu } from './expandMenu'
 export { ForgotPassword } from './forgotPassword'
 export { GeneralInformation } from './generalInfo'
