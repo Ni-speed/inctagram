@@ -2,6 +2,7 @@ import React, { FormEvent, useEffect, useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { AvatarType } from '@/features'
+import { UpdateProfileError } from '@/features/auth/model/types'
 import { Button, ControlledDataPicker, ControlledInput, Typography, useTranslation } from '@/shared'
 import { ControlledSelect } from '@/shared/ui/controlled/controlledSelect/ControlledSelect'
 import { ControlledTextArea } from '@/shared/ui/controlled/controlledTextArea/ControlledTextArea'
@@ -28,6 +29,7 @@ export type ProfileProps = {
 
 type GeneralInfoFormProps = {
   className?: string
+  errorProfileUpdate: UpdateProfileError | undefined
   myUserName?: string
   onSubmitProfile: SubmitHandler<{
     aboutMe: null | string
@@ -43,6 +45,7 @@ type GeneralInfoFormProps = {
 }
 export const GeneralInfoForm = ({
   className,
+  errorProfileUpdate,
   myUserName,
   onSubmitProfile,
   profile,
@@ -62,6 +65,13 @@ export const GeneralInfoForm = ({
 
   const [countryList, setCountryList] = useState<CountriesList>(null)
   const [citiesList, setCitiesList] = useState<any>(null)
+
+  if (errorProfileUpdate) {
+    setError(errorProfileUpdate.data.errorsMessages[0].field, {
+      message: errorProfileUpdate.data.errorsMessages[0].message,
+      type: 'manual',
+    })
+  }
 
   useEffect(() => {
     getCountries(setCountryList)
@@ -130,7 +140,7 @@ export const GeneralInfoForm = ({
               <ControlledSelect
                 className={s.areaItem}
                 control={control}
-                label={t.generalInfo.country}
+                label={t.generalInfo.city}
                 name={'city'}
                 options={citiesList}
                 placeholder={'City'}

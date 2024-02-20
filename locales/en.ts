@@ -78,13 +78,13 @@ export const en: LocaleType = {
     button: 'OK',
     title: 'Inter email for resend',
   },
-
   notConfirmEmail: {
     button: 'Resend verification link',
     subTitle:
       'Looks like the verification link has expired. Not to worry, we can send the link again',
     title: 'Email verification link expired',
   },
+
   other: {
     agree: 'I agree to the',
     and: 'and',
@@ -101,6 +101,12 @@ export const en: LocaleType = {
   privacyPolicy: {
     privacyPolicy: 'Privacy Policy',
     termsOfService: 'Terms of Service',
+  },
+  profileSettingsBar: {
+    accountManagement: 'Account Management',
+    devices: 'Devices',
+    generalInformation: 'General information',
+    myPayments: 'My payments',
   },
   registerForm: {
     error: {

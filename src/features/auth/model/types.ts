@@ -32,6 +32,10 @@ export type ErrorMessage = {
   field: string
   message: string
 }
+export type ProfileUpdateErrorMessage = {
+  field: 'birthDate' | 'city' | 'country' | 'firstname' | 'lastname' | 'username'
+  message: string
+}
 
 export type LoginIncorrectData = {
   errorsMessages: ErrorMessage[]
@@ -45,7 +49,12 @@ export type ErrorLoginResponse<T> = {
 }
 
 export type ErrorResponse = ReturnType<typeof serverErrorSignUp>
-
+export type UpdateProfileError = {
+  data: {
+    errorsMessages: ProfileUpdateErrorMessage[]
+  }
+  status: string
+}
 export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>
 export type GetProfileResponseType = {
   aboutMe?: null | string

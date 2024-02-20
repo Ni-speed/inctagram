@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Typography } from '@/shared'
+import { Typography, useTranslation } from '@/shared'
 import { clsx } from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -10,6 +10,7 @@ import s from './SettingsButtonBar.module.scss'
 type Active = 'Account' | 'Devices' | 'General' | 'payments'
 export const SettingsButtonBar = () => {
   const router = useRouter()
+  const { t } = useTranslation()
 
   const [active, setActive] = useState<Active>('General')
   const activeHandler = (linkName: Active) => {
@@ -24,7 +25,7 @@ export const SettingsButtonBar = () => {
         onClick={() => activeHandler('General')}
       >
         <Typography className={s.linkText} variant={'h3'}>
-          General information
+          {t.profileSettingsBar.generalInformation}
         </Typography>
       </Link>
       <Link
@@ -33,7 +34,7 @@ export const SettingsButtonBar = () => {
         onClick={() => activeHandler('Devices')}
       >
         <Typography className={s.linkText} variant={'h3'}>
-          Devices
+          {t.profileSettingsBar.devices}
         </Typography>
       </Link>
       <Link
@@ -42,7 +43,7 @@ export const SettingsButtonBar = () => {
         onClick={() => activeHandler('Account')}
       >
         <Typography className={s.linkText} variant={'h3'}>
-          Account Management
+          {t.profileSettingsBar.accountManagement}
         </Typography>
       </Link>
       <Link
@@ -51,7 +52,7 @@ export const SettingsButtonBar = () => {
         onClick={() => activeHandler('payments')}
       >
         <Typography className={s.linkText} variant={'h3'}>
-          My payments
+          {t.profileSettingsBar.myPayments}
         </Typography>
       </Link>
     </div>

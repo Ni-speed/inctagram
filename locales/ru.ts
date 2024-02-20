@@ -57,8 +57,8 @@ export const ru = {
     error: {
       emailNotConfirmed: 'Пользователь не подтвердил електронную почту.',
       incorrectInputData: 'Введены некорректные данные.',
-      invalidPasswordOrEmail: 'Неверный адрес электронной почты, имя пользователя или пароль.',
-      userNotCreated: 'Пользователь с таким именем или почтой не найде.',
+      invalidPasswordOrEmail: 'Неверный email или пароль.',
+      userNotCreated: 'Неверный email или пароль.',
     },
     password: 'Электронная почта или пароль неправильно. Попробуйте еще раз, пожалуйста',
     placeholder: {
@@ -77,13 +77,13 @@ export const ru = {
     button: 'OK',
     title: 'Введите адрес электронной почты',
   },
-
   notConfirmEmail: {
     button: 'Повторно отправить ссылку',
     subTitle:
       'Похоже, срок действия ссылки для подтверждения истек. Не волнуйтесь, мы можем отправить ссылку еще раз.',
     title: 'Срок действия ссылки истек',
   },
+
   other: {
     agree: 'Я принимаю',
     and: 'и',
@@ -98,6 +98,12 @@ export const ru = {
   privacyPolicy: {
     privacyPolicy: 'Политику конфиденциальности',
     termsOfService: 'Условия использования',
+  },
+  profileSettingsBar: {
+    accountManagement: 'Управление учетной записью',
+    devices: 'Устройства',
+    generalInformation: 'Общая информация',
+    myPayments: 'Мои платежи',
   },
   registerForm: {
     error: {
