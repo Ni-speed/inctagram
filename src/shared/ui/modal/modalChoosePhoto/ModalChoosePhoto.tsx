@@ -18,14 +18,14 @@ type Props = {
   nextModal: (value: boolean) => void
   onClose: () => void
   open: boolean
-  //   setPreviewAvatar: (avatar: string) => void
+  setPreviewAvatar: (avatar: string) => void
 }
 export const ModalChoosePhoto = (props: Props) => {
-  const { nextModal, onClose, open } = props
+  const { nextModal, onClose, open, setPreviewAvatar } = props
   const inputRef = useRef<HTMLInputElement>(null)
   const [uploadError, setUploadError] = useState<string>('')
 
-  const dispatch = useAppDispatch()
+  //   const dispatch = useAppDispatch()
   const { t } = useTranslation()
 
   const uploadHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -46,8 +46,8 @@ export const ModalChoosePhoto = (props: Props) => {
       if (matches && file.size <= permittedFileSizeForPost) {
         setUploadError('')
         const previewPhoto = function (reader: any) {
-          //   setPreviewAvatar(reader.result)
-          dispatch(addPhoto({ aspect: NaN, id: uuidv4(), src: reader.result }))
+          setPreviewAvatar(reader.result)
+          //   dispatch(addPhoto({ aspect: NaN, id: uuidv4(), src: reader.result }))
           nextModal(true)
         }
 

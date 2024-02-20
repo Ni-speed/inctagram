@@ -16,7 +16,7 @@ export const ModalAddPost = (props: Props) => {
 
   const [isOpenEditPhotoModal, setIsOpenEditPhotoModal] = useState<boolean>(false)
   const [isOpenCloseCreationModal, setIsOpenCloseCreationModal] = useState<boolean>(false)
-  //   const [imageForEdit, setImageForEdit] = useState<string>('')
+  const [imageForEdit, setImageForEdit] = useState<string>('')
 
   return (
     <>
@@ -25,10 +25,11 @@ export const ModalAddPost = (props: Props) => {
           nextModal={() => setIsOpenEditPhotoModal(true)}
           onClose={onClose}
           open={isOpen}
-          //   setPreviewAvatar={setImageForEdit}
+          setPreviewAvatar={setImageForEdit}
         ></ModalChoosePhoto>
       ) : (
         <ModalEditNewPhoto
+          image={imageForEdit}
           onClose={() => {
             setIsOpenCloseCreationModal(true)
           }}

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Cropper } from 'react-cropper'
 import { useSelector } from 'react-redux'
 
 import { Button } from '../..'
@@ -12,16 +13,16 @@ import { Modal } from '../Modal'
 import s from './modalEditNewPhoto.module.scss'
 
 type Props = {
-  //   images: Array<string>
+  image: string
   onClose: () => void
   open: boolean
 }
 
 export const ModalEditNewPhoto = (props: Props) => {
-  const { onClose, open } = props
+  const { image, onClose, open } = props
   const photos = useSelector((state: RootState) => state.photos.photos)
 
-  //   const cropperRef = useRef<Cropper | any>(null)
+  const cropperRef = useRef<Cropper | any>(null)
   const { t } = useTranslation()
   const [isOpenExpendMenu, setIsOpenExpendMenu] = useState(false)
   const [isOpenAddPhotoMenu, setIsOpenAddPhotoMenu] = useState(false)
@@ -49,8 +50,8 @@ export const ModalEditNewPhoto = (props: Props) => {
   return !filterMode ? (
     <Modal onClose={onClose} open={open} showCloseButton={false} size={'md'} title={titleEditFhoto}>
       <div className={s.imageContainer}>
-        <CropImages></CropImages>
-        {/* 
+        {/* <CropImages></CropImages> */}
+
         <Cropper
           aspectRatio={aspect}
           autoCropArea={1}
@@ -68,9 +69,9 @@ export const ModalEditNewPhoto = (props: Props) => {
           minContainerHeight={503}
           minContainerWidth={490}
           ref={cropperRef}
-          src={photos[0].src}
+          src={image}
           zoomOnWheel={false}
-        /> */}
+        />
       </div>
       <div className={s.filtersContainer}></div>
       <Button
@@ -95,7 +96,7 @@ export const ModalEditNewPhoto = (props: Props) => {
       >
         <MaximizeOutline className={s.svg}></MaximizeOutline>
       </Button>
-      <Button
+      {/* <Button
         className={`${s.iconImage} ${s.icon}`}
         onClick={() => {
           setIsOpenExpendMenu(false)
@@ -105,7 +106,7 @@ export const ModalEditNewPhoto = (props: Props) => {
         variant={'text'}
       >
         <ImageOutline className={s.svg}></ImageOutline>
-      </Button>
+      </Button> */}
       {isOpenExpendMenu && (
         <ExpandMenu
           onChange={aspect => {
@@ -124,7 +125,7 @@ export const ModalEditNewPhoto = (props: Props) => {
           value={[valueSlider]}
         />
       )}
-      {isOpenAddPhotoMenu && <AddPhotoMenu images={photos} onChange={() => {}} />}
+      {/* {isOpenAddPhotoMenu && <AddPhotoMenu images={photos} onChange={() => {}} />} */}
     </Modal>
   ) : (
     <ModalFilterMode image={cropImage} onClose={onClose} open={open}></ModalFilterMode>

@@ -100,9 +100,12 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
             const croppedImageFile = new File([blob], 'croppedImage.jpg', { type: 'image/jpeg' })
             const formData = new FormData()
 
+            console.log(formData)
+
             if (croppedImageFile) {
               formData.append('file', croppedImageFile)
             }
+
             try {
               uploadAvatar(formData).unwrap()
               setPreviewAvatar('')

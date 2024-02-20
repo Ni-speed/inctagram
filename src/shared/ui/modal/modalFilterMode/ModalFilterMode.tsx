@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { Button } from '../..'
 import { ArrowLeftIcon } from '../../..'
@@ -9,6 +9,7 @@ import { Modal } from '../Modal'
 import { AddDescription } from './addDescription/AddDescription'
 import { FilterItems } from './filterItems/FilterItems'
 import { skipToken } from '@reduxjs/toolkit/query'
+import domtoimage from 'dom-to-image'
 import Image from 'next/image'
 
 import s from './modalFilterMode.module.scss'
@@ -20,11 +21,12 @@ type Props = {
 
 export const ModalFilterMode = (props: Props) => {
   const { image, onClose, open } = props
-
+  const refImage = useRef(null)
   const { t } = useTranslation()
   const [filter, setFilter] = useState('normal')
   const [publicationnMode, setPublicationMode] = useState(false)
   const [valueTextarea, setValueTextarea] = useState('')
+  const [qweqwe, setimage] = useState<any>('')
   const titlePublicationMode = (
     <div className={s.title}>
       <ArrowLeftIcon className={s.arrow} onClick={() => setPublicationMode(false)}></ArrowLeftIcon>
@@ -68,13 +70,50 @@ export const ModalFilterMode = (props: Props) => {
             alt={'photo'}
             className={`${filter} ${s.mainImage}`}
             height={490}
+            id={'image'}
+            ref={refImage}
             src={image}
             width={490}
           ></Image>
         </div>
         {!publicationnMode ? (
           <div className={s.filtersContainer}>
-            <FilterItems image={image} setFilter={filter => setFilter(filter)}></FilterItems>
+            <FilterItems
+              image={image}
+              setFilter={filter => {
+                setFilter(filter)
+                domtoimage.toBlob(refImage.current).then((blob: any) => {
+                  //   const img = refImage.current
+                  //   const canvas = document.createElement('canvas')
+                  //   const context = canvas.getContext('2d')
+
+                  //   context && img && context.drawImage(img, 10, 10)
+
+                  //   console.log(canvas.toDataURL('image/jpeg', 1.0))
+                  //   if (blob) {
+                  // Create a File object from a Blob
+                  const croppedImageFile = new File([blob], 'croppedImage.jpg', {
+                    type: 'image/jpeg',
+                  })
+
+                  console.log(croppedImageFile)
+                  const formData = new FormData()
+
+                  formData.append('file', 'croppedImageFile')
+                  console.log(formData)
+                  //   if (croppedImageFile) {
+                  //     formData.append('file', croppedImageFile)
+                  //   }
+                  // // try {
+                  // setimage(formData)
+                  // console.log(blob)
+                  // window.saveAs(blob, 'my-node.png')
+                  // } catch (e: unknown) {}
+                  //   }
+                  //   console.log(formData)
+                }, 'image/jpeg')
+              }}
+            ></FilterItems>
           </div>
         ) : (
           <div className={s.addDescriptionContainer}>
