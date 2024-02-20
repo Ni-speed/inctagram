@@ -1,0 +1,64 @@
+.expandMenu {
+    position: absolute;
+    left: 11px;
+    bottom: 49px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 12px;
+    gap: 11px;
+    width: 156px;
+    opacity: 0.8;
+    border-radius: 2px;
+    background-color: var(--color-dark-500);
+
+    .input {
+        display: none;
+    }
+
+
+    .itemContainer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .imageIcon {
+            width: 24px;
+            height: 24px;
+        }
+
+        .quadrilateral {
+            border: 2px solid var(--color-light-100);
+            border-radius: 3px;
+            margin-right: 3px;
+        }
+
+        .oneByOne {
+            width: 18px;
+            height: 18px;
+
+        }
+
+        .fourByFive {
+            width: 18px;
+            height: 26px;
+
+        }
+
+        .sixteenByNine {
+            width: 26px;
+            height: 20px;
+
+        }
+
+        .unchecked {
+            color: var(--color-light-900);
+            fill: var(--color-light-900);
+
+        }
+
+        .unchecked.quadrilateral {
+            border: 2px solid var(--color-light-900);
+        }
+    }
+}

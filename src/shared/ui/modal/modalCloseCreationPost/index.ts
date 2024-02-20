@@ -1,0 +1,1 @@
+export { ModalCloseCreationPost } from './ModalCloseCreationPost'

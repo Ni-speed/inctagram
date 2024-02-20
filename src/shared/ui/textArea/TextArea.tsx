@@ -21,6 +21,7 @@ export type TextFieldProps = {
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, ref) => {
   const {
+    className,
     disabled,
     error,
     errorMessage,
@@ -40,7 +41,6 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
 
   const onChangeValueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
     onChange?.(e)
-    console.log(e.currentTarget.value)
     onChangeValue?.(e.currentTarget.value)
   }
   const onKeyPressHandler = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -65,7 +65,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextFieldProps>((props, 
         }`}
       >
         <textarea
-          className={`${s.textArea} ${error ? s.error : ''}`}
+          className={`${s.textArea} ${className} ${error ? s.error : ''}`}
           disabled={disabled}
           onBlur={onBlur}
           onChange={onChangeValueHandler}

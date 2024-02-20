@@ -10,6 +10,7 @@ import s from './slider.module.scss'
 type PropsType = {
   autoPlay?: boolean
   autoPlayTime?: number
+  chooseCurrentImage?: (image: string) => void
   height?: string
   items: { title: string; url: string }[]
   width?: string
@@ -18,11 +19,13 @@ type PropsType = {
 export const Slider = ({
   autoPlay = false,
   autoPlayTime = 5000,
+  chooseCurrentImage,
   height = '240px',
   items,
   width = '234px',
 }: PropsType) => {
   const [slide, setSlide] = useState(0)
+  //   const [currentImage, setCurrentImage] = useState('')
   const [touchPosition, setTouchPosition] = useState<null | number>(null)
 
   const changeSlide = (direction = 1) => {
@@ -35,6 +38,8 @@ export const Slider = ({
     }
 
     setSlide(slideNumber)
+    // setCurrentImage(items[slideNumber].url)
+    // chooseCurrentImage && chooseCurrentImage(currentImage)
   }
 
   const goToSlide = (number: number) => {
@@ -65,6 +70,10 @@ export const Slider = ({
 
     setTouchPosition(null)
   }
+
+  //   useEffect(() => {
+  //     setCurrentImage(items[0].url)
+  //   }, [])
 
   useEffect(() => {
     if (!autoPlay) {

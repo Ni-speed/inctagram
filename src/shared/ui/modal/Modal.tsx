@@ -5,14 +5,14 @@ import { Close } from '../../assets/svg'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import s from './modal.module.scss'
-export type ModalSize = 'lg' | 'md' | 'sm'
+export type ModalSize = 'lg' | 'md' | 'sm' | 'superLg'
 export type ModalProps = {
   children?: ReactNode
   onClose: () => void
   open: boolean
   showCloseButton?: boolean
   size?: ModalSize
-  title: string
+  title: ReactNode
 }
 
 export const Modal = ({
@@ -23,10 +23,6 @@ export const Modal = ({
   size = 'sm',
   title,
 }: ModalProps) => {
-  function handleModalClosed() {
-    onClose()
-  }
-
   let className
 
   switch (size) {
@@ -39,12 +35,15 @@ export const Modal = ({
     case 'lg':
       className = s.lg
       break
+    case 'superLg':
+      className = s.superLg
+      break
     default:
       break
   }
 
   return (
-    <Dialog.Root onOpenChange={handleModalClosed} open={open}>
+    <Dialog.Root onOpenChange={onClose} open={open}>
       <Dialog.Portal>
         <Dialog.Overlay className={s.overlay} />
         <Dialog.Content className={`${s.content} ${className}`}>

@@ -1,0 +1,40 @@
+.addPhotoMenu {
+    position: absolute;
+    right: 11px;
+    bottom: 49px;
+    display: flex;
+    padding: 12px;
+    gap: 12px;
+    border-radius: 2px;
+    background-color: rgb(23, 23, 23, 0.8);
+
+    .plus {
+        cursor: pointer;
+    }
+
+    .containerPhoto {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        max-width: 264px;
+
+        .close {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            height: 12px;
+            width: 12px;
+            border-radius: 2px;
+            background-color: rgb(23, 23, 23, 0.8);
+        }
+
+    }
+
+    .image {
+        object-fit: contain;
+
+    }
+
+
+
+}
