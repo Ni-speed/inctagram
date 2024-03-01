@@ -8,10 +8,16 @@ import { Mutex } from 'async-mutex'
 
 const mutex = new Mutex()
 const baseQuery = fetchBaseQuery({
-  baseUrl: 'https://inctagram-tau.vercel.app/api/v1/',
+  baseUrl: 'https://inctagram.work/api/v1/',
   credentials: 'include',
   prepareHeaders: (headers, { endpoint }) => {
     if (
+      endpoint === 'getMe' ||
+      endpoint === 'getUser' ||
+      endpoint === 'getProfile' ||
+      endpoint === 'newUpdateProfile' ||
+      endpoint === 'uploadAvatar' ||
+      endpoint === 'newGetProfile' ||
       endpoint === 'updateProfile' ||
       endpoint === 'uploadAvatar' ||
       endpoint === 'deleteAvatar'
@@ -45,7 +51,7 @@ export const baseQueryWithReauth: BaseQueryFn<
         if (refreshResult.meta?.response?.status === 204) {
           result = await baseQuery(args, api, extraOptions)
         } else {
-          console.log('Error')
+          /*console.log('Error')*/
         }
       } finally {
         release()
