@@ -43,12 +43,12 @@ export const Header = ({ username }: HeaderProp) => {
             <>
               <Button
                 className={s.middleButton}
-                onClick={() => router.push('/signIn')}
+                onClick={() => router.push('/auth/signIn')}
                 variant={'text'}
               >
                 <Typography variant={'h3'}>{t.linksButtons.signIn}</Typography>
               </Button>
-              <Button onClick={() => router.push('/signUp')} variant={'primary'}>
+              <Button onClick={() => router.push('/auth/signUp')} variant={'primary'}>
                 <Typography variant={'h3'}>{t.linksButtons.signUp}</Typography>
               </Button>
             </>
