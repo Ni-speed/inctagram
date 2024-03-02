@@ -2,18 +2,19 @@ import { ChangeEvent, useRef, useState } from 'react'
 
 import { useAppDispatch } from '../../app'
 import { PhotosState, addPhoto, deletePhoto } from '../../entities/post/model/slice'
+import { PlusCurcle } from '../../shared/assets/svg/plusCurcle'
 import {
   Button,
   Close,
   permittedFileSizeForPost,
   permittedFileTypes,
   useTranslation,
-} from '../../shared'
-import { PlusCurcle } from '../../shared/assets/svg/plusCurcle'
+} from '@/shared'
 import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 
 import s from './addPhotoMenu.module.scss'
+
 type PropsType = {
   images: PhotosState
   onChange: () => void

@@ -2,6 +2,7 @@ import React, { FormEvent, useEffect, useState } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
 import { AvatarType } from '@/features'
+import { NewGetProfileResponseType } from '@/features/auth/model/types'
 import { Button, ControlledDataPicker, ControlledInput, Typography, useTranslation } from '@/shared'
 import { ControlledSelect } from '@/shared/ui/controlled/controlledSelect/ControlledSelect'
 import { ControlledTextArea } from '@/shared/ui/controlled/controlledTextArea/ControlledTextArea'
@@ -28,18 +29,18 @@ export type ProfileProps = {
 
 type GeneralInfoFormProps = {
   className?: string
-  myUserName?: string
+  myUserName?: null | string
   onSubmitProfile: SubmitHandler<{
     aboutMe: null | string
-    birthDate: Date | string
     city: null | string
     country: null | string
-    firstname: string
-    lastname: string
-    username: null | string
+    dateOfBirth: Date | null
+    firstName: null | string
+    lastName: null | string
+    userName: string
   }>
 
-  profile?: ProfileProps
+  profile: NewGetProfileResponseType
 }
 export const GeneralInfoForm = ({
   className,
@@ -91,7 +92,7 @@ export const GeneralInfoForm = ({
               inputIsSearch={false}
               inputType={'text'}
               label={t.generalInfo.username + '*'}
-              name={'username'}
+              name={'userName'}
             />
             <ControlledInput
               className={s.textField}
@@ -100,7 +101,7 @@ export const GeneralInfoForm = ({
               inputIsSearch={false}
               inputType={'text'}
               label={t.generalInfo.firstname + '*'}
-              name={'firstname'}
+              name={'firstName'}
             />
             <ControlledInput
               className={s.textField}
@@ -109,13 +110,13 @@ export const GeneralInfoForm = ({
               inputIsSearch={false}
               inputType={'text'}
               label={t.generalInfo.lastname + '*'}
-              name={'lastname'}
+              name={'lastName'}
             />
             <ControlledDataPicker
               className={s.dataPicker}
               control={control}
               label={t.generalInfo.dateOfBirth}
-              name={'birthDate'}
+              name={'dateOfBirth'}
             />
             <div className={s.area}>
               <ControlledSelect

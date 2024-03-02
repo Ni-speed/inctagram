@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-import { getLayout } from '../../widgets'
-import { ForgotPassword, ForgotPasswordFormType } from '../../widgets/forgotPassword'
 import { usePasswordRecoveryMutation } from '@/features/auth/api/authApi'
 import { useTranslation } from '@/shared/hooks'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 import { ModalEmailSent } from '@/shared/ui/modal/modalEmailSent'
+import { getLayout } from '@/widgets'
+import { ForgotPassword, ForgotPasswordFormType } from '@/widgets/forgotPassword'
 
 type Props = {}
 

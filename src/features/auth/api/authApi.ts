@@ -1,17 +1,17 @@
 import type {
   LogInArgs,
-  MeResponse,
+  NewMeResponse,
   NewPasswordArgs,
   RegistrationArgs,
   RegistrationConfirmationArgs,
   Token,
 } from '../model/types'
 
-import { GET_ME, baseApi } from '@/shared/api'
+import { GET_ME, baseApi } from '@/shared'
 
 const authApi = baseApi.injectEndpoints({
   endpoints: build => ({
-    getMe: build.query<MeResponse, void>({
+    getMe: build.query<NewMeResponse, void>({
       providesTags: [GET_ME],
       query: body => ({ body, url: 'auth/me' }),
     }),
@@ -44,7 +44,7 @@ const authApi = baseApi.injectEndpoints({
       async onQueryStarted(_, { dispatch, queryFulfilled }) {
         dispatch(
           authApi.util.updateQueryData('getMe', undefined, draft => {
-            draft.username = undefined
+            draft.userName = undefined
           })
         )
         try {
@@ -69,15 +69,35 @@ const authApi = baseApi.injectEndpoints({
     }),
 
     registration: build.mutation<void, RegistrationArgs>({
-      query: body => ({ body, method: 'POST', url: 'auth/registration' }),
+      query: body => ({
+        body: {
+          baseUrl: 'https://inctagram.work/api/v1',
+          email: body.email,
+          password: body.password,
+          userName: body.userName,
+        },
+        method: 'POST',
+        url: 'auth/registration',
+      }),
     }),
 
     registrationConfirmation: build.mutation<void, RegistrationConfirmationArgs>({
-      query: body => ({ body, method: 'POST', url: 'auth/registration-confirmation' }),
+      query: body => ({
+        body: { confirmationCode: body.code },
+        method: 'POST',
+        url: 'auth/registration-confirmation',
+      }),
     }),
 
     registrationEmailResending: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
-      query: body => ({ body, method: 'POST', url: 'auth/registration-email-resending' }),
+      query: body => ({
+        body: {
+          baseUrl: 'https://inctagram.work/api/v1/',
+          email: body.email,
+        },
+        method: 'POST',
+        url: 'auth/registration-email-resending',
+      }),
     }),
   }),
 })

@@ -14,19 +14,19 @@ export const schema = (t: ErrorRegisterFormType) => {
         .trim()
         .email(t.email.format)
         .regex(/^[\w-\\.]+@([\w-]+\.)+[\w-]{2,4}$/, t.email.format),
-      login: z
-        .string()
-        .trim()
-        .min(6, t.login.min)
-        .max(30, t.login.max)
-        .regex(/^[a-zA-Z0-9_-]*$/, t.login.characters),
       password: z
         .string()
         .trim()
         .min(6, t.password.min)
         .max(20, t.password.max)
-        .regex(/^[a-zA-Z0-9_-]*$/, t.password.characters),
+        .regex(/^[a-zA-Z0-9!@#$%^&'()*+,\-.:;<=>?[\\\]_`{|}~]*$/, t.password.characters),
       privacyPolicy: z.literal<boolean>(true),
+      userName: z
+        .string()
+        .trim()
+        .min(6, t.login.min)
+        .max(30, t.login.max)
+        .regex(/^[a-zA-Z0-9_-]*$/, t.login.characters),
     })
     .refine(data => data.password === data.confirmPassword, {
       message: t.passwordConfirm,
@@ -39,8 +39,8 @@ export type FormSignUp = z.infer<ReturnType<typeof schema>>
 export const useRegisterForm = (
   onSubmit: SubmitHandler<{
     email: string
-    login: string
     password: string
+    userName: string
   }>
 ) => {
   const { t } = useTranslation()
@@ -48,9 +48,9 @@ export const useRegisterForm = (
     defaultValues: {
       confirmPassword: '',
       email: '',
-      login: '',
       password: '',
       privacyPolicy: true,
+      userName: '',
     },
     mode: 'onBlur',
     resolver: zodResolver(schema(t.registerForm.error)),

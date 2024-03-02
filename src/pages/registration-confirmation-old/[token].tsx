@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 
-import { useRegistrationConfirmationMutation } from '../../features/auth/api/authApi'
-import { ConfirmEmail, NotConfirmEmail, getLayout } from '../../widgets'
-import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { useRegistrationConfirmationMutation } from '@/features'
+import { HeadMeta } from '@/shared'
+import { ConfirmEmail, NotConfirmEmail, getLayout } from '@/widgets'
 import { useRouter } from 'next/router'
 
 const ConfirmEmailPage = () => {

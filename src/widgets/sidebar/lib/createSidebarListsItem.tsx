@@ -6,19 +6,19 @@ import Link from 'next/link'
 import s from './../ui/sidebar.module.scss'
 
 type PropsType = {
-  id: Undefineable<string>
   items: SidebarItemsType
   key: string
   onClickCreateHandler: () => void
   onClickLogoutHandler: () => void
+  userName: Undefineable<string>
 }
 
 export const CreateSidebarListsItem = ({
-  id,
   items,
   key,
   onClickCreateHandler,
   onClickLogoutHandler,
+  userName,
 }: PropsType) => {
   if (key === 'logout') {
     return (
@@ -55,8 +55,8 @@ export const CreateSidebarListsItem = ({
         <Link
           className={s.item}
           href={{
-            pathname: `${items[key as keyof typeof items].url}/[id]`,
-            query: { id },
+            pathname: `${items[key as keyof typeof items].url}/[userName]`,
+            query: { userName },
           }}
         >
           <div>{items[key as keyof typeof items].icon}</div>

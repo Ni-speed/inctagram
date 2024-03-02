@@ -1,12 +1,12 @@
 import { useTransition } from 'react'
 
-import { TextArea } from '../../..'
-import { Typography, useTranslation } from '../../../..'
-import { useGetMeQuery, useGetProfileQuery } from '../../../../../features'
+import { useGetMeQuery, useGetProfileQuery } from '@/features'
+import { TextArea, Typography, useTranslation } from '@/shared'
 import { skipToken } from '@reduxjs/toolkit/query'
 import Image from 'next/image'
 
 import s from './addDescription.module.scss'
+
 type IProps = {
   onChange: (value: string) => void
   value: string
@@ -15,7 +15,7 @@ type IProps = {
 export const AddDescription = ({ onChange, value }: IProps) => {
   const { data: meData, isLoading: isLoadingMe } = useGetMeQuery()
   const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
-    profileId: meData?.id ?? skipToken,
+    profileId: meData?.userId ?? skipToken,
   })
   const imgUrl =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Ctio9d7UbPoFkuH6-h1kqcruqY3kgjwBSA&usqp=CAU'

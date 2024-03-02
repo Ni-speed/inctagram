@@ -1,7 +1,7 @@
 import { PropsWithChildren, ReactElement } from 'react'
 
-import { Header } from '../../../header'
-import { useGetMeQuery } from '@/features/auth'
+import { useGetMeQuery } from '@/features'
+import { Header } from '@/widgets'
 import { NextPage } from 'next'
 
 import s from './layout.module.scss'
@@ -14,7 +14,7 @@ export const Layout: NextPage<PropsWithChildren<any>> = props => {
 
   return (
     <main className={s.main}>
-      <Header username={data?.username}></Header>
+      <Header username={data?.userName}></Header>
       <div className={`${s.container} ${classNameContainer}`}>{children}</div>
     </main>
   )

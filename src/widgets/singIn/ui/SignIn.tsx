@@ -1,11 +1,12 @@
 import React from 'react'
+import { toast } from 'react-toastify'
 
-import { useLoginMutation } from '@/features/auth/api/authApi'
-import { LoginErrors } from '@/features/auth/model/types'
+import { useGetMeQuery, useLoginMutation } from '@/features'
+import { NewErrorSignUpResponse } from '@/features/auth/model/types'
 import { SingInForm } from '@/features/auth/ui/singIn'
+import { Button, Card, Typography } from '@/shared'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
-import { Button, Card, Typography } from '@/shared/ui'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -13,21 +14,28 @@ import s from '@/widgets/singIn/ui/signIn.module.scss'
 
 export const SignIn = () => {
   const router = useRouter()
-
-  const [login, { error, isLoading, isSuccess: loginSuccess }] = useLoginMutation()
   const { t } = useTranslation()
 
-  if (loginSuccess) {
-    router.push('/profile')
+  const [login, { error, isLoading, isSuccess: loginSuccess }] = useLoginMutation()
+  const { data: meData, isLoading: isLoadingMe, isSuccess: isSuccessGetMe } = useGetMeQuery()
+
+  if (isSuccessGetMe) {
+    router.push(`/users/profile/`)
   }
 
   const onSubmitHandler = (props: { email: string; password: string }) => {
-    login({ loginOrEmail: props.email, password: props.password })
+    login({ email: props.email, password: props.password })
+      .unwrap()
+      .then(res => {
+        toast.success(toast.success(t.toast.success))
+        router.push('/users/profile')
+      })
   }
   let loginError = undefined
 
+  // todo fix comments
   if (error) {
-    loginError = error as LoginErrors
+    loginError = error as NewErrorSignUpResponse
   }
 
   const locationGoogle = () =>
@@ -57,7 +65,7 @@ export const SignIn = () => {
         <Typography variant={'regularText16'}>{t.other.dontHaveAcc}</Typography>
       </div>
       <div className={s.link}>
-        <Link href={'/signUp'}>
+        <Link href={'/auth/signUp'}>
           <Button className={s.buttonLink} variant={'text'}>
             <Typography className={s.textLink} variant={'h3'}>
               {t.linksButtons.signUp}

@@ -1,5 +1,5 @@
-import { TermOfService, getLayout } from '../../widgets'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
+import { TermOfService, getLayout } from '@/widgets'
 
 const TermOfServiceIndex = () => {
   return (

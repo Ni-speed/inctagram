@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 import { useRegistrationMutation } from '@/features/auth/api/authApi'
-import { LoginErrors } from '@/features/auth/model/types'
+import { NewErrorSignUpResponse } from '@/features/auth/model/types'
 import { RegisterForm } from '@/features/auth/ui/signUp/ui'
+import { Button, Card, ModalEmailSent, Typography } from '@/shared'
 import { Github, Google } from '@/shared/assets/svg'
 import { useTranslation } from '@/shared/hooks'
-import { Button, Card, ModalEmailSent, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './signUp.module.scss'
@@ -17,7 +17,7 @@ export const SignUp = () => {
 
   const [registration, { error, isLoading, isSuccess }] = useRegistrationMutation()
 
-  const onSubmitHandler = async (body: { email: string; login: string; password: string }) => {
+  const onSubmitHandler = async (body: { email: string; password: string; userName: string }) => {
     await registration(body)
     setModalIsOpen(true)
     setEmail(body.email)
@@ -25,7 +25,7 @@ export const SignUp = () => {
   let loginError = undefined
 
   if (error) {
-    loginError = error as LoginErrors
+    loginError = error as NewErrorSignUpResponse
   }
 
   const locationGoogle = () =>
@@ -57,7 +57,7 @@ export const SignUp = () => {
       </div>
 
       <div className={s.link}>
-        <Link href={'/signIn'}>
+        <Link href={'/auth/signIn'}>
           <Typography className={s.textLink} variant={'h3'}>
             {t.linksButtons.signIn}
           </Typography>

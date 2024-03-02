@@ -11,7 +11,7 @@ export * from './button'
 export * from './languageSelect'
 export * from './select'
 export * from './modal'
-export * from './commonCheckbox'
+export * from './CommonCheckbox'
 /*export { Avatar } from './avatar'*/
 export * from './loader'
 /*export * from './settingsButtonBar'*/

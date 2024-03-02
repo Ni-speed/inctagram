@@ -1,5 +1,5 @@
 import { Modal } from '..'
-import { Button, Typography, useTranslation } from '../../..'
+import { Button, Typography, useTranslation } from '@/shared'
 
 import s from './modalCloseCreationPost.module.scss'
 type Props = {

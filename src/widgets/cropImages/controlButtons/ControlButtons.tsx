@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux'
 
-import { useAppDispatch } from '../../../app'
-import { RootState } from '../../../app/appStore'
-import { setCurrentPhoto } from '../../../entities'
-import { ArrowLeftIcon, ArrowRightIcon, Button } from '../../../shared'
+import { useAppDispatch } from '@/app'
+import { RootState } from '@/app/appStore'
+import { setCurrentPhoto } from '@/entities'
+import { ArrowLeftIcon, ArrowRightIcon, Button } from '@/shared'
 
 import s from './controlButtons.module.scss'
 

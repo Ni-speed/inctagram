@@ -1,6 +1,8 @@
 import { ChangeEvent, useRef, useState } from 'react'
 
 import { Modal } from '..'
+import { useAppDispatch } from '../../../../app'
+import { addPhoto } from '../../../../entities'
 import {
   Button,
   ImageOutline,
@@ -8,12 +10,11 @@ import {
   permittedFileSizeForPost,
   permittedFileTypes,
   useTranslation,
-} from '../../..'
-import { useAppDispatch } from '../../../../app'
-import { addPhoto } from '../../../../entities'
-import { v4 as uuidv4 } from 'uuid'
+} from '@/shared'
+//import { v4 as uuidv4 } from 'uuid'
 
 import s from './modalChoosePhoto.module.scss'
+
 type Props = {
   nextModal: (value: boolean) => void
   onClose: () => void
