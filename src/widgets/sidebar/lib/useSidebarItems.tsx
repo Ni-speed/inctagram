@@ -31,7 +31,7 @@ export const useSidebarItems = () => {
     myProfile: {
       icon: <User className={s.icon} />,
       title: t.sidebar.myProfile,
-      url: '/profile',
+      url: '/users/profile',
     },
     // eslint-disable-next-line perfectionist/sort-objects
     messenger: {
@@ -59,7 +59,7 @@ export const useSidebarItems = () => {
     logout: {
       icon: <Logout className={s.icon} />,
       title: t.sidebar.logOut,
-      url: '',
+      url: '/auth/signIn',
     },
   }
 
