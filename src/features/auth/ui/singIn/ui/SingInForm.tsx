@@ -4,9 +4,9 @@ import { SubmitHandler } from 'react-hook-form'
 import { useSingInForm } from '..'
 import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
 import { serverErrorSignIn } from '@/features/auth/model/errors'
-import { LoginErrors } from '@/features/auth/model/types'
+import { NewErrorSignUpResponse } from '@/features/auth/model/types'
+import { Button, ControlledInput, Typography } from '@/shared'
 import { useTranslation } from '@/shared/hooks'
-import { Button, ControlledInput, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'
 import Link from 'next/link'
 
@@ -14,7 +14,9 @@ import s from './singInForm.module.scss'
 
 type SingInFormProps = {
   className?: string
-  errorMessage?: LoginErrors
+  errorMessage?: NewErrorSignUpResponse
+  // todo fix comments
+  /*errorMessage?: LoginErrors*/
   isQuery: boolean
   onSubmit: SubmitHandler<{
     email: string
@@ -31,9 +33,11 @@ export const SingInForm = ({ className, errorMessage, isQuery, onSubmit }: SingI
     await handleSubmit()
   }
 
+  //todo does it change from if to useEffect  and fix comments
   if (errorMessage) {
     serverErrorResponseHandler({
-      code: errorMessage.originalStatus,
+      /*code: errorMessage.originalStatus,*/
+      errorResponse: errorMessage,
       serverErrorHandler: serverErrorSignIn,
       setError,
       t,
@@ -66,7 +70,7 @@ export const SingInForm = ({ className, errorMessage, isQuery, onSubmit }: SingI
           placeholder={t.logInForm.placeholder.password}
         />
         <div className={s.link}>
-          <Link href={'/forgotPassword'}>
+          <Link href={'/auth/forgotPassword'}>
             <Typography className={s.textLink} variant={'regularText14'}>
               {t.linksButtons.forgotPassword}
             </Typography>
