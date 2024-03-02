@@ -1,6 +1,6 @@
-import { Button, Input } from '../..'
 import { useTranslation } from '../../../hooks'
 import { Modal } from '../Modal'
+import { Button, Input } from '@/shared'
 
 import s from './ModalInputEmail.module.scss'
 type Props = {

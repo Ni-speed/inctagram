@@ -16,16 +16,16 @@ export const LayoutSidebar = (props: PropsWithChildren<any>) => {
     return <div>Loading...</div>
   }
   if (isError) {
-    router.push('/signIn')
+    router.push('/auth/signIn')
   }
   const logoutHandler = () => {
-    router.push('/signIn')
+    router.push('/auth/signIn')
     logout()
   }
 
   return (
     <div className={s.container}>
-      <Sidebar accountPaid id={data?.id} logout={logoutHandler} />
+      <Sidebar accountPaid logout={logoutHandler} userName={data?.userName} />
       <div className={s.content}>{children}</div>
     </div>
   )

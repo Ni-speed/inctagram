@@ -10,7 +10,7 @@ export const PrivacyPolicy = () => {
 
   return (
     <>
-      <Link className={s.link} href={'/signUp'}>
+      <Link className={s.link} href={'/auth/signUp'}>
         <LongArrow></LongArrow>
         <Typography variant={'regularText14'}>{t.linksButtons.backToSignUp}</Typography>
       </Link>

@@ -6,7 +6,6 @@ function SignUpIndex({}) {
   return (
     <>
       <HeadMeta title={'Sign In'} />
-      {/*<SignIn />*/}
       <SignIn />
     </>
   )
