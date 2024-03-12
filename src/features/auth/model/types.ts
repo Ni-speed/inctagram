@@ -10,6 +10,10 @@ export type RegistrationArgs = {
   password: string
   userName: string
 }
+export type PasswordRecovery = {
+  email: string
+  recaptcha: null | string
+}
 //todo
 export type NewMeResponse = {
   email: string
