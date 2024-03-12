@@ -1,26 +1,31 @@
-import React, { useRef } from 'react'
-import ReCAPTCHA from 'react-google-recaptcha'
+import React, { useState } from 'react'
 
-import { ForgotPasswordFormType, useCaptcha, useForgotPassword } from '..'
+import { useForgotPassword } from '..'
+import { PasswordRecovery } from '@/features/auth/model/types'
 import { useTranslation } from '@/shared/hooks'
-import { Button, Card, ControlledInput, Typography } from '@/shared/ui'
+import { Nullable } from '@/shared/types/nullableType'
+import { Button, Card, ControlledInput, Recaptcha, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './forgotPassword.module.scss'
 
 type ForgotPasswordPropsType = {
   isSent: boolean
-  onSubmitHandler: (data: ForgotPasswordFormType) => void
+  onSubmitHandler: (data: PasswordRecovery) => void
 }
 
 export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsType) => {
-  const recaptchaRef = useRef<ReCAPTCHA>(null)
+  const [recaptchaKey, setRecaptchaKey] = useState<Nullable<string>>(null)
 
-  const { handleCaptchaSubmission, isVerified } = useCaptcha()
   const { t } = useTranslation()
 
   const { control, handleSubmit } = useForgotPassword()
-  const onSubmit = handleSubmit(data => onSubmitHandler(data))
+  const onRecaptchaChangeHandler = (key: Nullable<string>) => {
+    setRecaptchaKey(key)
+  }
+  const onSubmit = handleSubmit(data =>
+    onSubmitHandler({ email: data.email, recaptcha: recaptchaKey })
+  )
 
   return (
     <>
@@ -42,7 +47,7 @@ export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsT
               {t.other.infoSent}
             </Typography>
           )}
-          <Button disabled={isVerified} fullWidth type={'submit'}>
+          <Button disabled={!recaptchaKey} fullWidth type={'submit'}>
             {!isSent ? t.linksButtons.sendLink : t.linksButtons.resendLink}
           </Button>
         </form>
@@ -50,14 +55,7 @@ export const ForgotPassword = ({ isSent, onSubmitHandler }: ForgotPasswordPropsT
           <Link href={'/auth/signIn'}>{t.linksButtons.backToSignIn}</Link>
         </Button>
         <div style={{ display: 'inline-block' }}>
-          {!isSent && (
-            <ReCAPTCHA
-              onChange={handleCaptchaSubmission}
-              ref={recaptchaRef}
-              sitekey={process.env.NEXT_PUBLIC_SITE_KEY!}
-              theme={'dark'}
-            />
-          )}
+          <Recaptcha onRecaptchaChangeHandler={onRecaptchaChangeHandler} />
         </div>
       </Card>
     </>
