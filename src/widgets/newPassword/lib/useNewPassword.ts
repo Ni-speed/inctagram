@@ -20,7 +20,7 @@ export const schema = (t: ErrorRegisterFormType) => {
         .trim()
         .min(6, t.password.min)
         .max(20, t.password.max)
-        .regex(/^[a-zA-Z0-9_-]*$/, t.login.characters),
+        .regex(/^[a-zA-Z0-9!@#$%^&'()*+,\-.:;<=>?[\\\]_`{|}~]*$/, t.login.characters),
     })
     .refine(data => data.password === data.confirmPassword, {
       message: t.passwordConfirm,

@@ -2,6 +2,7 @@ import type {
   LogInArgs,
   NewMeResponse,
   NewPasswordArgs,
+  PasswordRecovery,
   RegistrationArgs,
   RegistrationConfirmationArgs,
   Token,
@@ -60,7 +61,7 @@ const authApi = baseApi.injectEndpoints({
       query: body => ({ body, method: 'POST', url: 'auth/new-password' }),
     }),
 
-    passwordRecovery: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
+    passwordRecovery: build.mutation<void, PasswordRecovery>({
       query: body => ({ body, method: 'POST', url: 'auth/password-recovery' }),
     }),
 
@@ -71,7 +72,6 @@ const authApi = baseApi.injectEndpoints({
     registration: build.mutation<void, RegistrationArgs>({
       query: body => ({
         body: {
-          baseUrl: 'https://inctagram.work/api/v1',
           email: body.email,
           password: body.password,
           userName: body.userName,
@@ -92,7 +92,6 @@ const authApi = baseApi.injectEndpoints({
     registrationEmailResending: build.mutation<void, Pick<RegistrationArgs, 'email'>>({
       query: body => ({
         body: {
-          baseUrl: 'https://inctagram.work/api/v1/',
           email: body.email,
         },
         method: 'POST',
