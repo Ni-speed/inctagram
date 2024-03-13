@@ -9,7 +9,9 @@ type ServerErrorSignUpHandler = {
   code?: number
   errorResponse: NewErrorSignUpResponse
   serverErrorHandler: (t: LocaleType) => ErrorResponse
-  setError: UseFormSetError<FormSignIn | FormSignUp>
+  // setError: UseFormSetError<FormSignIn | FormSignUp>
+  //todo fix problem with types
+  setError: any
   t: LocaleType
 }
 
