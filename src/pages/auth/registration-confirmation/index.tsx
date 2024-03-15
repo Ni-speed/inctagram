@@ -15,10 +15,10 @@ const ConfirmEmailCodePage = () => {
   useEffect(() => {
     registrationConfirmation({ code: query.code as string })
       .unwrap()
-      .then(res => {
+      .then(_ => {
         router.push('auth/signIn')
       })
-  }, [registrationConfirmation, query])
+  }, [router, registrationConfirmation, query])
 
   if (isLoading) {
     return <div>Loading...</div>

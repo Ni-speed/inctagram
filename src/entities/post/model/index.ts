@@ -1,1 +1,1 @@
-export { addPhoto, changeCurrentPhoto,deletePhoto, photosSlice, setCurrentPhoto } from './slice'
+export { addPhoto, changeCurrentPhoto, deletePhoto, photosSlice, setCurrentPhoto } from './slice'
