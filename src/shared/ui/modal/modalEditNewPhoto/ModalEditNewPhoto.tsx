@@ -12,7 +12,7 @@ import { ArrowLeftIcon, Button, ExpandIcon, MaximizeOutline, ModalFilterMode } f
 import s from './modalEditNewPhoto.module.scss'
 
 type Props = {
-  image: string
+  image?: string
   onClose: () => void
   open: boolean
 }

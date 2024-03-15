@@ -12,7 +12,7 @@ type Story = StoryObj<typeof meta>
 
 export const ModalEditNewPhotoCommon: Story = {
   args: {
-    handleButtonClick: () => {},
+    // handleButtonClick: () => {},
     onClose: () => {},
     open: true,
   },
