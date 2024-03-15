@@ -1,15 +1,16 @@
 import { useRef, useState } from 'react'
 
-import { useTranslation } from '../../../hooks'
-import { Typography } from '../../typography'
-import { Modal } from '../Modal'
-import { AddDescription } from './addDescription/AddDescription'
-import { FilterItems } from './filterItems/FilterItems'
 import { ArrowLeftIcon, Button } from '@/shared'
 import domtoimage from 'dom-to-image'
 import Image from 'next/image'
 
 import s from './modalFilterMode.module.scss'
+
+import { useTranslation } from '../../../hooks'
+import { Typography } from '../../typography'
+import { Modal } from '../Modal'
+import { AddDescription } from './addDescription/AddDescription'
+import { FilterItems } from './filterItems/FilterItems'
 
 type Props = {
   image: string
@@ -80,6 +81,8 @@ export const ModalFilterMode = (props: Props) => {
               image={image}
               setFilter={filter => {
                 setFilter(filter)
+
+                // @ts-ignore
                 domtoimage.toBlob(refImage.current).then((blob: any) => {
                   //   const img = refImage.current
                   //   const canvas = document.createElement('canvas')
@@ -109,6 +112,7 @@ export const ModalFilterMode = (props: Props) => {
                   // } catch (e: unknown) {}
                   //   }
                   //   console.log(formData)
+                  // @ts-ignore
                 }, 'image/jpeg')
               }}
             ></FilterItems>
