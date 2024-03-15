@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { ModalCloseCreationPost } from './ModalCloseCreationPost'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: ModalCloseCreationPost,

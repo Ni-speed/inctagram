@@ -1,5 +1,8 @@
 import { ChangeEvent, useRef, useState } from 'react'
 
+import { Modal } from '..'
+import { useAppDispatch } from '../../../../app'
+import { addPhoto } from '../../../../entities'
 import {
   Button,
   ImageOutline,
@@ -8,10 +11,6 @@ import {
   permittedFileTypes,
   useTranslation,
 } from '@/shared'
-
-import { Modal } from '..'
-import { useAppDispatch } from '../../../../app'
-import { addPhoto } from '../../../../entities'
 //import { v4 as uuidv4 } from 'uuid'
 
 import s from './modalChoosePhoto.module.scss'

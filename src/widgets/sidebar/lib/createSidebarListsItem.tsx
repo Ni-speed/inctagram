@@ -1,10 +1,9 @@
+import { SidebarItemsType } from './useSidebarItems'
 import { Undefineable } from '@/shared'
 import { Button, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './../ui/sidebar.module.scss'
-
-import { SidebarItemsType } from './useSidebarItems'
 
 type PropsType = {
   items: SidebarItemsType

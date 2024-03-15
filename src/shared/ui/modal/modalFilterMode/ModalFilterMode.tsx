@@ -1,16 +1,15 @@
 import { useRef, useState } from 'react'
 
-import { ArrowLeftIcon, Button } from '@/shared'
-import domtoimage from 'dom-to-image'
-import Image from 'next/image'
-
-import s from './modalFilterMode.module.scss'
-
 import { useTranslation } from '../../../hooks'
 import { Typography } from '../../typography'
 import { Modal } from '../Modal'
 import { AddDescription } from './addDescription/AddDescription'
 import { FilterItems } from './filterItems/FilterItems'
+import { ArrowLeftIcon, Button } from '@/shared'
+import domtoimage from 'dom-to-image'
+import Image from 'next/image'
+
+import s from './modalFilterMode.module.scss'
 
 type Props = {
   image: string

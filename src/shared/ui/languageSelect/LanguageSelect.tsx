@@ -1,10 +1,9 @@
 import { memo, useMemo, useState } from 'react'
 
-import { EnFlag, RuFlag } from '@/shared/assets/svg'
-import { useRouter } from 'next/router'
-
 import { LanguageSelectItem } from '.'
 import { Option, Select } from '..'
+import { EnFlag, RuFlag } from '@/shared/assets/svg'
+import { useRouter } from 'next/router'
 
 type LocalType = 'en' | 'ru'
 export type LanguageSelectTypes = {

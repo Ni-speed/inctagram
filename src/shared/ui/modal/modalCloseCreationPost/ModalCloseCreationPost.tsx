@@ -1,8 +1,7 @@
+import { Modal } from '..'
 import { Button, Typography, useTranslation } from '@/shared'
 
 import s from './modalCloseCreationPost.module.scss'
-
-import { Modal } from '..'
 type Props = {
   buttonHandler: () => void
   onClose: () => void

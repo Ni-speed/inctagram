@@ -1,10 +1,9 @@
-import Link from 'next/link'
-
-import s from './privacyPolicy.module.scss'
-
 import { LongArrow } from '../../../shared/assets/svg'
 import { useTranslation } from '../../../shared/hooks'
 import { Typography } from '../../../shared/ui'
+import Link from 'next/link'
+
+import s from './privacyPolicy.module.scss'
 
 export const PrivacyPolicy = () => {
   const { t } = useTranslation()

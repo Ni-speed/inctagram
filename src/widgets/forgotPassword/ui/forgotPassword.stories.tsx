@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { ForgotPassword } from './ForgotPassword'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: ForgotPassword,

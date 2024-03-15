@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { Cropper } from 'react-cropper'
 
-import s from './cropImage.module.scss'
-
 import { useAppDispatch } from '../../../app'
 import { PhotoType, changeCurrentPhoto } from '../../../entities/post/model/slice'
+
+import s from './cropImage.module.scss'
 
 type IProps = {
   cropImage: PhotoType

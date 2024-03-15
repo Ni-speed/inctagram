@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { ModalEditNewPhoto } from './ModalEditNewPhoto'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: ModalEditNewPhoto,

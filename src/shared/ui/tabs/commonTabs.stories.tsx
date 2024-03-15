@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { CommonTabs } from './CommonTabs'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: CommonTabs,

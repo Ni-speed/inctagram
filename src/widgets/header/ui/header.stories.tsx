@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { Header } from './Header'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: Header,

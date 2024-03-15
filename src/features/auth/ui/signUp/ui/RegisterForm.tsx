@@ -1,6 +1,8 @@
 import { FormEvent, useEffect } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
+import { NewErrorSignUpResponse } from '../../../model/types'
+import { useRegisterForm } from '../lib'
 import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
 import { serverErrorSignUp } from '@/features/auth/model/errors'
 import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared'
@@ -8,9 +10,6 @@ import { useTranslation } from '@/shared/hooks'
 import Link from 'next/link'
 
 import s from './registerForm.module.scss'
-
-import { NewErrorSignUpResponse } from '../../../model/types'
-import { useRegisterForm } from '../lib'
 
 type RegisterFormPropsType = {
   className?: string

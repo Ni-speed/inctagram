@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { PublicPost } from './PublicPost'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: PublicPost,

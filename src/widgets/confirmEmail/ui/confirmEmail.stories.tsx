@@ -1,6 +1,5 @@
-import { Meta, StoryObj } from '@storybook/react'
-
 import { ConfirmEmail } from './ConfirmEmail'
+import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: ConfirmEmail,

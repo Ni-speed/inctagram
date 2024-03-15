@@ -1,5 +1,3 @@
-import s from './../ui/sidebar.module.scss'
-
 import {
   Favorite,
   Home,
@@ -12,6 +10,8 @@ import {
 } from '../../../shared/assets/svg'
 import { useTranslation } from '../../../shared/hooks'
 import { Typography } from '../../../shared/ui'
+
+import s from './../ui/sidebar.module.scss'
 
 export const useSidebarItems = () => {
   const { t } = useTranslation()

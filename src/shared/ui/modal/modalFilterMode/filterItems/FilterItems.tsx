@@ -1,9 +1,8 @@
+import { Typography } from '../../..'
+import { filters } from '../../../../constans/photoFilters'
 import Image from 'next/image'
 
 import s from './FilterItems.module.scss'
-
-import { Typography } from '../../..'
-import { filters } from '../../../../constans/photoFilters'
 
 type IProps = {
   image: string

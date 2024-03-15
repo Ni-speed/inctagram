@@ -1,10 +1,9 @@
 import { UseFormSetError } from 'react-hook-form'
 
-import { LocaleType } from '@/../locales/ru'
-import { ErrorResponse, NewErrorSignUpResponse } from '@/features/auth/model/types'
-
 import { FormSignUp } from '../ui/signUp/lib/useRegisterForm'
 import { FormSignIn } from '../ui/singIn/lib/useSingInForm'
+import { LocaleType } from '@/../locales/ru'
+import { ErrorResponse, NewErrorSignUpResponse } from '@/features/auth/model/types'
 
 type ServerErrorSignUpHandler = {
   code?: number

@@ -1,10 +1,9 @@
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { ErrorRegisterFormType } from '../../../../../../locales/ru'
 import { useTranslation } from '@/shared/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-
-import { ErrorRegisterFormType } from '../../../../../../locales/ru'
 
 export const schema = (t: ErrorRegisterFormType) => {
   return z

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import { useForgotPassword } from '..'
 import { PasswordRecovery } from '@/features/auth/model/types'
 import { useTranslation } from '@/shared/hooks'
 import { Nullable } from '@/shared/types/nullableType'
@@ -7,8 +8,6 @@ import { Button, Card, ControlledInput, Recaptcha, Typography } from '@/shared/u
 import Link from 'next/link'
 
 import s from './forgotPassword.module.scss'
-
-import { useForgotPassword } from '..'
 
 type ForgotPasswordPropsType = {
   isSent: boolean

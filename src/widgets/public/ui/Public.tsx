@@ -1,9 +1,8 @@
+import { CountUser } from '../../countUsers/CountUser'
 import { PublicPost } from '@/entities/publicPost/ui/PublicPost'
 import { HeadMeta } from '@/shared/ui/headMeta/HeadMeta'
 
 import s from './public.module.scss'
-
-import { CountUser } from '../../countUsers/CountUser'
 export const Public=()=> {
   return (
     <div className={s.container}>

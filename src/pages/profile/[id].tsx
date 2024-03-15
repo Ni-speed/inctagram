@@ -1,6 +1,5 @@
-import { Profile, getLayoutSidebar } from '@/widgets'
-
 import { HeadMeta } from '../../shared'
+import { Profile, getLayoutSidebar } from '@/widgets'
 
 function ProfileIndex() {
   return (

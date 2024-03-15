@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 
-import s from './dot.module.scss'
-
 import { SliderContext } from '../../../model/sliderContext'
+
+import s from './dot.module.scss'
 
 type PropsType = {
   number: number

@@ -1,12 +1,11 @@
 import React from 'react'
 
+import { useNewPassword } from '../lib'
+import { NewPasswordFormType } from '../lib/useNewPassword'
 import { useTranslation } from '@/shared/hooks'
 import { Button, Card, ControlledInput, Typography } from '@/shared/ui'
 
 import s from './newPassword.module.scss'
-
-import { useNewPassword } from '../lib'
-import { NewPasswordFormType } from '../lib/useNewPassword'
 
 type Props = {
   onSubmitHandler: (data: NewPasswordFormType) => void
