@@ -5,13 +5,12 @@ import { Typography } from '../../typography'
 import { Modal } from '../Modal'
 import { AddDescription } from './addDescription/AddDescription'
 import { FilterItems } from './filterItems/FilterItems'
-import { useGetMeQuery, useGetProfileQuery } from '@/features'
 import { ArrowLeftIcon, Button } from '@/shared'
-import { skipToken } from '@reduxjs/toolkit/query'
 import domtoimage from 'dom-to-image'
 import Image from 'next/image'
 
 import s from './modalFilterMode.module.scss'
+
 type Props = {
   image: string
   onClose: () => void
