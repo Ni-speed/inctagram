@@ -1,0 +1,1 @@
+export { ModalChoosePhoto } from './ModalChoosePhoto'

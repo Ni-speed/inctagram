@@ -1,6 +1,6 @@
 import { PropsWithChildren, useEffect } from 'react'
 
-import { useGetMeQuery, useLogoutMutation } from '@/features/auth'
+import { useGetMeQuery, useLogoutMutation } from '@/features'
 import { SettingsButtonBar } from '@/shared/ui/settingsButtonBar/SettingsButtonBar'
 import { useRouter } from 'next/router'
 
@@ -15,7 +15,7 @@ export const LayoutProfileSettings = (props: PropsWithChildren<any>) => {
   useEffect(() => {
     if (!isLoading) {
       if (!data) {
-        router.push('/signIn')
+        router.push('/auth/signIn')
       }
     }
   }, [data, isLoading, router])

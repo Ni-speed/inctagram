@@ -35,7 +35,7 @@ export const ru = {
     lastname: 'Фамилия пользователя',
     saveChanges: 'Сохранить',
     saveSettingsChange: 'Сохранить изменения',
-    selectImage: 'Выбрать изображение с этого компьютера',
+    selectImage: 'Выбрать с компьютера',
     username: '"Ник" пользователя',
   },
   languageSelector: {
@@ -66,6 +66,25 @@ export const ru = {
       password: 'Введите пароль',
     },
   },
+  modalAddPost: {
+    button: {
+      discard: 'Отменить',
+      next: 'Дальше',
+      openDraft: 'Как перевести?',
+      original: 'Оригинал',
+      publish: 'Опубликовать',
+      saveDraft: 'Завершить',
+      selectFromComputer: 'Выбрать',
+    },
+    textOne: 'Вы действительно хотите завершить создание публикации?',
+    textTwo: 'Если вы закроете, прогресс будет удален',
+    titleAddFhoto: 'Добавить фото',
+    titleCloseCreation: 'Завершить',
+    titleEditFhoto: 'Редактирование',
+    titleFilterMode: 'Фильтры',
+    titlePublicationMode: 'Публикация',
+    titleTextarea: 'Добавьте описание к публикации',
+  },
   modalEmailSent: {
     button: 'OK',
     mailResend: 'Cсылка для подтверждения вашего электронного ящика отправлена повторно на',
@@ -84,6 +103,7 @@ export const ru = {
       'Похоже, срок действия ссылки для подтверждения истек. Не волнуйтесь, мы можем отправить ссылку еще раз.',
     title: 'Срок действия ссылки истек',
   },
+
   other: {
     agree: 'Я принимаю',
     and: 'и',
@@ -144,6 +164,10 @@ export const ru = {
     expiredLinkPass: 'Ссылка восстановления пароля истекла',
     forgotPassword: 'Восстановление пароля',
     privacyPolicy: 'Политика конфиденциальности',
+  },
+  toast: {
+    fetchError: 'Ошибка соединения с сервером',
+    success: 'Успешно!',
   },
 }
 export type LocaleType = typeof ru

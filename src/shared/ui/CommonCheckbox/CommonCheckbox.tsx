@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 
-import { CheckboxChecked, CheckboxCheckedDisabled } from '../../assets/svg'
+import { CheckboxChecked, CheckboxCheckedDisabled } from '@/shared'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 
 import s from './CommonCheckbox.module.scss'

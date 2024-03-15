@@ -1,6 +1,6 @@
 import React, { ChangeEvent, ComponentPropsWithoutRef, useState } from 'react'
 
-import { EyeSvg, SearchSvg } from '../../assets/svg'
+import { EyeSvg, SearchSvg } from '@/shared'
 import { CloseEyeSvg } from '@/shared/assets/svg/inputSvg'
 import { Label, Typography } from '@/shared/ui'
 import { clsx } from 'clsx'

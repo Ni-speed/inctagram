@@ -1,4 +1,8 @@
 export * from './Modal'
 export * from './modal.module.scss'
+export { ModalAddPost } from './modalAddPost'
+export { ModalChoosePhoto } from './modalChoosePhoto'
+export { ModalEditNewPhoto } from './modalEditNewPhoto'
 export { ModalEmailSent } from './modalEmailSent'
+export { ModalFilterMode } from './modalFilterMode'
 export { ModalInputEmail } from './modalInputEmail'

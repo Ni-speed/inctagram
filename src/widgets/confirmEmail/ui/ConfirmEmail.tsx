@@ -17,7 +17,7 @@ export const ConfirmEmail = () => {
         {t.confirmEmail.subTitle}
       </Typography>
       <Button className={s.button}>
-        <Link href={'/signIn'}>
+        <Link href={'auth/signIn'}>
           <Typography variant={'h3'}>{t.confirmEmail.button}</Typography>
         </Link>
       </Button>

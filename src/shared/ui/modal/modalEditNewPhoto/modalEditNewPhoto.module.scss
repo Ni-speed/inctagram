@@ -1,0 +1,70 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow {
+        cursor: pointer;
+    }
+
+    .next {
+        color: var(--color-accent-500)
+    }
+}
+
+.imageContainer {
+    height: 503px;
+    position: relative;
+    margin: -24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.crop {
+    border-color: none;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.icon {
+    position: absolute;
+
+    width: 36px;
+    background-color: rgb(23, 23, 23, 0.8);
+    border-radius: 2px;
+
+    &:focus {
+        box-shadow: none
+    }
+
+    .svg {
+        fill: var(--color-light-100);
+        width: 24px;
+        height: 24px;
+
+        &:hover {
+            fill: var(--color-accent-500);
+        }
+    }
+}
+
+.iconExpend {
+
+    left: 11px;
+    bottom: 11px;
+
+}
+
+.iconZoom {
+
+    left: 72px;
+    bottom: 11px;
+
+}
+
+.iconImage {
+    right: 11px;
+    bottom: 11px;
+}

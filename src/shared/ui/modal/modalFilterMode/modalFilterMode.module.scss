@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    margin: -24px;
+
+    .imageContainer {
+        height: 490px;
+
+        .mainImage {
+            object-fit: contain;
+        }
+    }
+
+    .filtersContainer {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        gap: 14px 24px;
+        padding: 24px 54px 30px;
+    }
+
+    .addDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 24px 44px;
+        width: 100%;
+    }
+}
+
+
+
+
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow {
+        cursor: pointer;
+    }
+
+    .next {
+        color: var(--color-accent-500)
+    }
+}

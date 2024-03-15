@@ -1,0 +1,25 @@
+  .avatarAndName {
+      display: flex;
+      height: 36px;
+      gap: 12px;
+      margin-bottom: 24px;
+
+      .avatar {
+          border-radius: 50%;
+          overflow: hidden;
+      }
+
+      .name {
+          display: flex;
+          align-items: center;
+      }
+  }
+
+  .textarea {
+      height: 106px;
+  }
+
+  .text {
+      text-align: end;
+      color: var(--color-light-900);
+  }

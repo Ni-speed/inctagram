@@ -1,14 +1,25 @@
-import { AvatarType } from '@/features'
+import { AvatarType, NewAvatarType } from '@/features'
 import { serverErrorSignUp } from '@/features/auth/model/errors'
 
 export type LogInArgs = {
-  loginOrEmail: string
+  email: string
   password: string
 }
 export type RegistrationArgs = {
   email: string
-  login: string
   password: string
+  userName: string
+}
+export type PasswordRecovery = {
+  email: string
+  recaptcha: null | string
+}
+//todo
+export type NewMeResponse = {
+  email: string
+  isBlocked: boolean
+  userId: number
+  userName: string | undefined
 }
 
 export type MeResponse = {
@@ -20,8 +31,10 @@ export type MeResponse = {
 export type RegistrationConfirmationArgs = {
   code: string
 }
+
+//todo
 export type NewPasswordArgs = {
-  password: string
+  newPassword: string
   recoveryCode: string | string[]
 }
 export type Token = {
@@ -44,9 +57,36 @@ export type ErrorLoginResponse<T> = {
   status: string
 }
 
+export type DataSignUpResponse = {
+  error: string
+  messages: ErrorMessage[]
+  statusCode: number
+}
+export type NewErrorSignUpResponse = {
+  data: DataSignUpResponse
+  status: number
+}
+
 export type ErrorResponse = ReturnType<typeof serverErrorSignUp>
 
-export type LoginErrors = ErrorLoginResponse<LoginIncorrectData> | ErrorLoginResponse<string>
+export type LoginErrors =
+  | ErrorLoginResponse<LoginIncorrectData>
+  | ErrorLoginResponse<string>
+  | NewErrorSignUpResponse
+
+//todo add new type for new backend
+export type NewGetProfileResponseType = {
+  aboutMe: null | string
+  avatars: NewAvatarType[]
+  city: null | string
+  createdAt: Date
+  dateOfBirth: Date | null
+  firstName: string
+  id: number
+  lastName: string
+  userName: null | string
+}
+
 export type GetProfileResponseType = {
   aboutMe?: null | string
   avatars: AvatarType[]
@@ -60,11 +100,22 @@ export type GetProfileResponseType = {
   lastname: string
   username: null | string
 }
+
 export type AvatarsType = {
   fileSize: number
   height: number
   url: string
   width: number
+}
+
+//todo add new type for new backend
+export type NewProfileInfoUpdateRequest = {
+  aboutMe: null | string
+  city: null | string
+  dateOfBirth: Date | null
+  firstName: null | string
+  lastName: null | string
+  userName: string
 }
 
 export type ProfileRequestType = {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useGetMeQuery, useGetProfileQuery, useUpdateProfileMutation } from '@/features'
+import { useNewGetProfileQuery, useNewUpdateProfileMutation } from '@/features'
 import { GeneralInfoForm } from '@/widgets/generalInfo/ui/generalInfoForm/GeneralInfoForm'
 import { omit } from 'remeda'
 
@@ -8,19 +8,19 @@ import s from './GeneralInformation.module.scss'
 
 type GeneralInfo = {
   aboutMe: null | string
-  birthDate: Date | string
   city: null | string
   country: null | string
-  firstname: string
-  lastname: string
-  username: null | string
+  dateOfBirth: Date | null
+  firstName: null | string
+  lastName: null | string
+  userName: string
 }
 export const GeneralInformation = () => {
-  const [updateProfile, { error: updateProfileError }] = useUpdateProfileMutation()
-  const { data: me } = useGetMeQuery()
-  const { data: profile, isLoading } = useGetProfileQuery({ profileId: me?.id })
+  //todo add another request for new back
+  const [updateProfile, { error: updateProfileError }] = useNewUpdateProfileMutation()
+  const { data: profileData, isLoading: isLoadingProfile } = useNewGetProfileQuery()
 
-  if (!profile) {
+  if (!profileData) {
     return <div>Loading</div>
   }
   const onSubmitHandler = (generalIngo: GeneralInfo) => {
@@ -30,9 +30,9 @@ export const GeneralInformation = () => {
   return (
     <div className={s.genContainer}>
       <GeneralInfoForm
-        myUserName={me && me.username}
+        myUserName={profileData.userName}
         onSubmitProfile={onSubmitHandler}
-        profile={profile}
+        profile={profileData}
       />
     </div>
   )

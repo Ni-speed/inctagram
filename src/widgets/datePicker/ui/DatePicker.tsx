@@ -15,9 +15,10 @@ import { enUS, ru } from 'date-fns/locale'
 
 import { isWeekend } from 'date-fns/fp'
 
+import 'react-datepicker/dist/react-datepicker.min.css'
+
 // eslint-disable-next-line perfectionist/sort-imports
 import s from './DatePicker.module.scss'
-import 'react-datepicker/dist/react-datepicker.min.css'
 
 const RDPC = (((RDP.default as any).default as any) ||
   (RDP.default as any) ||
@@ -173,7 +174,7 @@ const CustomHeader = ({ date, decreaseMonth, increaseMonth }: ReactDatePickerCus
 const CustomDay = (dayOfMonth: number, date?: Date | undefined) => {
   const dayClassName = `${s.day} ${date && isWeekend(date) ? s.weekend : s.notWeekend} ${
     date && isToday(date) && s.today
-  } ${date && isThisMonth(date) && s.notThisMonth}`
+  } `
 
   return <span className={dayClassName}>{dayOfMonth}</span>
 }

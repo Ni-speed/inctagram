@@ -6,17 +6,24 @@ import Link from 'next/link'
 import s from './../ui/sidebar.module.scss'
 
 type PropsType = {
-  id: Undefineable<string>
   items: SidebarItemsType
   key: string
-  onClickHandler: () => void
+  onClickCreateHandler: () => void
+  onClickLogoutHandler: () => void
+  userName: Undefineable<string>
 }
 
-export const createSidebarListsItem = ({ id, items, key, onClickHandler }: PropsType) => {
+export const CreateSidebarListsItem = ({
+  items,
+  key,
+  onClickCreateHandler,
+  onClickLogoutHandler,
+  userName,
+}: PropsType) => {
   if (key === 'logout') {
     return (
       <li className={s.itemWrapper} key={key}>
-        <Button className={s.button} onClick={onClickHandler} variant={'text'}>
+        <Button className={s.button} onClick={onClickLogoutHandler} variant={'text'}>
           <div>{items[key as keyof typeof items].icon}</div>
           <div>
             <Typography className={s.text} variant={'mediumText14'}>
@@ -28,14 +35,28 @@ export const createSidebarListsItem = ({ id, items, key, onClickHandler }: Props
     )
   }
 
+  if (key === 'create') {
+    return (
+      <li className={s.itemWrapper} key={key}>
+        <Button className={s.button} onClick={onClickCreateHandler} variant={'text'}>
+          <div>{items[key as keyof typeof items].icon}</div>
+          <div>
+            <Typography className={s.text} variant={'mediumText14'}>
+              {items[key as keyof typeof items].title}
+            </Typography>
+          </div>
+        </Button>
+      </li>
+    )
+  }
   if (key === 'myProfile') {
     return (
       <li className={s.itemWrapper} key={key}>
         <Link
           className={s.item}
           href={{
-            pathname: `${items[key as keyof typeof items].url}/[id]`,
-            query: { id },
+            pathname: `${items[key as keyof typeof items].url}/[userName]`,
+            query: { userName },
           }}
         >
           <div>{items[key as keyof typeof items].icon}</div>

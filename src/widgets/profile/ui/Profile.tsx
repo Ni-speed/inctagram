@@ -1,26 +1,37 @@
 import { FC } from 'react'
 
-import { useGetMeQuery, useGetProfileQuery } from '@/features'
+import { useGetMeQuery, useNewGetProfileQuery } from '@/features'
 import { ProfileButtons } from '@/features/profile/ui/profileButtons/ProfileButtons'
 import { ProfileStatistic } from '@/features/profile/ui/profileStatisric/ProfileStatistic'
+import { useGetUserQuery } from '@/features/users'
 import { Typography } from '@/shared'
 import { HeroProfilePlaceholder } from '@/widgets/heroProfilePlaceholder/HeroProfilePlaceholder'
 import { skipToken } from '@reduxjs/toolkit/query'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import s from './profile.module.scss'
 
 type PropsType = {}
 
 export const Profile: FC<PropsType> = () => {
+  const userNameFromRouter = useRouter()
+
+  //todo it`s not work, ask to backend
+  /*const { data: userData, isLoading: isLoadingUser } = useGetUserQuery({
+        userName: userNameFromRouter.query.userName ? userNameFromRouter.query.userName : skipToken,
+      })*/
   //TODO need fix Internationalization & add useTranslation
   const { data: meData, isLoading: isLoadingMe } = useGetMeQuery()
-  const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
-    profileId: meData?.id ?? skipToken,
-  })
+  const { data: profileData, isLoading: isLoadingProfile } = useNewGetProfileQuery()
 
-  const isOwnProfile = meData?.id === profileData?.id
-  const isFriend = profileData?.isFriend ?? true
+  //todo commented old request
+  /*const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
+                                                profileId: meData?.userId ?? skipToken,
+                                              })*/
+
+  const isOwnProfile = meData?.userId === profileData?.id
+  const isFriend = /*profileData?.isFollowing ??*/ true
 
   if (isLoadingMe || isLoadingProfile) {
     return <>Loading...</>
@@ -54,7 +65,7 @@ export const Profile: FC<PropsType> = () => {
 
         <div className={s.statisticWrapper}>
           <div className={s.profileURL}>
-            <Typography variant={'h1'}>URLProfile</Typography>
+            <Typography variant={'h1'}>{profileData?.userName}</Typography>
             <div className={s.profileButtonsContainer}>
               <ProfileButtons
                 isFriend={isFriend}

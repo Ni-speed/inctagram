@@ -1,28 +1,32 @@
-import { ReactElement } from 'react'
+import { ReactElement, useState } from 'react'
 
-import { createSidebarListsItem } from '../lib/createSidebarListsItem'
 import { SidebarItemsType, useSidebarItems } from '../lib/useSidebarItems'
-import { Undefineable } from '@/shared'
+import { ModalAddPost, Undefineable } from '@/shared'
+import { CreateSidebarListsItem } from '@/widgets/sidebar/lib/createSidebarListsItem'
 
 import s from './sidebar.module.scss'
 
 type PropsType = {
   accountPaid: boolean
-  id: Undefineable<string>
   logout: () => void
+  userName: Undefineable<string>
 }
 
-export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
+export const Sidebar = ({ accountPaid, logout, userName }: PropsType) => {
+  const [isOpenModal, setIsOpenModal] = useState(false)
   const sidebarItems = useSidebarItems()
   const sidebarList: ReactElement[] = []
 
   const addSidebarItemInList = (key: string, sidebarItems: SidebarItemsType) => {
     return sidebarList.push(
-      createSidebarListsItem({
-        id,
+      CreateSidebarListsItem({
         items: sidebarItems,
         key,
-        onClickHandler: logout,
+        onClickCreateHandler: () => {
+          setIsOpenModal(true)
+        },
+        onClickLogoutHandler: logout,
+        userName,
       })
     )
   }
@@ -40,6 +44,7 @@ export const Sidebar = ({ accountPaid, id, logout }: PropsType) => {
   return (
     <aside className={s.aside}>
       <ul className={s.sidebarList}>{sidebarList}</ul>
+      <ModalAddPost isOpen={isOpenModal} onClose={() => setIsOpenModal(false)}></ModalAddPost>
     </aside>
   )
 }

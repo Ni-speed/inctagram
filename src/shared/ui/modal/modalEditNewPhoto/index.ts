@@ -1,0 +1,1 @@
+export { ModalEditNewPhoto } from './ModalEditNewPhoto'

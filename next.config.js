@@ -17,6 +17,7 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
       's3-alpha-sig.figma.com',
+      'storage.yandexcloud.net',
     ],
   },
   reactStrictMode: true,

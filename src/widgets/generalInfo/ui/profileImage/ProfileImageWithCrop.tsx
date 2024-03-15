@@ -1,16 +1,21 @@
 import React, { ChangeEvent, memo, useCallback, useRef, useState } from 'react'
-// @ts-ignore
 import { Cropper } from 'react-cropper'
 
 import { useDeleteAvatarMutation, useUploadAvatarMutation } from '@/features'
-import { Button, DeleteIcon, Loader, Modal, Typography, useTranslation } from '@/shared'
-import { Avatar } from '@/shared/ui/avatar/Avatar'
 import {
-  permittedFileSize,
+  Button,
+  DeleteIcon,
+  Loader,
+  Modal,
+  Typography,
+  permittedFileSizeForAvatar,
   permittedFileTypes,
-} from '@/widgets/generalInfo/ui/generalInfoForm/imageConst'
+  useTranslation,
+} from '@/shared'
+import { Avatar } from '@/shared/ui/avatar/Avatar'
 
 import s from './ProfileImage.module.scss'
+// eslint-disable-next-line import/no-unresolved
 import 'cropperjs/dist/cropper.css'
 
 type ProfileImageProps = {
@@ -46,7 +51,7 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
         return fileName.endsWith(it)
       })
 
-      if (matches && file.size <= permittedFileSize) {
+      if (matches && file.size <= permittedFileSizeForAvatar) {
         setUploadError('')
         const previewPhoto = function (reader: any) {
           setPreviewAvatar(reader.result)
@@ -96,9 +101,12 @@ export const ProfileImageWithCrop = memo(({ avatars = '' }: ProfileImageProps) =
             const croppedImageFile = new File([blob], 'croppedImage.jpg', { type: 'image/jpeg' })
             const formData = new FormData()
 
+            console.log(formData)
+
             if (croppedImageFile) {
               formData.append('file', croppedImageFile)
             }
+
             try {
               uploadAvatar(formData).unwrap()
               setPreviewAvatar('')

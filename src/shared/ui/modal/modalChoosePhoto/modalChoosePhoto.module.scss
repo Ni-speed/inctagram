@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    flex-direction: column;
+    margin: 48px auto 0;
+    gap: 24px;
+    width: 222px;
+
+    .svgContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--color-dark-500);
+        height: 228px;
+    }
+
+    .buttonFirst {
+        margin-top: 36px;
+    }
+
+    .buttonSecond {
+        margin-bottom: 24px;
+    }
+}

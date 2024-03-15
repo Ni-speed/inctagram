@@ -1,24 +1,24 @@
 import { FormEvent, useEffect } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
-import { LoginErrors } from '../../../model/types'
+import { NewErrorSignUpResponse } from '../../../model/types'
 import { useRegisterForm } from '../lib'
 import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
 import { serverErrorSignUp } from '@/features/auth/model/errors'
+import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared'
 import { useTranslation } from '@/shared/hooks'
-import { Button, ControlledCheckbox, ControlledInput, Typography } from '@/shared/ui'
 import Link from 'next/link'
 
 import s from './registerForm.module.scss'
 
 type RegisterFormPropsType = {
   className?: string
-  errorMessage?: LoginErrors
+  errorMessage?: NewErrorSignUpResponse
   isQuery?: boolean
   onSubmit: SubmitHandler<{
     email: string
-    login: string
     password: string
+    userName: string
   }>
 }
 
@@ -39,7 +39,7 @@ export const RegisterForm = ({
   useEffect(() => {
     if (errorMessage) {
       serverErrorResponseHandler({
-        code: errorMessage.originalStatus,
+        errorResponse: errorMessage,
         serverErrorHandler: serverErrorSignUp,
         setError,
         t,
@@ -56,7 +56,7 @@ export const RegisterForm = ({
           control={control}
           inputIsSearch={false}
           label={t.registerForm.fields.username}
-          name={'login'}
+          name={'userName'}
         ></ControlledInput>
         <ControlledInput
           className={s.textField}
@@ -90,11 +90,11 @@ export const RegisterForm = ({
           label={
             <Typography className={s.textCheckbox} variant={'smallLink'}>
               {t.other.agree}{' '}
-              <Link className={s.link} href={'/termsOfService'}>
+              <Link className={s.link} href={'/auth/termsOfService'}>
                 {t.privacyPolicy.termsOfService}
               </Link>{' '}
               {t.other.and}{' '}
-              <Link className={s.link} href={'/privacyPolicy'}>
+              <Link className={s.link} href={'/auth/privacyPolicy'}>
                 {t.privacyPolicy.privacyPolicy}
               </Link>
             </Typography>

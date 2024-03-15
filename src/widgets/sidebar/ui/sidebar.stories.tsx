@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>
 export const SidebarWidget: Story = {
   args: {
     accountPaid: true,
-    id: '1234',
     logout: () => console.log(''),
+    userName: '1234',
   },
 }

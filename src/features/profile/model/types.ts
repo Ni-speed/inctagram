@@ -1,9 +1,18 @@
+export type NewAvatarType = {
+  fileSize: number
+  height: number
+  url: string
+  width: number
+}
+//todo add new type NewAvatarType
+
 export type AvatarType = {
   fileSize: number
   height: number
   url: string
   width: number
 }
+
 export type GetProfileResponse = {
   aboutMe: null | string
   avatars: AvatarType[]
