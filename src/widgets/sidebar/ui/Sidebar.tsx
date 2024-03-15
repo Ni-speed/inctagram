@@ -1,10 +1,11 @@
 import { ReactElement, useState } from 'react'
 
-import { SidebarItemsType, useSidebarItems } from '../lib/useSidebarItems'
 import { ModalAddPost, Undefineable } from '@/shared'
 import { CreateSidebarListsItem } from '@/widgets/sidebar/lib/createSidebarListsItem'
 
 import s from './sidebar.module.scss'
+
+import { SidebarItemsType, useSidebarItems } from '../lib/useSidebarItems'
 
 type PropsType = {
   accountPaid: boolean

@@ -1,6 +1,6 @@
-import { ImageOutline, Typography, useTranslation } from '../../shared'
-
 import s from './expandMenu.module.scss'
+
+import { ImageOutline, Typography, useTranslation } from '../../shared'
 type PropsType = {
   onChange: (aspect: number) => void
   value: number

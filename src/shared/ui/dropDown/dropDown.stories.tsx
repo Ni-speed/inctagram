@@ -1,6 +1,7 @@
+import { Meta, StoryObj } from '@storybook/react'
+
 import { BallNotification } from '../../../entities/user/ui'
 import { DropDown } from './DropDown'
-import { Meta, StoryObj } from '@storybook/react'
 
 const meta = {
   component: DropDown,

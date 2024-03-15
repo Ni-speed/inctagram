@@ -1,8 +1,5 @@
 import { ChangeEvent, useRef, useState } from 'react'
 
-import { useAppDispatch } from '../../app'
-import { PhotosState, addPhoto, deletePhoto } from '../../entities/post/model/slice'
-import { PlusCurcle } from '../../shared/assets/svg/plusCurcle'
 import {
   Button,
   Close,
@@ -14,6 +11,10 @@ import Image from 'next/image'
 import { v4 as uuidv4 } from 'uuid'
 
 import s from './addPhotoMenu.module.scss'
+
+import { useAppDispatch } from '../../app'
+import { PhotosState, addPhoto, deletePhoto } from '../../entities/post/model/slice'
+import { PlusCurcle } from '../../shared/assets/svg/plusCurcle'
 
 type PropsType = {
   images: PhotosState

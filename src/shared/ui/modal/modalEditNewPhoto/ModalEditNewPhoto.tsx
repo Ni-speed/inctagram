@@ -2,14 +2,15 @@ import { useRef, useState } from 'react'
 import { Cropper } from 'react-cropper'
 import { useSelector } from 'react-redux'
 
+import { ArrowLeftIcon, Button, ExpandIcon, MaximizeOutline, ModalFilterMode } from '@/shared'
+
+import s from './modalEditNewPhoto.module.scss'
+
 import { RootState } from '../../../../app/appStore'
 import { AddPhotoMenu, CropImages, ExpandMenu, ZoomMenu } from '../../../../widgets'
 import { useTranslation } from '../../../hooks'
 import { Typography } from '../../typography'
 import { Modal } from '../Modal'
-import { ArrowLeftIcon, Button, ExpandIcon, MaximizeOutline, ModalFilterMode } from '@/shared'
-
-import s from './modalEditNewPhoto.module.scss'
 
 type Props = {
   image?: string

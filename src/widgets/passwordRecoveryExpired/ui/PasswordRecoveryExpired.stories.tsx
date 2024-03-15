@@ -1,5 +1,6 @@
-import { PasswordRecoveryExpired } from './PasswordRecoveryExpired'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { PasswordRecoveryExpired } from './PasswordRecoveryExpired'
 
 const meta = {
   component: PasswordRecoveryExpired,

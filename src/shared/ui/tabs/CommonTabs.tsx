@@ -1,9 +1,10 @@
 import React, { ReactNode } from 'react'
 
-import { Typography } from '../typography'
 import * as Tabs from '@radix-ui/react-tabs'
 
 import s from './commonTabs.module.scss'
+
+import { Typography } from '../typography'
 
 export type TabsPropsType = {
   children?: ReactNode

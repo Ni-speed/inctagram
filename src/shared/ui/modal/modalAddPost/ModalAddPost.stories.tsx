@@ -1,5 +1,6 @@
-import { ModalAddPost } from './ModalAddPost'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { ModalAddPost } from './ModalAddPost'
 
 const meta = {
   component: ModalAddPost,

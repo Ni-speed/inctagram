@@ -1,8 +1,9 @@
-import { useTranslation } from '../../../hooks'
-import { Modal } from '../Modal'
 import { Button, Input } from '@/shared'
 
 import s from './ModalInputEmail.module.scss'
+
+import { useTranslation } from '../../../hooks'
+import { Modal } from '../Modal'
 type Props = {
   handleButtonClick: () => void
   isOpen: boolean

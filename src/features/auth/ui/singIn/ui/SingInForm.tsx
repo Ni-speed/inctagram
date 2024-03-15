@@ -1,7 +1,6 @@
 import React, { FormEvent } from 'react'
 import { SubmitHandler } from 'react-hook-form'
 
-import { useSingInForm } from '..'
 import { serverErrorResponseHandler } from '@/features/auth/lib/serverErrorResponseHandler'
 import { serverErrorSignIn } from '@/features/auth/model/errors'
 import { NewErrorSignUpResponse } from '@/features/auth/model/types'
@@ -11,6 +10,8 @@ import { clsx } from 'clsx'
 import Link from 'next/link'
 
 import s from './singInForm.module.scss'
+
+import { useSingInForm } from '..'
 
 type SingInFormProps = {
   className?: string

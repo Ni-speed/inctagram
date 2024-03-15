@@ -1,8 +1,8 @@
 import React from 'react'
 
-import SlideImage from './slideImage/SlideImage'
-
 import s from './slide.module.scss'
+
+import SlideImage from './slideImage/SlideImage'
 
 type PropsType = {
   data: { title: string; url: string }

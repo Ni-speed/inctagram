@@ -14,9 +14,10 @@ import {
 } from '@/shared'
 import { Avatar } from '@/shared/ui/avatar/Avatar'
 
-import s from './ProfileImage.module.scss'
 // eslint-disable-next-line import/no-unresolved
 import 'cropperjs/dist/cropper.css'
+
+import s from './ProfileImage.module.scss'
 
 type ProfileImageProps = {
   avatars?: string

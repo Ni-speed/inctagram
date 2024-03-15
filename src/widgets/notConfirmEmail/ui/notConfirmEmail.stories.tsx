@@ -1,5 +1,6 @@
-import { NotConfirmEmail } from './NotConfirmEmail'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { NotConfirmEmail } from './NotConfirmEmail'
 
 const meta = {
   component: NotConfirmEmail,

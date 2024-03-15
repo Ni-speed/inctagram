@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 
+import s from './dots.module.scss'
+
 import { SliderContext } from '../../model/sliderContext'
 import { Dot } from './dot/Dot'
-
-import s from './dots.module.scss'
 
 export const Dots = () => {
   const { slidesCount } = useContext(SliderContext)

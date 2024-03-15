@@ -1,11 +1,11 @@
 import React, { TouchEvent, useEffect, useState } from 'react'
 
+import s from './slider.module.scss'
+
 import { SliderContext } from '../model/sliderContext'
 import Arrows from './arrows/Arrows'
 import { Dots } from './dots/Dots'
 import SlidesList from './sliderList/SliderList'
-
-import s from './slider.module.scss'
 
 type PropsType = {
   autoPlay?: boolean

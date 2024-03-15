@@ -1,5 +1,3 @@
-import { useTransition } from 'react'
-
 import { useGetMeQuery, useGetProfileQuery } from '@/features'
 import { TextArea, Typography, useTranslation } from '@/shared'
 import { skipToken } from '@reduxjs/toolkit/query'
@@ -14,7 +12,9 @@ type IProps = {
 
 export const AddDescription = ({ onChange, value }: IProps) => {
   const { data: meData, isLoading: isLoadingMe } = useGetMeQuery()
+
   const { data: profileData, isLoading: isLoadingProfile } = useGetProfileQuery({
+    // @ts-ignore
     profileId: meData?.userId ?? skipToken,
   })
   const imgUrl =

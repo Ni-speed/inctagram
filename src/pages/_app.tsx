@@ -7,10 +7,9 @@ import { Provider } from 'react-redux'
 import { store } from '@/app'
 import { useLoader } from '@/shared/hooks/useNextLoader'
 
-import '@fontsource-variable/inter'
-
-import '../styles/nprogress.css'
 import '../styles/index.scss'
+import '../styles/nprogress.css'
+import '@fontsource-variable/inter'
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode

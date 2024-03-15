@@ -1,5 +1,6 @@
-import { SignUp } from './SignUp'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { SignUp } from './SignUp'
 
 const meta = {
   component: SignUp,

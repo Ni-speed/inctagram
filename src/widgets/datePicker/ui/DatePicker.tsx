@@ -15,9 +15,10 @@ import { enUS, ru } from 'date-fns/locale'
 
 import { isWeekend } from 'date-fns/fp'
 
+import 'react-datepicker/dist/react-datepicker.min.css'
+
 // eslint-disable-next-line perfectionist/sort-imports
 import s from './DatePicker.module.scss'
-import 'react-datepicker/dist/react-datepicker.min.css'
 
 const RDPC = (((RDP.default as any).default as any) ||
   (RDP.default as any) ||

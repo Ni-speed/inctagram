@@ -1,10 +1,11 @@
 import React, { ReactNode } from 'react'
 
-import { Typography } from '..'
-import { Close } from '../../assets/svg'
 import * as Dialog from '@radix-ui/react-dialog'
 
 import s from './modal.module.scss'
+
+import { Typography } from '..'
+import { Close } from '../../assets/svg'
 export type ModalSize = 'lg' | 'md' | 'sm' | 'superLg'
 export type ModalProps = {
   children?: ReactNode

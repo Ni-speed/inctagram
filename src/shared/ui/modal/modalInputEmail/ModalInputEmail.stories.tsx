@@ -1,5 +1,6 @@
-import { ModalInputEmail } from './ModalInputEmail'
 import { Meta, StoryObj } from '@storybook/react'
+
+import { ModalInputEmail } from './ModalInputEmail'
 
 const meta = {
   component: ModalInputEmail,

@@ -1,7 +1,8 @@
 import { ReactElement } from 'react'
 
-import { Layout, LayoutSidebar } from '../..'
 import { LayoutProfileSettings } from '@/widgets/layouts/layoutProfileSettings/ui/LayoutProfileSettings'
+
+import { Layout, LayoutSidebar } from '../..'
 
 export const getLayoutProfileSettings = (page: ReactElement) => {
   return (
